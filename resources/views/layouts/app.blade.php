@@ -66,6 +66,7 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
+<<<<<<< HEAD
                         @if (Auth::guest())
                         <li><a class="navbar-brand" href="{{ url('/login') }}">Login</a></li>
                         <li><a class="navbar-brand" href="{{ url('/register') }}">Register</a></li>
@@ -78,6 +79,21 @@
                         </li>
                         @endif
                     </ul>
+=======
+                            @if (Auth::guest())
+                                <li><a class="navbar-brand" href="#" data-toggle="modal" data-target="#login">Login</a></li>
+                                <li><a class="navbar-brand" href="{{ url('/register') }}">Register</a></li>
+                            @else
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle navbar-brand" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                                    </ul>
+                                </li>
+                            @endif
+                        </ul>
+                    </div>
+>>>>>>> 50c6d959f3178965b3a4cc8a5ec2b7eb31562282
                 </div>
             </div>
         </nav>
