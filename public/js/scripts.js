@@ -1,10 +1,10 @@
 // Scroll animation
+/*
 
 $('body').scrollspy({
   target: '#navbar-collapsible',
   offset: 52
 });
-
 $('a[href*=#]:not([href=#])').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
       var target = $(this.hash);
@@ -31,14 +31,19 @@ $('a[href*=#]:not([href=#])').click(function() {
     }
 });
 
+*/
+
 // Overlay login close
+
+/*
 
 function closeLogin(){
 	$('#login').modal('hide');
 };
 
-// Registration
+*/
 
+// Registration
 
 function registrationEvent(name){
     switch(name){

@@ -107,10 +107,10 @@ footer a:visited {
 
 
 /*
- * Section 1
+ * Welcome Page
  */
 
-#section1 {
+#welcome {
     background-color: #5491bd;
     color: #fff;
     opacity: 0.8;
@@ -118,124 +118,247 @@ footer a:visited {
 
 
 /*
- * Section 2
+ * New Questions
  */
 
-#section2 {
+#new {
     background-color: #fff;
+    opacity: 0.8;
 }
 
-#section2 a:link,
-#section2 a:visited,
-#section2 a:active {
+#new a:link,
+#new a:visited,
+#new a:active {
     color: #000;
 }
 
-#section2 a:hover {
+#new a:hover {
     color: #337ab7;
 }
 
 
 /*
- * Section 3
+ * Popular Questions
  */
 
-#section3 {
+#popular {
     background-color: #5491bd;
     color: #fff;
     opacity: 0.8;
 }
 
-#section3 a:link,
-#section3 a:visited,
-#section3 a:active {
+#popular a:link,
+#popular a:visited,
+#popular a:active {
     color: #fff;
 }
 
-#section3 a:hover {
+#popular a:hover {
     color: #000;
 }
 
 
 /*
- * Section 4
+ * Unanswered Questions
  */
 
-#section4 {
+#unanswered {
     background-color: #fff;
+    opacity: 0.8;
 }
 
-#section4 a:link,
-#section4 a:visited,
-#section4 a:active {
+#unanswered a:link,
+#unanswered a:visited,
+#unanswered a:active {
     color: #000;
 }
 
-#section4 a:hover {
+#unanswered a:hover {
     color: #337ab7;
 }
 
 
 /*
- * Section 5
+ * Question Overview
  */
 
-#section5 {
+#overview {
     background-color: #5491bd;
     color: #fff;
     opacity: 0.8;
 }
 
-#section5 a:link,
-#section5 a:visited,
-#section5 a:active {
+#overview a:link,
+#overview a:visited,
+#overview a:active {
     color: #fff;
 }
 
-#section5 a:hover {
+#overview a:hover {
     color: #000;
 }
 
 
 /*
- * Section 6
+ * Profile
  */
 
-#section6 {
+#profile {
     background-color: #fff;
-    display: none;
+    opacity: 0.8;
 }
 
-#section6 a:link,
-#section6 a:visited,
-#section6 a:active {
+#profile a:link,
+#profile a:visited,
+#profile a:active {
     color: #000;
 }
 
-#section6 a:hover {
+#profile a:hover {
     color: #337ab7;
 }
 
 
 /*
- * Section 7
+ * Login
  */
 
-#section7 {
+#login {
     background-color: #fff;
-    display: none;
+    opacity: 0.8;
 }
 
-#section7 a:link,
-#section7 a:visited,
-#section7 a:active {
+#login a:link,
+#login a:visited,
+#login a:active {
     color: #000;
 }
 
-#section7 a:hover {
+#login a:hover {
     color: #337ab7;
 }
 
+/*
+ * Registration
+ */
+
+
+#registration {
+    background-color: #fff;
+    opacity: 0.8;
+}
+
+
+#registration a:link,
+#registration a:visited,
+#registration a:active {
+    color: #000;
+}
+
+#registration a:hover {
+    color: #337ab7;
+}
+
+
+/*
+ * Passwort Reset
+ */
+
+#reset {
+    background-color: #fff;
+    opacity: 0.8;
+}
+
+
+#reset a:link,
+#reset a:visited,
+#reset a:active {
+    color: #000;
+}
+
+#reset a:hover {
+    color: #337ab7;
+}
+
+/*
+ * Email Reset
+ */
+
+#email {
+    background-color: #fff;
+    opacity: 0.8;
+}
+
+
+#email a:link,
+#email a:visited,
+#email a:active {
+    color: #000;
+}
+
+#email a:hover {
+    color: #337ab7;
+}
+
+/*
+ * Imprint
+ */
+
+#imprint {
+    background-color: #fff;
+    opacity: 0.8;
+}
+
+
+#imprint a:link,
+#imprint a:visited,
+#imprint a:active {
+    color: #000;
+}
+
+#imprint a:hover {
+    color: #337ab7;
+}
+
+/*
+ * Privacy Policy
+ */
+
+#privacypolicy {
+    background-color: #fff;
+    opacity: 0.8;
+}
+
+
+#privacypolicy a:link,
+#privacypolicy a:visited,
+#privacypolicy a:active {
+    color: #000;
+}
+
+#privacypolicy a:hover {
+    color: #337ab7;
+}
+
+/*
+ * Legal Notice
+ */
+
+#legalnotice {
+    background-color: #fff;
+    opacity: 0.8;
+}
+
+
+#legalnotice a:link,
+#legalnotice a:visited,
+#legalnotice a:active {
+    color: #000;
+}
+
+#legalnotice a:hover {
+    color: #337ab7;
+}
 
 /*********************************
  *                               *
@@ -333,6 +456,11 @@ footer a:visited {
     padding-bottom: 10px;
 }
 
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+    background-color: #337ab7;
+    border-color: #337ab7;
+}
+
 .navborderbot {
     border-bottom: 2px solid #fff !important;
 }
@@ -366,10 +494,25 @@ footer a:visited {
     letter-spacing: 1px;
 }
 
+.test {
+    background-color: lightgrey;
+}
+
 .navbar-trans .form-control:focus {
     border-color: #eee;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(100, 100, 100, 0.6);
     outline: 0;
+}
+
+.dropdown-menu>li>a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: #ffffff;
+    background-color: #2b2b2b;
+    white-space: nowrap;
 }
 
 .messageimg {
@@ -382,6 +525,10 @@ footer a:visited {
     padding-left: 40px;
     padding-right: 40px;
     padding-top: 20px;
+}
+
+.paddingleft15 {
+    padding-left: 15px;
 }
 
 .profil {
@@ -407,6 +554,10 @@ footer a:visited {
     position: fixed;
     right: 2em;
     z-index: 999;
+}
+
+.authnav {
+    font-size: 15px;
 }
 
 .scroll-up a {
