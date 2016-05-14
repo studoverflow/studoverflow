@@ -3,7 +3,7 @@
 @section('content')
 <section class="container-fluid" id="question">
     <section class="container">
-        <div class="col-xs-12 col-md-12 column messagetop">
+        <div class="col-xs-12 col-md-12 column questiontop">
             Die Legendäre IF-Schleife von <a href="#section7">Enes</a> am 04.04.2016
         </div>
         <div class="col-xs-3 col-md-1 column messageimg">
@@ -30,10 +30,10 @@
             <br />v
             <br />
         </div>
-        <div class="col-xs-12 col-md-12 column messagebot">
+        <div class="col-xs-12 col-md-12 column questionbot">
              &nbsp;
         </div>
-        <div class="col-xs-12 col-md-12 column marginbottom40">
+        <div class="col-xs-12 col-md-12 column marginbottom40 margintop10">
             <input type="button" class="btn-xs btn-black messagebtn" value="Antworten">
         </div>
         <div class="col-xs-12 col-md-12 column messagetop">
