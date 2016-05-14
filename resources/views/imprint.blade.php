@@ -6,6 +6,7 @@
 	<section class="container">
 		<article class="row">
 			<div class="col-sm-12">
+			<div class="text-center">
 				Angaben gemäß § 5 TMG:
 				<h3>StudOverflow</h3>
 				Brauneggerstraße 55
@@ -33,6 +34,7 @@
 				<br />
 				<br />
 				<br />
+				</div>
 				<h4>Haftungsausschluss (Disclaimer)</h4>
 				<h6>Haftung für Inhalte</h6>
 				Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen
