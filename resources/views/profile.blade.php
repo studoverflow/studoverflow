@@ -3,8 +3,9 @@
 @section('content')
 <?php 
     $user_id = DB::table('users')->where('name', Auth::user()->name)->first()->id;
+    $profile_id = DB::table('profiles')->where('user_id', $user_id)->first()->id;
     $user = App\User::find($user_id);
-    $profile = App\Profile::find($user->id);
+    $profile = App\Profile::find($profile_id);
 ?>
 <section class="container-fluid" id="profile">
     <h1 class="text-center">Profil @if (!Auth::guest()) <a href="#" class="editsize">Edit</a> @endif</h1> 
