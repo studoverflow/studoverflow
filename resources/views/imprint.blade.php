@@ -6,34 +6,34 @@
 	<section class="container">
 		<article class="row">
 			<div class="col-sm-12">
-			<div class="text-center">
-				Angaben gemäß § 5 TMG:
-				<h3>StudOverflow</h3>
-				Brauneggerstraße 55
-				<br />
-				78462 Konstanz
-				<br />
-				<br />
-				<br />
-				<b>Vertreten durch:</b>
-				<br />
-				Stephen Beck
-				<br />
-				Markus Jäckle
-				<br />
-				<br />
-				E-Mail:	mail@studoverflow.de
-				<br />
-				<br />
-				<h4>Hinweis auf EU-Streitschlichtung</h4>
-				Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
-				<br />
-				<a href="http://ec.europa.eu/consumers/odr">http://ec.europa.eu/consumers/odr</a>
-				<br />
-				Unsere E-Mail-Adresse finden sie oben im Impressum.
-				<br />
-				<br />
-				<br />
+				<div class="text-center">
+					Angaben gemäß § 5 TMG:
+					<h3>StudOverflow</h3>
+					Brauneggerstraße 55
+					<br />
+					78462 Konstanz
+					<br />
+					<br />
+					<br />
+					<b>Vertreten durch:</b>
+					<br />
+					Stephen Beck
+					<br />
+					Markus Jäckle
+					<br />
+					<br />
+					E-Mail:	mail@studoverflow.de
+					<br />
+					<br />
+					<h4>Hinweis auf EU-Streitschlichtung</h4>
+					Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
+					<br />
+					<a href="http://ec.europa.eu/consumers/odr">http://ec.europa.eu/consumers/odr</a>
+					<br />
+					Unsere E-Mail-Adresse finden sie oben im Impressum.
+					<br />
+					<br />
+					<br />
 				</div>
 				<h4>Haftungsausschluss (Disclaimer)</h4>
 				<h6>Haftung für Inhalte</h6>
