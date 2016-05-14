@@ -3,39 +3,34 @@
 @section('content')
 <section class="container-fluid" id="question">
     <section class="container">
-        <div class="col-xs-12 col-md-12 column questiontop">
-            Die Legendäre IF-Schleife von <a href="#section7">Enes</a> am 04.04.2016
-        </div>
-        <div class="col-xs-3 col-md-1 column messageimg">
-            <img class="text-center" src="img/defpic.png">
-        </div>
-        <div class="col-xs-9 col-md-11 column messagemain">
-            Hallo Zusammen,
-            <br />
-            ich bin der Enes und Studieren Wirtschaftsinformatik.
-            <br />
-            Leider hab ich das mit der IF-SCHLEIFE noch nicht ganz verstanden.
-            <br />
-            Kann mir jemand helfen?
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            v
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />v
-            <br />
-        </div>
-        <div class="col-xs-12 col-md-12 column questionbot">
-             &nbsp;
-        </div>
-        <div class="col-xs-12 col-md-12 column marginbottom40 margintop10">
-            <input type="button" class="btn-xs btn-black messagebtn" value="Antworten">
-        </div>
+        <article class="row">
+            <div class="col-xs-12 col-md-12 column questiontop">
+                Die Legendäre IF-Schleife von <a href="#section7">Enes</a> am 04.04.2016
+            </div>
+            <div class="col-xs-12 col-md-12 column messagemain">
+                <div class="col-xs-3 col-md-1 column messageimg">
+                <img class="text-center" src="img/defpic.png">
+                </div>
+                <div class="col-xs-9 col-md-11 column messagemain">
+                    Hallo Zusammen,
+                    <br />
+                    ich bin der Enes und Studieren Wirtschaftsinformatik.
+                    <br />
+                    Leider hab ich das mit der IF-SCHLEIFE noch nicht ganz verstanden.
+                    <br />
+                    Kann mir jemand helfen?
+                 </div>
+            </div>
+
+            <div class="col-xs-12 col-md-12 column questionbot">
+                 &nbsp;
+            </div>
+            <div class="col-xs-12 col-md-12 column marginbottom40 margintop10">
+                <input type="button" class="btn-xs btn-black messagebtn" value="Antworten">
+            </div>
+            
+        </article>
+        
         <div class="col-xs-12 col-md-12 column messagetop">
             Antwort von winuser am 04.04.2016
         </div>
