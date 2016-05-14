@@ -207,7 +207,7 @@ footer a:visited {
 }
 
 #overview a:hover {
-    color: #000;
+    color: #111;
 }
 
 
@@ -216,14 +216,14 @@ footer a:visited {
  */
 
 #profile {
-    background-color: #fff;
-    opacity: 0.8;
+    background:rgba(255,255,255, 0.8);
+    color: #111111;
 }
 
 #profile a:link,
 #profile a:visited,
 #profile a:active {
-    color: #000;
+    color: red;
 }
 
 #profile a:hover {
@@ -242,7 +242,7 @@ footer a:visited {
 #login a:link,
 #login a:visited,
 #login a:active {
-    color: #000;
+    color: #111;
 }
 
 #login a:hover {
@@ -262,7 +262,7 @@ footer a:visited {
 #registration a:link,
 #registration a:visited,
 #registration a:active {
-    color: #000;
+    color: #111;
 }
 
 #registration a:hover {
@@ -282,7 +282,7 @@ footer a:visited {
 #reset a:link,
 #reset a:visited,
 #reset a:active {
-    color: #000;
+    color: #111;
 }
 
 #reset a:hover {
@@ -301,7 +301,7 @@ footer a:visited {
 #email a:link,
 #email a:visited,
 #email a:active {
-    color: #000;
+    color: #111;
 }
 
 #email a:hover {
@@ -321,7 +321,7 @@ footer a:visited {
 #imprint a:link,
 #imprint a:visited,
 #imprint a:active {
-    color: #000;
+    color: #111;
 }
 
 #imprint a:hover {
@@ -341,7 +341,7 @@ footer a:visited {
 #privacypolicy a:link,
 #privacypolicy a:visited,
 #privacypolicy a:active {
-    color: #000;
+    color: #111;
 }
 
 #privacypolicy a:hover {
@@ -578,4 +578,9 @@ footer a:visited {
 
 .paddingright5 {
     padding-right: 5px;
+}
+
+.editsize {
+    font-size: 20px;
+
 }
