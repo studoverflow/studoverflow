@@ -2,7 +2,6 @@
 
 @section('content')
 <section class="container-fluid" id="question">
-    <h1 class="text-center">Frage</h1>
     <section class="container">
         <div class="col-xs-12 col-md-12 column messagetop">
             Die Legendäre IF-Schleife von <a href="#section7">Enes</a> am 04.04.2016
@@ -19,9 +18,23 @@
             <br />
             Kann mir jemand helfen?
             <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            v
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />v
+            <br />
         </div>
         <div class="col-xs-12 col-md-12 column messagebot">
-            <input type="button" class="btn-xs btn-primary messagebtn" value="Antworten">
+             &nbsp;
+        </div>
+        <div class="col-xs-12 col-md-12 column marginbottom40">
+            <input type="button" class="btn-xs btn-black messagebtn" value="Antworten">
         </div>
         <div class="col-xs-12 col-md-12 column messagetop">
             Antwort von winuser am 04.04.2016
@@ -37,7 +50,7 @@
             grüße winuser
         </div>
         <div class="col-xs-12 col-md-12 column messagebot">
-            <input type="button" class="btn-xs btn-primary messagebtn" value="Antworten">
+             &nbsp;
         </div>
         <div class="col-xs-12 col-md-12 column messagetop">
             Antwort von <a href="#section7">Enes</a> am 04.04.2016
@@ -53,8 +66,8 @@
             <br />
         </div>
         <div class="col-xs-12 col-md-12 column messagebot">
-            <input type="button" class="btn-xs btn-primary messagebtn" value="Antworten">
+             &nbsp;
         </div>
-    </section>
+     </section>
 </section>
 @endsection
