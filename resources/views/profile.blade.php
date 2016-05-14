@@ -1,14 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<?php
-
-    $user = App\User::find("1");
+<?php 
+    $user_id = DB::table('users')->where('name', Auth::user()->name)->first()->id;
+    $user = App\User::find($user_id);
     $profile = App\Profile::find($user->id);
-    
-
 ?>
-
 <section class="container-fluid" id="profile">
     <h1 class="text-center">Profil @if (!Auth::guest()) <a href="#" class="editsize">Edit</a> @endif</h1> 
     <section class="container">
@@ -31,6 +28,7 @@
                 <p>
                     <b class="profil">Vorname</b>
                     </br> <?php echo $profile->forename; ?>
+                    
                 </p>
                 <p>
                     <b class="profil">Nachname</b>
