@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <section class="container-fluid" id="profile">
     <h1 class="text-center">Profil</h1>
     <section class="container">
@@ -17,11 +18,12 @@
             </div>
             <div class="col-md-4">
                 <p>
-                    <b class="profil">User </b></br>Enes
+                    <b class="profil">User </b>
+                    </br>Enes
                 </p>
                 <p>
                     <b class="profil">Vorname</b>
-                    </br>Enes
+                    </br>{{$profile = "yo"; 
                 </p>
                 <p>
                     <b class="profil">Nachname</b>

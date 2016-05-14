@@ -47,7 +47,7 @@ Route::get('/imprint', function () {
 });
 
 Route::get('/privacy', function () {
-    return view('privacypolicy');
+    return view('privacypolicy');;
 });
 
 Route::get('/legalnotice', function () {
@@ -57,3 +57,14 @@ Route::get('/legalnotice', function () {
 Route::get('/feedback', function () {
     return view('feedback');
 });
+
+
+Route::get('test', function () {
+    $users = App\User::all();
+    foreach ($users as $user){
+        $profile = App\Profile::find($user->id);
+        echo $user->name . " hat den Nachname " . $profile->surname . "<br/>";
+    }
+    
+});
+
