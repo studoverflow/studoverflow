@@ -53,4 +53,3 @@ Route::get('/privacy', function () {
 Route::get('/legalnotice', function () {
     return view('legalnotice');
 });
-

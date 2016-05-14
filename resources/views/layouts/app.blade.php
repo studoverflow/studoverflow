@@ -43,18 +43,19 @@
                     </div>
                     <div class="navbar-collapse collapse" id="navbar-collapsible">
                         <ul class="nav navbar-nav navbar-left">
-                            <li>
-                                <a href="/new">Neuste Fragen</a>
+                            <li {{{ (Request::is('new') ? 'class=active' : '') }}}>
+                                <a href="{{ url('/new') }}">Neue Fragen</a>
                             </li>
-                            <li>
-                                <a href="/popular">Beliebte Fragen</a>
+                            <li {{{ (Request::is('popular') ? 'class=active' : '') }}}>
+                                <a href="{{ url('/popular') }}">Beliebte Fragen</a>
                             </li>
-                            <li>
-                                <a href="/unanswered">Unbeantwortete Fragen</a>
+                            <li {{{ (Request::is('unanswered') ? 'class=active' : '') }}}>
+                                <a href="{{ url('/unanswered') }}">Unbeantwortete Fragen</a>
                             </li>
-                            <li>
-                                <a href="/overview">Übersicht</a>
+                            <li {{{ (Request::is('overview') ? 'class=active' : '') }}}>
+                                <a href="{{ url('/overview') }}">Übersicht</a>
                             </li>
+
                             <li>
                                 &nbsp;
                             </li>
@@ -63,24 +64,24 @@
                         <ul class="nav navbar-nav navbar-right">
                             <!-- Authentication Links -->
                             @if (Auth::guest())
-                            <li>
-                                <a class="navbar-brand authnav" href="{{ url('/login') }}">Login</a>
+                            <li {{{ (Request::is('login') ? 'class=active' : '') }}}>
+                                <a href="{{ url('/login') }}"><i class="fa fa-btn fa-sign-in"></i> Anmelden</a>
                             </li>
-                            <li class="paddingleft15">
-                                <a class="navbar-brand authnav" href="{{ url('/register') }}">Register</a>
+                            <li {{{ (Request::is('register') ? 'class=active' : '') }}}>
+                                <a href="{{ url('/register') }}"><i class="fa fa-btn fa-user"></i> Registrieren</a>
                             </li>
                             @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle navbar-brand authnav" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
-                                        <a href="{{ url('/profile') }}"><i class="fa fa-btn"></i>Profil bearbeiten</a>
+                                        <a href="{{ url('/profile') }}"><i class="fa fa-btn fa-cog"></i> Profil</a>
                                     </li>
                                     <li>
-                                        <a href="#"><i class="fa fa-btn"></i>Verlauf anzeigen</a>
+                                        <a href="#"><i class="fa fa-btn fa-paperclip"></i> Verlauf</a>
                                     </li>
                                     <li>
-                                        <a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a>
+                                        <a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> Logout</a>
                                     </li>
 
                                 </ul>

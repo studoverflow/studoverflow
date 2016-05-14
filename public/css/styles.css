@@ -121,6 +121,7 @@ footer a:visited {
 
 #new {
     background:rgba(255,255,255, 0.8);
+    color: #111111;
 
 }
 
@@ -141,13 +142,13 @@ footer a:visited {
 
 #popular {
     background:rgba(84,145,189, 0.8);
-    color: #fff;
+    color: #ffffff;
 }
 
 #popular a:link,
 #popular a:visited,
 #popular a:active {
-    color: #fff;
+    color: #ffffff;
 }
 
 #popular a:hover {
@@ -160,8 +161,8 @@ footer a:visited {
  */
 
 #unanswered {
-    background-color: #fff;
-    opacity: 0.8;
+    background:rgba(255,255,255, 0.8);
+    color: #111111;
 }
 
 #unanswered a:link,
@@ -513,10 +514,6 @@ footer a:visited {
     padding-left: 40px;
     padding-right: 40px;
     padding-top: 20px;
-}
-
-.paddingleft15 {
-    padding-left: 15px;
 }
 
 .profil {

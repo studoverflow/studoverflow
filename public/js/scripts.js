@@ -43,9 +43,13 @@ function closeLogin(){
 
 */
 
+
+
 // Registration
 
 function registrationEvent(name){
+
+
     switch(name){
         case "username":
             regUsername(document.getElementById('username').value);
