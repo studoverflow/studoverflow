@@ -65,6 +65,12 @@ Route::get('test', function () {
         $profile = App\Profile::find($user->id);
         echo $user->name . " hat den Nachname " . $profile->surname . "<br/>";
     }
+});
+
+Route::get('test2', function () {
+    $user = App\User::find("1");
+    $profile = App\Profile::find($user->id);
+    echo $user->name . " hat den Nachname " . $profile->surname;
     
 });
 
