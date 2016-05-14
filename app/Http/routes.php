@@ -34,8 +34,40 @@ Route::get('/overview', function () {
     return view('questionsoverview');
 });
 
+Route::get('/profile={id}', function ($id) {
+
+    $user_id = DB::table('users')->where('id', $id)->first()->id;
+    $profile_id = DB::table('profiles')->where('user_id', $user_id)->first()->id;
+    $user = App\User::find($user_id);
+    $profile = App\Profile::find($profile_id);
+    $data = array(
+        'name' => $user->name,
+        'email' => $user->email,
+        'page' => $profile->page,
+        'college' => $profile->college,
+        'course' => $profile->course,
+        'forename' => $profile->forename,
+        'surname' => $profile->surname,);
+
+    return view('profile')->with($data);
+});
+
 Route::get('/profile', function () {
-    return view('profile');
+    $user_id = DB::table('users')->where('name', Auth::user()->name)->first()->id;
+    $profile_id = DB::table('profiles')->where('user_id', $user_id)->first()->id;
+    $user = App\User::find($user_id);
+    $profile = App\Profile::find($profile_id);
+    $data = array(
+        'name' => $user->name,
+        'email' => $user->email,
+        'page' => $profile->page,
+        'college' => $profile->college,
+        'course' => $profile->course,
+        'forename' => $profile->forename,
+        'surname' => $profile->surname,);
+
+    return view('profile')->with($data);
+
 });
 
 Route::get('/question', function () {

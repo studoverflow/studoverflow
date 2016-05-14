@@ -1,12 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<?php 
-    $user_id = DB::table('users')->where('name', Auth::user()->name)->first()->id;
-    $profile_id = DB::table('profiles')->where('user_id', $user_id)->first()->id;
-    $user = App\User::find($user_id);
-    $profile = App\Profile::find($profile_id);
-?>
+
 <section class="container-fluid" id="profile">
     <h1 class="text-center">Profil @if (!Auth::guest()) <a href="#" class="editsize">Edit</a> @endif</h1> 
     <section class="container">
@@ -24,32 +19,32 @@
             <div class="col-md-4">
                 <p>
                     <b class="profil">User </b>
-                    </br><?php echo $user->name; ?>
+                    </br>{{ $name }}
                 </p>
                 <p>
                     <b class="profil">Vorname</b>
-                    </br> <?php echo $profile->forename; ?>
-                    
+                    </br> {{ $forename }}
+
                 </p>
                 <p>
                     <b class="profil">Nachname</b>
-                    </br><?php echo $profile->surname; ?>
+                    </br>{{ $surname }}
                 </p>
                 <p>
                     <b class="profil">E-Mail</b>
-                    </br><?php echo $user->email; ?>
+                    </br>{{ $email }}
                 </p>
             </div>
             <div class="col-md-4">
                 <p>
                     <b class="profil">Homepage</b>
-                    </br><?php echo $profile->page; ?>
+                    </br>{{ $page }}
                 </p>
                 <p>
-                    <b class="profil">Hochschule</b></br><?php echo $profile->college; ?>
+                    <b class="profil">Hochschule</b></br>{{ $college }}
                 </p>
                 <p>
-                    <b class="profil">Studiengang</b></br><?php echo $profile->course; ?>
+                    <b class="profil">Studiengang</b></br>{{ $course }}
                 </p>
             </div>
         </div>
