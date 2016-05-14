@@ -11,10 +11,10 @@
                 <p><img class="profilpad" src="img/defpic.png">
                 </p>
                 <p>
-                    <b>Rang:</b> Neuling
+                    <b>Rang:</b> {{ $rank }}
                 </p>
                 <p>
-                    <b>Top-Antwort:</b> 0 mal
+                    <b>Top-Antwort:</b> {{ $top }} mal
                 </p>
             </div>
             <div class="col-md-4">

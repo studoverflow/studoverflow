@@ -64,8 +64,9 @@ Route::get('/profile', function () {
         'college' => $profile->college,
         'course' => $profile->course,
         'forename' => $profile->forename,
-        'surname' => $profile->surname,);
-
+        'surname' => $profile->surname,
+        'top' => $profile->top,
+        'rank' => $profile->rank );
     return view('profile')->with($data);
 
 });
