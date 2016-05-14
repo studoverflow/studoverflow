@@ -94,12 +94,15 @@
         </header>
 
         @yield('content')
-        <footer class="container-fluid navbar-trans navbar-fixed-bottom" title="footer">
+        <footer class="container-fluid navbar-trans navbar-fixed-bottom">
             <div class="container margintop15">
                 <div class="row">
-                    <div class="col-xs-12 col-md-12 column">
-                        <div id="footerfont">
-                            <a href="/imprint">Impressum</a> | <a href="/privacy">Datenschutz</a> | <a href="/legalnotice">Rechtliche Hinweise</a>
+                    <div class="col-xs-12 col-md-12">
+                        <div class="text-center scalefooter">
+                            <a class="paddingright5" href="/imprint"><i class="fa fa-btn fa-pencil"></i> Impressum  </a>
+                            <a class="paddingright5" href="/privacy"><i class="fa fa-btn fa-key"></i> Datenschutz</a> 
+                            <a class="paddingright5" href="/legalnotice"><i class="fa fa-btn fa-info"></i> Rechtliche Hinweise</a>
+                            <a href="/feedback"><i class="fa fa-btn fa-comment-o"></i> Feedback</a>
                         </div>
                     </div>
                 </div>

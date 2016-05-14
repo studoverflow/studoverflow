@@ -53,3 +53,7 @@ Route::get('/privacy', function () {
 Route::get('/legalnotice', function () {
     return view('legalnotice');
 });
+
+Route::get('/feedback', function () {
+    return view('feedback');
+});
