@@ -160,6 +160,4 @@ function regbEmail(args){
         element.classList.remove("fieldred");
         errText.innerHTML = "";
     }
-
-
 }

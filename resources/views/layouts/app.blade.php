@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="de">
     <head>
+
+        <script type="text/javascript"> 
+        var totalCount = 5;
+        function ChangeIt() {
+        var num = Math.ceil( Math.random() * totalCount );
+        document.body.background = 'img/'+num+'.jpg';
+        document.body.style.backgroundRepeat = "repeat";}
+        </script>
+
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -94,6 +103,11 @@
         </header>
 
         @yield('content')
+
+        <script type="text/javascript"> 
+        ChangeIt();
+        </script> 
+        
         <footer class="container-fluid navbar-trans navbar-fixed-bottom">
             <div class="container margintop15">
                 <div class="row">

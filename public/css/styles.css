@@ -1,7 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Poppins);
 html,
 body {
-    background: center no-repeat fixed url('../img/bg.jpg');
     background-size: cover;
     color: #444;
     font-family: 'Poppins', sans-serif;
