@@ -2,7 +2,7 @@
 
 @section('content')
 <section class="container-fluid" id="profile">
-    <h1 class="text-center">Profil 
+    <h1 class="text-center studoverflow">Profil 
     @if (!Auth::guest() && Auth::user()->name == $name) <a href="#" class="editsize">Edit</a> @endif</h1> 
     <section class="container">
         <div class="row">
