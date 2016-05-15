@@ -458,6 +458,26 @@ footer a:visited {
     color: #337ab7;
 }
 
+/*
+ * History
+ */
+
+#history {
+    background:rgba(255,255,255, 0.8);
+    color: #111111;
+}
+
+
+#history a:link,
+#history a:visited,
+#history a:active {
+    color: #000;
+}
+
+#history a:hover {
+    color: #337ab7;
+}
+
 /*********************************
  *                               *
  * CLASS Area                    *
