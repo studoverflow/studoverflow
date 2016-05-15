@@ -381,7 +381,7 @@ footer a:visited {
 #question a:link,
 #question a:visited,
 #question a:active {
-    color: #000;
+    color: #ffffff;
 }
 
 #question a:hover {
@@ -479,16 +479,28 @@ footer a:visited {
 }
 
 .messagetop {
-    background-color: #337ab7;
-    border: 2px #111111 solid;
-    color: #fff;
+    background-color: #2b2b2b;
+    color: #ffffff;
+    border-top: 2px #ffffff solid;
+    border-left: 2px #ffffff solid;
+    border-right: 2px #ffffff solid;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 20px;
 }
 
 .messagebot {
-    background-color: #337ab7;
-    border: 2px #111111 solid;
-    color: #fff;
-    margin-bottom: 20px;
+    background-color: #2b2b2b;
+    color: #ffffff;
+    border-bottom: 2px #ffffff solid;
+    border-left: 2px #ffffff solid;
+    border-right: 2px #ffffff solid;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .messagebtn {
@@ -641,6 +653,7 @@ footer a:visited {
     border-top-right-radius: 5px;
     padding-top: 5px;
     padding-bottom: 5px;
+    margin-top: 50px;
 }
 
 .questionbot {
@@ -653,5 +666,46 @@ footer a:visited {
     border-bottom-right-radius: 5px;
     padding-top: 5px;
     padding-bottom: 5px;
+}
 
+.bold {
+    font-weight: bold;
+}
+
+.questionblue {
+    background-color: #337ab7;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #ffffff;
+    border-bottom: 1px #111111 solid;
+}
+
+.questionblue a {
+    color: #ffffff !important;
+}
+.questionblue a:hover {
+    color: #111111 !important;
+}
+
+.questionwhite {
+    background-color: #ffffff;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: #111111;
+    border-bottom: 1px #111111 solid;
+}
+
+.questionheader {
+    background-color: #2b2b2b;
+    color: #ffffff;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom: 1px #ffffff solid;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.questionheaderfont {
+    color: #ffffff;
+    font-family: 'Audiowide', cursive;
 }
