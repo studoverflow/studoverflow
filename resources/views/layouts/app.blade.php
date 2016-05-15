@@ -64,11 +64,6 @@
                             <li {{{ (Request::is('search') ? 'class=active' : '') }}}>
                                 <a href="{{ url('/search') }}">Suchen</a>
                             </li>
- 
-
-                            <li>
-                                &nbsp;
-                            </li>
                         </ul>
                         <!-- Right Side Of Navbar -->
                         <ul class="nav navbar-nav navbar-right">
@@ -81,11 +76,15 @@
                                 <a href="{{ url('/register') }}"><i class="fa fa-btn fa-user"></i> Registrieren</a>
                             </li>
                             @else
+
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle navbar-brand authnav" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-btn fa-universal-access"></i> {{ Auth::user()->name }} <span class="caret"></span></a>
+                                <a href="#" class="dropdown-toggle navbar-brand authnav" data-toggle="dropdown" aria-expanded="true"><i class="fa fa-btn fa-universal-access"></i> {{ Auth::user()->name }} <span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
                                         <a href="{{ url('/profile') }}"><i class="fa fa-btn fa-cog"></i> Profil</a>
+                                    </li>
+                                    <li>
+                                        <a  href="{{ url('/ask') }}"><i class="fa fa-btn fa-pencil"></i> Frage verfassen</a>
                                     </li>
                                     <li>
                                         <a href="#"><i class="fa fa-btn fa-paperclip"></i> Verlauf</a>
@@ -95,9 +94,6 @@
                                     </li>
 
                                 </ul>
-                            </li>
-                            <li {{{ (Request::is('ask') ? 'class=active' : '') }}}>
-                                <a href="{{ url('/ask') }}"><i class="fa fa-btn fa-pencil"></i> Frage verfassen</a>
                             </li>
                             @endif
                         </ul>
