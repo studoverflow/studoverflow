@@ -388,6 +388,66 @@ footer a:visited {
     color: #337ab7;
 }
 
+/*
+ * Search
+ */
+
+#search {
+    background:rgba(84,145,189, 0.8);
+    color: #111111;
+}
+
+
+#search a:link,
+#search a:visited,
+#search a:active {
+    color: #ffffff;
+}
+
+#search a:hover {
+    color: #337ab7;
+}
+
+/*
+ * Ask
+ */
+
+#ask {
+    background:rgba(84,145,189, 0.8);
+    color: #111111;
+}
+
+
+#ask a:link,
+#ask a:visited,
+#ask a:active {
+    color: #ffffff;
+}
+
+#ask a:hover {
+    color: #337ab7;
+}
+
+/*
+ * Feedback
+ */
+
+#feedback {
+    background:rgba(255,255,255, 0.8);
+    color: #111111;
+}
+
+
+#feedback a:link,
+#feedback a:visited,
+#feedback a:active {
+    color: #000;
+}
+
+#feedback a:hover {
+    color: #337ab7;
+}
+
 /*********************************
  *                               *
  * CLASS Area                    *

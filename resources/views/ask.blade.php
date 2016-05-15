@@ -1,9 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-<section id="feedback" class="container-fluid">
-	<h1 class="text-center">Feedback</h1>
-	<h2 class="text-center">Deine Meinung ist uns wichtig!</h2>
+<section id="ask" class="container-fluid">
+	<h1 class="text-center">Frage verfassen</h1>
 	<h1> ToDo: !!!!!!</h1>
 	<section class="container">
 		<article class="row">

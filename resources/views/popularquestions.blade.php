@@ -1,86 +1,39 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="container-fluid" id="popular">
-    <h1 class="text-center">Beliebte Fragen</h1>
+<?php 
+$questions = DB::select('select * from questions order by date desc'); 
+$answers = DB::select('select * from countanswer');
+?>
+<section class="container-fluid" id="new">
     <section class="container">
         <article class="row">
-            <div class="col-sm-12">
-                <div class="col-sm-6">
-                    <div class="col-sm-12">
-                        <b><a href="#">Die Legendäre IF-Schleife</a></b> von <b><a href="#">Enes</a></b> am 04.04.2016
-                    </div>
-                    <div class="col-sm-12 question">
-                        Hallo Zusammen,
-                        <br />
-                        ich bin der Enes und Studieren Wirtschaftsinformatik.
-                        <br />
-                        Leider hab ich das mit der IF-SCHLEIFE noch nicht ganz verstanden.
-                        <br />
-                        Kann mir jemand helfen?
-                        <br />
-                    </div>
-                    <div class="col-sm-12 margquestion">
-                        <b>Antworten:</b> 2 &nbsp;&nbsp;&nbsp; <b>Aufrufe:</b> 13
-                    </div>
+            <article class="col-sm-12">
+                <div class="col-sm-12 questionheader">
+                    <h1 class="text-center questionheaderfont">Beliebte Fragen</h1>
                 </div>
-                <div class="col-sm-6">
-                    <div class="col-sm-12">
-                        <b><a href="#">Die Legendäre IF-Schleife</a></b> von <b><a href="#">Enes</a></b> am 04.04.2016
-                    </div>
-                    <div class="col-sm-12">
-                        Hallo Zusammen,
-                        <br />
-                        ich bin der Enes und Studieren Wirtschaftsinformatik.
-                        <br />
-                        Leider hab ich das mit der IF-SCHLEIFE noch nicht ganz verstanden.
-                        <br />
-                        Kann mir jemand helfen?
-                        <br />
-                    </div>
-                    <div class="col-sm-12 margquestion">
-                        <b>Antworten:</b> 2 &nbsp;&nbsp;&nbsp; <b>Aufrufe:</b> 13
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12">
-                <div class="col-sm-6">
-                    <div class="col-sm-12">
-                        <b><a href="#">Die Legendäre IF-Schleife</a></b> von <b><a href="#">Enes</a></b> am 04.04.2016
-                    </div>
-                    <div class="col-sm-12">
-                        Hallo Zusammen,
-                        <br />
-                        ich bin der Enes und Studieren Wirtschaftsinformatik.
-                        <br />
-                        Leider hab ich das mit der IF-SCHLEIFE noch nicht ganz verstanden.
-                        <br />
-                        Kann mir jemand helfen?
-                        <br />
-                    </div>
-                    <div class="col-sm-12 margquestion">
-                        <b>Antworten:</b> 2 &nbsp;&nbsp;&nbsp; <b>Aufrufe:</b> 13
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="col-sm-12">
-                        <b><a href="#">Die Legendäre IF-Schleife</a></b> von <b><a href="#">Enes</a></b> am 04.04.2016
-                    </div>
-                    <div class="col-sm-12 question">
-                        Hallo Zusammen,
-                        <br />
-                        ich bin der Enes und Studieren Wirtschaftsinformatik.
-                        <br />
-                        Leider hab ich das mit der IF-SCHLEIFE noch nicht ganz verstanden.
-                        <br />
-                        Kann mir jemand helfen?
-                        <br />
-                    </div>
-                    <div class="col-sm-12 margquestion">
-                        <b>Antworten:</b> 2 &nbsp;&nbsp;&nbsp; <b>Aufrufe:</b> 13
-                    </div>
-                </div>
-            </div>
+                @foreach($answers as $answer)
+                    @foreach($questions as $question)
+                        @if($answer->anzahl > 0 && $answer->id==$question->id)
+                            <?php $user = App\User::find($question->user_id); ?>
+                            <div class="col-sm-12 questionblue">
+                                <div class="col-sm-6">
+                                    <b><a href="/question={{$question->id}}">
+                                    <i class="fa fa-question-circle-o" aria-hidden="true"></i> 
+                                    {{$question->titel}}
+                                    </a></b>
+                                </div>
+                                <div class="col-sm-3">
+                                    <b><a href="/profile={{$user->id}}"><i class="fa fa-user" aria-hidden="true"></i> {{$user->name}}</a></b>
+                                </div>
+                                <div class="col-sm-3">
+                                    <i class="fa fa-clock-o" aria-hidden="true"></i> {{$question->date}}
+                                </div>
+                            </div>
+                        @endif
+                    @endforeach
+                @endforeach
+            </article>
         </article>
         <!--/row-->
     </section>

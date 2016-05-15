@@ -48,7 +48,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="/">StudOverflow</a>
+                        <a class="navbar-brand" href="/"><i class="fa fa-stack-overflow" aria-hidden="true"></i> StudOverflow</a>
                     </div>
                     <div class="navbar-collapse collapse" id="navbar-collapsible">
                         <ul class="nav navbar-nav navbar-left">
@@ -61,9 +61,10 @@
                             <li {{{ (Request::is('unanswered') ? 'class=active' : '') }}}>
                                 <a href="{{ url('/unanswered') }}">Unbeantwortete Fragen</a>
                             </li>
-                            <li {{{ (Request::is('overview') ? 'class=active' : '') }}}>
-                                <a href="{{ url('/overview') }}">Übersicht</a>
+                            <li {{{ (Request::is('search') ? 'class=active' : '') }}}>
+                                <a href="{{ url('/search') }}">Suchen</a>
                             </li>
+ 
 
                             <li>
                                 &nbsp;
@@ -81,7 +82,7 @@
                             </li>
                             @else
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle navbar-brand authnav" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
+                                <a href="#" class="dropdown-toggle navbar-brand authnav" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-btn fa-universal-access"></i> {{ Auth::user()->name }} <span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
                                         <a href="{{ url('/profile') }}"><i class="fa fa-btn fa-cog"></i> Profil</a>
@@ -94,6 +95,9 @@
                                     </li>
 
                                 </ul>
+                            </li>
+                            <li {{{ (Request::is('ask') ? 'class=active' : '') }}}>
+                                <a href="{{ url('/ask') }}"><i class="fa fa-btn fa-pencil"></i> Frage verfassen</a>
                             </li>
                             @endif
                         </ul>
