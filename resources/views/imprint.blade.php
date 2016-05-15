@@ -2,7 +2,7 @@
 
 @section('content')
 <section id="imprint" class="container-fluid">
-	<h1 class="text-center">Impressum</h1>
+	<h1 class="text-center studoverflow">Impressum</h1>
 	<section class="container">
 		<article class="row">
 			<div class="col-sm-12">

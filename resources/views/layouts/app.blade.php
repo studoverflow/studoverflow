@@ -61,6 +61,9 @@
                             <li {{{ (Request::is('unanswered') ? 'class=active' : '') }}}>
                                 <a href="{{ url('/unanswered') }}">Unbeantwortete Fragen</a>
                             </li>
+                            <li {{{ (Request::is('overview') ? 'class=active' : '') }}}>
+                                <a href="{{ url('/overview') }}">Übersicht</a>
+                            </li>
                             <li {{{ (Request::is('search') ? 'class=active' : '') }}}>
                                 <a href="{{ url('/search') }}">Suchen</a>
                             </li>
