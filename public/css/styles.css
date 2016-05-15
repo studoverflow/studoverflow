@@ -130,6 +130,16 @@ footer a:visited {
     color: #111111;
 }
 
+#welcome a:link,
+#welcome a:visited,
+#welcome a:active {
+    color: #ffffff;
+}
+
+#welcome a:hover {
+    color: #337ab7;
+}
+
 /*
  * New Questions
  */
@@ -785,4 +795,11 @@ footer a:visited {
 .questionheaderfont {
     color: #ffffff;
     font-family: 'Audiowide', cursive;
+}
+
+.statsbox {
+    background-color: #ffffff;
+    border: 1px #111111 solid;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
 }

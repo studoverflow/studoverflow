@@ -76,7 +76,6 @@
                                 <a href="{{ url('/register') }}"><i class="fa fa-btn fa-user"></i> Registrieren</a>
                             </li>
                             @else
-
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle navbar-brand authnav" data-toggle="dropdown" aria-expanded="true"><i class="fa fa-btn fa-universal-access"></i> {{ Auth::user()->name }} <span class="caret"></span></a>
                                 <ul class="dropdown-menu" role="menu">
