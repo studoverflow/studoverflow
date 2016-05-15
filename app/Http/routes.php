@@ -115,3 +115,11 @@ Route::get('/ask', function () {
         return view('ask');
     }    
 });
+
+Route::get('/history', function () {
+    if(Auth::guest()){
+        return view('welcome');
+    } else {
+        return view('history');
+    }    
+});

@@ -65,7 +65,7 @@
                                 <a href="{{ url('/overview') }}">Übersicht</a>
                             </li>
                             <li {{{ (Request::is('search') ? 'class=active' : '') }}}>
-                                <a href="{{ url('/search') }}">Suchen</a>
+                                <a href="{{ url('/search') }}">Suchen <i class="fa fa-search" aria-hidden="true"></i></a>
                             </li>
                         </ul>
                         <!-- Right Side Of Navbar -->
@@ -89,7 +89,7 @@
                                         <a  href="{{ url('/ask') }}"><i class="fa fa-btn fa-pencil"></i> Frage verfassen</a>
                                     </li>
                                     <li>
-                                        <a href="#"><i class="fa fa-btn fa-paperclip"></i> Verlauf</a>
+                                        <a href="{{ url('/history') }}"<i class="fa fa-btn fa-paperclip"></i> Verlauf</a>
                                     </li>
                                     <li>
                                         <a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i> Logout</a>
