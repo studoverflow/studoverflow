@@ -6,19 +6,24 @@
         <article class="row">
             <article class="col-xs-12">
                 <div class="col-xm-12 ">
-                    <h1 class="text-center"><h1 class="text-center studoverflow">
-                    <i class="fa fa-stack-overflow" aria-hidden="true"></i>  StudOverflow</h1></h1>
+                    <h1 class="text-center studoverflow">
+                        <span class="fa fa-stack-overflow" aria-hidden="true"></span>StudOverflow
+                    </h1>
                 @if(Auth::guest())
                     <p class="text-center">
-                        <a type="button" href="/register" class="btn btn-black btn-lg btn-huge">jetzt Mitglied werden</a>
+                        <a type="button" href="/register" class="btn btn-black btn-lg btn-huge">
+                            Jetzt Mitglied werden
+                        </a>
                     </p>
                 </div>  
                 @else
 <?php $countquestions = DB::select('select count(*) as count from questions where user_id = ?', [Auth::user()->id]); ?>
 <?php $countanswers = DB::select('select count(*) as count from answers where user_id = ?', [Auth::user()->id]); ?>
-                    <div class="col-md-12"><h2 class="studoverflow text-center">Willommen zurück {{ Auth::user()->name }}<h2></div>
+                    <div class="col-md-12">
+                        <h2 class="text-center">Willommen zurück {{ Auth::user()->name }}<h2>
+                    </div>
                     <div class="col-md-12 statsbox text-center">
-                        <h1 class="studoverflow">Deine Statistik</h1>
+                        <h1 class="">Deine Statistik</h1>
                         <div class="col-md-6">User</div>
                         <div class="col-md-6">{{ Auth::user()->name }}</div>
 
@@ -45,5 +50,5 @@
         <!--/row
     </section>
     <!--/container-->
-</section> -->
+</section>
 @endsection

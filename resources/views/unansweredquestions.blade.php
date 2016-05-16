@@ -12,7 +12,7 @@
                 @foreach($unanswered as $key)
                     <?php $question = App\Question::find($key->id); ?>
                     <?php $user = App\User::find($question->user_id); ?>
-                    <div class="col-sm-12 questionblue">
+                    <div class="col-sm-12 question">
                         <div class="col-sm-6">
                             <b><a href="/question={{$question->id}}">
                             <i class="fa fa-question-circle-o" aria-hidden="true"></i> 

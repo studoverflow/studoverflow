@@ -16,7 +16,7 @@ $answers = DB::select('select * from countanswer');
                     @foreach($questions as $question)
                         @if($answer->anzahl > 0 && $answer->id==$question->id)
                             <?php $user = App\User::find($question->user_id); ?>
-                            <div class="col-sm-12 questionblue">
+                            <div class="col-sm-12 question">
                                 <div class="col-sm-6">
                                     <b><a href="/question={{$question->id}}">
                                     <i class="fa fa-question-circle-o" aria-hidden="true"></i> 
