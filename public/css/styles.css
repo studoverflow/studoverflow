@@ -884,9 +884,23 @@ footer a:visited {
     border-radius: 50%;
 }
 
+.avatariconxs {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    border-radius: 50%;
+}
+
 .beforeicon {
     position: relative;
     padding-left: 50px !important;
+}
+
+.beforeiconxs {
+    position: relative;
+    padding-left: 30px !important;
 }
 
 .avatar {

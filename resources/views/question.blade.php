@@ -10,7 +10,7 @@
             </div>
             <div class="col-xs-12 col-md-12 column messagemain">
                 <div class="col-xs-3 col-md-1 column messageimg">
-                    <img class="text-center" src="img/defpic.png">
+                    <img class="text-center avatar" src="/img/upload/avatar/{{ $avatar }}">
                 </div>
                 <div class="col-xs-9 col-md-11 column messagemain">
                     {{$text}}
@@ -46,7 +46,7 @@
                     </div>
                     <div class="col-xs-12 col-md-12 column messagemain">
                         <div class="col-xs-3 col-md-1 column messageimg">
-                            <img class="text-center" src="img/defpic.png">
+                            <img class="text-center avatar" src="/img/upload/avatar/{{ $usersanswer->avatar }}">
                         </div>
                         <div class="col-xs-9 col-md-11 column messagemain">
                             {{$out->text}}

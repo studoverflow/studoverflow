@@ -86,7 +86,8 @@ Route::get('/question={id}', function ($id) {
         'text' => $question->text,
         'date' => $question->date,
         'edit' => $question->edit,
-        'question_id' => $question->id );
+        'question_id' => $question->id,
+        'avatar' => $user->avatar );
     return view('question')->with($data);
 });
 
