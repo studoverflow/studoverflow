@@ -8,7 +8,7 @@
             <div class="col-md-offset-3 col-md-9">
                 <form enctype="multipart/form-data" action="/profile/edit" method="POST">
                     <div class="col-md-4">
-                        <p><img class="profilpad" src="/img/upload/avatar/{{Auth::user()->avatar}}"></p>
+                        <p><img class="profilpad avatar" src="/img/upload/avatar/{{Auth::user()->avatar}}"></p>
                     </div>
                     <div class="col-md-8">
                        <label>Profilbild ändern</label>
@@ -55,8 +55,6 @@
                         <p><input type="text" name="course" placeholder="Studiengang ändern"><br><br><br><br><br></p>
                     </div>
                     <div class="col-md-12"><input type="submit" value="Änderungen bestätigen"></div>
-
-
                 </form>
             </div>
         </article>

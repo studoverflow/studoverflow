@@ -874,3 +874,21 @@ footer a:visited {
 .marginbottom40 {
     margin-bottom: 40px;
 }
+
+.avatariconmenu {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border-radius: 50%;
+}
+
+.beforeicon {
+    position: relative;
+    padding-left: 50px !important;
+}
+
+.avatar {
+    border-radius: 50%
+}

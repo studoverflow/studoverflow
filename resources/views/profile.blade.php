@@ -7,7 +7,7 @@
     <section class="container">
         <div class="row">
             <div class="col-md-3 col-md-offset-1">
-                <p><img class="profilpad" src="img/upload/avatar/{{$avatar}}">
+                <p><img class="profilpad avatar" src="img/upload/avatar/{{$avatar}}">
                 </p>
                 <p>
                     <b>Rang:</b> {{ $rank }}
