@@ -2,10 +2,10 @@
 
 @section('content')
 <section id="privacypolicy" class="container-fluid">
-	<h1 class="text-center studoverflow">Datenschutzerklärung</h1>
+	<h1 class="text-center studoverflow">Datenschutz</h1>
 	<section class="container">
 		<article class="row">
-			<div class="col-sm-12">
+			<div class="col-ms-12">
 				Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst.
 				Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der
 				gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.

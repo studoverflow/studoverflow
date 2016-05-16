@@ -15,7 +15,7 @@
                 </div>
                 @foreach($questions as $question)
                     <?php $user = App\User::find($question->user_id); ?>
-                    <div class="col-sm-12 questionblue">
+                    <div class="col-sm-12 historyrow">
                         <div class="col-sm-6">
                             <b><a href="/question={{$question->id}}">
                             <i class="fa fa-question-circle-o" aria-hidden="true"></i> 
@@ -34,7 +34,7 @@
                     <h3 class="text-center studoverflow">Antworten</h3>
                 </div>
                 @foreach($answers as $answer) 
-                    <div class="col-sm-12 questionblue">
+                    <div class="col-sm-12 historyrow">
                         <div class="col-sm-6">
                             <b><a href="/question={{$answer->question_id}}">
                             <i class="fa fa-question-circle-o" aria-hidden="true"></i> 

@@ -906,3 +906,11 @@ footer a:visited {
 .avatar {
     border-radius: 50%
 }
+
+.historyrow {
+    background-color: #5491bd;
+}
+
+.feedbackmassage {
+    padding-bottom:100px;
+}
