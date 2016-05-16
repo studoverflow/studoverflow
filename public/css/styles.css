@@ -237,6 +237,25 @@ footer a:visited {
     color: #337ab7;
 }
 
+/*
+ * Edit
+ */
+
+#edit {
+    background: rgba(255, 255, 255, 0.8);
+    color: #111111;
+}
+
+#edit a:link,
+#edit a:visited,
+#edit a:active {
+    color: red;
+}
+
+#edit a:hover {
+    color: #337ab7;
+}
+
 
 /*
  * Login
