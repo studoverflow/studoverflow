@@ -73,7 +73,9 @@ Route::get('/profile/edit', function () {
     return view('editprofile');
 });
 
-Route::post('/profile/edit', 'UserController@update_avatar');
+// Route::post('/profile/edit', 'UserController@update_avatar');
+
+Route::post('/profile/edit', 'UserController@update_profile');
 
 Route::get('/question={id}', function ($id) {
 

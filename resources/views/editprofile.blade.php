@@ -5,7 +5,7 @@
     <h1 class="text-center studoverflow">Profil anpassen</h1>
     <section class="container">
         <article class="row">
-            <div class="col-md-offset-3 col-md-9">
+            <div class="col-md-offset-2 col-md-10">
                 <form enctype="multipart/form-data" action="/profile/edit" method="POST">
                     <div class="col-md-4">
                         <p><img class="profilpad avatar" src="/img/upload/avatar/{{Auth::user()->avatar}}"></p>
@@ -22,39 +22,45 @@
                         <p><b class="profil">E-Mail</b></br>{{ Auth::user()->email }}</p>
                     </div>                  
                     <div class="col-md-8">
-                        <p><input type="text" name="email" placeholder="E-Mail ändern"> <br><br><br><br><br></p>
+                        <label>Email ändern</label>
+                        <p><input class="form-control input-lg" type="text" name="email"></p>
                     </div>
                     <div class="col-md-4">
                         <p><b class="profil">Vorname</b></br> {{ Auth::user()->firstname }}</p>
                     </div>                  
                     <div class="col-md-8">
-                        <p><input type="text" name="firstname" placeholder="Vorname ändern"><br><br><br><br><br></p>
+                        <label>Vorname ändern</label>
+                        <p><input class="form-control input-lg" type="text" name="firstname"></p>
                     </div>
                     <div class="col-md-4">
                         <p><b class="profil">Nachname</b></br> {{ Auth::user()->lastname }}</p>
                     </div>                  
                     <div class="col-md-8">
-                        <p><input type="text" name="lastname" placeholder="Nachname ändern"><br><br><br><br><br></p>
+                        <label>Nachname ändern</label>
+                        <p><input class="form-control input-lg" type="text" name="lastname"></p>
                     </div>
                     <div class="col-md-4">
                         <p><b class="profil">Homepage</b></br> {{ Auth::user()->page }}</p>
                     </div>                  
                     <div class="col-md-8">
-                        <p><input type="text" name="page" placeholder="Homepage ändern"><br><br><br><br><br></p>
+                        <label>Homepage ändern</label>
+                        <p><input class="form-control input-lg" type="text" name="page"></p>
                     </div>
                     <div class="col-md-4">
                         <p><b class="profil">Hochschule</b></br> {{ Auth::user()->college }}</p>
                     </div>                  
                     <div class="col-md-8">
-                        <p><input type="text" name="college" placeholder="Hochschule ändern"><br><br><br><br><br></p>
+                        <label>Hochschule ändern</label>
+                        <p><input class="form-control input-lg" type="text" name="college"></p>
                     </div>
                     <div class="col-md-4">
                         <p><b class="profil">Studiengang</b></br> {{ Auth::user()->course }}</p>
                     </div>                  
                     <div class="col-md-8">
-                        <p><input type="text" name="course" placeholder="Studiengang ändern"><br><br><br><br><br></p>
+                        <label>Studiengang ändern</label>
+                        <p><input class="form-control input-lg" type="text" name="course"></p>
                     </div>
-                    <div class="col-md-12"><input type="submit" value="Änderungen bestätigen"></div>
+                    <div class="col-md-12"><input class="btn btn-primary" type="submit" value="Änderungen bestätigen"></div>
                 </form>
             </div>
         </article>
