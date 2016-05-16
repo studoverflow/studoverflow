@@ -23,7 +23,16 @@
                     <h3 class="text-center">Willommen zurück {{ Auth::user()->name }}<h3>
                 </div>
                 <div class="col-md-12 statsbox text-center">
-                    <h3 class="">Deine Statistik</h3>
+                    <div class="row">
+                        <div class="col-md-12 statsrow">
+                            <div class="col-md-10">
+                                <h3>Deine Statistik</h3>
+                            </div>
+                            <div class="col-md-2">
+                                <input type="button" class="btn btn-black messagebtn" value="Neue Frage stellen">
+                            </div>
+                        </div>
+                    </div>
                     <div class="row">
                        <div class="col-md-12 statsrow">                           
                             <div class="col-md-6">
