@@ -7,7 +7,6 @@
             <article class="col-sm-12">
             	<h1 class="text-center studoverflow">Such such</h1>
             	<h1 class="text-center">toDo: Suchen mit Ajax?</h1>
-
             </article>
         </article>
     </section>

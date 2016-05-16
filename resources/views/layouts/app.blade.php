@@ -72,8 +72,8 @@
                             <a href="{{ url('/overview') }}">Übersicht</a>
                         </li>
                         <li {{{ (Request::is( 'search') ? 'class=active' : '') }}}>
-                            <a href="{{ url('/search') }}">Suchen 
-                                <span class="fa fa-search" aria-hidden="true"></span>
+                            <a href="{{ url('/search') }}">
+                                <span class="fa fa-btn fa-search" aria-hidden="true"></span> Suchen
                             </a>
                         </li>
                     </ul>
@@ -93,7 +93,10 @@
                         </li>
                         @else
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle navbar-brand authnav" data-toggle="dropdown" aria-expanded="true"><i class="fa fa-btn fa-universal-access"></i> {{ Auth::user()->name }} <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle navbar-brand authnav" data-toggle="dropdown" aria-expanded="true">
+                                <i class="fa fa-btn fa-universal-access"></i> {{ Auth::user()->name }} 
+                                <span class="caret"></span>
+                            </a>
                             <ul class="dropdown-menu" role="menu">
                                 <li>
                                     <a href="{{ url('/profile') }}">
@@ -106,7 +109,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('/history') }}" 
+                                    <a href="{{ url('/history') }}">
                                         <span class="fa fa-btn fa-paperclip"></span> Verlauf
                                     </a>
                                 </li>
@@ -115,7 +118,6 @@
                                         <span class="fa fa-btn fa-sign-out"></span> Logout
                                     </a>
                                 </li>
-
                             </ul>
                         </li>
                         @endif

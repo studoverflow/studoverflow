@@ -17,17 +17,28 @@
                     </p>
                 </div>  
                 @else
-<?php $countquestions = DB::select('select count(*) as count from questions where user_id = ?', [Auth::user()->id]); ?>
-<?php $countanswers = DB::select('select count(*) as count from answers where user_id = ?', [Auth::user()->id]); ?>
-                    <div class="col-md-12">
-                        <h2 class="text-center">Willommen zurück {{ Auth::user()->name }}<h2>
+                    <?php $countquestions = DB::select('select count(*) as count from questions where user_id = ?', [Auth::user()->id]); ?>
+                    <?php $countanswers = DB::select('select count(*) as count from answers where user_id = ?', [Auth::user()->id]); ?>
+                <div class="col-md-12">
+                    <h3 class="text-center">Willommen zurück {{ Auth::user()->name }}<h3>
+                </div>
+                <div class="col-md-12 statsbox text-center">
+                    <h3 class="">Deine Statistik</h3>
+                    <div class="row">
+                       <div class="col-md-12 statsrow">                           
+                            <div class="col-md-6">
+                                User
+                            </div>
+                            <div class="col-md-6">
+                                {{ Auth::user()->name }}
+                            </div>
+                       </div>
                     </div>
-                    <div class="col-md-12 statsbox text-center">
-                        <h1 class="">Deine Statistik</h1>
-                        <div class="col-md-6">User</div>
-                        <div class="col-md-6">{{ Auth::user()->name }}</div>
-
-                        <div class="col-md-6">gestellte Fragen</div>
+                    <div class="row">
+                       <div class="col-md-12 statsrow">                           
+                        <div class="col-md-6">
+                            gestellte Fragen
+                        </div>
                         @foreach($countquestions as $question)
                             @if($question->count != null)
                                 <div class="col-md-6">{{ $question->count }}</div>
@@ -35,15 +46,19 @@
                                 <div class="col-md-6">0</div>
                             @endif
                         @endforeach
-
-                        <div class="col-md-6">gegebene Antworten</div>
-                        @foreach($countanswers as $answer)
-                            @if($answer->count != null)
-                                <div class="col-md-6">{{ $answer->count }}</div>
-                            @else
-                                <div class="col-md-6">0</div>
-                            @endif
-                        @endforeach
+                        </div>
+                    </div>
+                    <div class="row">
+                       <div class="col-md-12 statsrow">                           
+                            <div class="col-md-6">gegebene Antworten</div>
+                            @foreach($countanswers as $answer)
+                                @if($answer->count != null)
+                                    <div class="col-md-6">{{ $answer->count }}</div>
+                                @else
+                                    <div class="col-md-6">0</div>
+                                @endif
+                            @endforeach
+                        </div>
                     </div>
                 @endif
             </article>

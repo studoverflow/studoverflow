@@ -742,6 +742,10 @@ footer a:visited {
     border-top-right-radius: 30px;
 }
 
+.statsrow {
+    padding: 10px 0;
+}
+
 
 /*********************************
  *                               *
