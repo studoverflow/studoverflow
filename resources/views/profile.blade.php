@@ -3,11 +3,11 @@
 @section('content')
 <section class="container-fluid" id="profile">
     <h1 class="text-center studoverflow">Profil 
-    @if (!Auth::guest() && Auth::user()->name == $name) <a href="#" class="editsize">Edit</a> @endif</h1> 
+    @if (!Auth::guest() && Auth::user()->name == $name) <a href="/profile/{{Auth::user()->id}}/edit" class="editsize">Edit</a> @endif</h1> 
     <section class="container">
         <div class="row">
             <div class="col-md-3 col-md-offset-1">
-                <p><img class="profilpad" src="img/defpic.png">
+                <p><img class="profilpad" src="img/upload/avatar/{{$avatar}}">
                 </p>
                 <p>
                     <b>Rang:</b> {{ $rank }}

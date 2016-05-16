@@ -46,7 +46,8 @@ Route::get('/profile={id}', function ($id) {
         'forename' => $user->firstname,
         'surname' => $user->lastname,
         'top' => $user->top,
-        'rank' => $user->rank );
+        'rank' => $user->rank,
+        'avatar' => $user->avatar );
     return view('profile')->with($data);
 });
 
@@ -62,10 +63,17 @@ Route::get('/profile', function () {
         'forename' => $user->firstname,
         'surname' => $user->lastname,
         'top' => $user->top,
-        'rank' => $user->rank );
+        'rank' => $user->rank,
+        'avatar' => $user->avatar );
     return view('profile')->with($data);
 
 });
+
+Route::get('/profile/{id}/edit', function ($id) {
+    return view('editprofile');
+});
+
+Route::post('/profile/{id}/edit', 'UserController@update_avatar')
 
 Route::get('/question={id}', function ($id) {
 
