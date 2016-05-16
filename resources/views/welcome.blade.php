@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="container-fluid" id="welcome">
+ <section class="container-fluid" id="welcome">
     <section class="container">
         <article class="row">
             <article class="col-xs-12">
@@ -42,8 +42,8 @@
                     </div>
                 @endif
             </article>
-        <!--/row-->
+        <!--/row
     </section>
     <!--/container-->
-</section>
+</section> -->
 @endsection
