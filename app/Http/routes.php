@@ -69,11 +69,29 @@ Route::get('/profile', function () {
 
 });
 
-Route::get('/profile/{id}/edit', function ($id) {
+Route::get('/profile/edit', function () {
     return view('editprofile');
 });
 
-//Route::post('/profile/{id}/edit', 'UserController@update_avatar')
+
+Route::post('/profile/edit', 'UserController@update_avatar');
+
+//     if($request->hasFile('avatar')){
+
+//             $avatar = $request->file('avatar');
+//             $filename = time() . '.' . $avatar->getClientOriginalExtension();
+//             Image::make($avatar)->resize(100, 100)->save(public_path('img/upload/avatar/' . $filename));
+//             $user = Auth::user();
+//             $user->avatar = $filename;
+//             $user->save();
+//         }
+
+            
+//     return view('editprofile');
+// });
+
+
+
 
 Route::get('/question={id}', function ($id) {
 
