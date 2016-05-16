@@ -36,39 +36,33 @@ Route::get('/overview', function () {
 
 Route::get('/profile={id}', function ($id) {
 
-    $user_id = DB::table('users')->where('id', $id)->first()->id;
-    $profile_id = DB::table('profiles')->where('user_id', $user_id)->first()->id;
-    $user = App\User::find($user_id);
-    $profile = App\Profile::find($profile_id);
+    $user = App\User::find($id);
     $data = array(
         'name' => $user->name,
         'email' => $user->email,
-        'page' => $profile->page,
-        'college' => $profile->college,
-        'course' => $profile->course,
-        'forename' => $profile->forename,
-        'surname' => $profile->surname,
-        'top' => $profile->top,
-        'rank' => $profile->rank );
+        'page' => $user->page,
+        'college' => $user->college,
+        'course' => $user->course,
+        'forename' => $user->firstname,
+        'surname' => $user->lastname,
+        'top' => $user->top,
+        'rank' => $user->rank );
     return view('profile')->with($data);
 });
 
 Route::get('/profile', function () {
 
-    $user_id = DB::table('users')->where('name', Auth::user()->name)->first()->id;
-    $profile_id = DB::table('profiles')->where('user_id', $user_id)->first()->id;
-    $user = App\User::find($user_id);
-    $profile = App\Profile::find($profile_id);
+    $user = App\User::find(Auth::user()->id);
     $data = array(
         'name' => $user->name,
         'email' => $user->email,
-        'page' => $profile->page,
-        'college' => $profile->college,
-        'course' => $profile->course,
-        'forename' => $profile->forename,
-        'surname' => $profile->surname,
-        'top' => $profile->top,
-        'rank' => $profile->rank );
+        'page' => $user->page,
+        'college' => $user->college,
+        'course' => $user->course,
+        'forename' => $user->firstname,
+        'surname' => $user->lastname,
+        'top' => $user->top,
+        'rank' => $user->rank );
     return view('profile')->with($data);
 
 });
