@@ -123,3 +123,7 @@ Route::get('/history', function () {
         return view('history');
     }    
 });
+
+Route::get('/home', function () {
+    return view('welcome');  
+});
