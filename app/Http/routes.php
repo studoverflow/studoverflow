@@ -73,25 +73,9 @@ Route::get('/profile/edit', function () {
     return view('editprofile');
 });
 
+// Route::post('/profile/edit', 'UserController@update_avatar');
 
-Route::post('/profile/edit', 'UserController@update_avatar');
-
-//     if($request->hasFile('avatar')){
-
-//             $avatar = $request->file('avatar');
-//             $filename = time() . '.' . $avatar->getClientOriginalExtension();
-//             Image::make($avatar)->resize(100, 100)->save(public_path('img/upload/avatar/' . $filename));
-//             $user = Auth::user();
-//             $user->avatar = $filename;
-//             $user->save();
-//         }
-
-            
-//     return view('editprofile');
-// });
-
-
-
+Route::post('/profile/edit', 'UserController@update_profile');
 
 Route::get('/question={id}', function ($id) {
 
@@ -104,7 +88,8 @@ Route::get('/question={id}', function ($id) {
         'text' => $question->text,
         'date' => $question->date,
         'edit' => $question->edit,
-        'question_id' => $question->id );
+        'question_id' => $question->id,
+        'avatar' => $user->avatar );
     return view('question')->with($data);
 });
 

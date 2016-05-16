@@ -93,8 +93,8 @@
                         </li>
                         @else
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle navbar-brand authnav" data-toggle="dropdown" aria-expanded="true">
-                                <i class="fa fa-btn fa-universal-access"></i> {{ Auth::user()->name }} 
+                            <a href="#" class="beforeicon dropdown-toggle navbar-brand authnav" data-toggle="dropdown" aria-expanded="true"">
+                                <img class="avatariconmenu" src="/img/upload/avatar/{{ Auth::user()->avatar }}"> {{ Auth::user()->name }} 
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu" role="menu">
