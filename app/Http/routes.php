@@ -52,20 +52,24 @@ Route::get('/profile={id}', function ($id) {
 });
 
 Route::get('/profile', function () {
+    if(Auth::guest()){
+        return view('welcome');
+    } else {
+        $user = App\User::find(Auth::user()->id);
+        $data = array(
+            'name' => $user->name,
+            'email' => $user->email,
+            'page' => $user->page,
+            'college' => $user->college,
+            'course' => $user->course,
+            'forename' => $user->firstname,
+            'surname' => $user->lastname,
+            'top' => $user->top,
+            'rank' => $user->rank,
+            'avatar' => $user->avatar );
+        return view('profile')->with($data);
+    }
 
-    $user = App\User::find(Auth::user()->id);
-    $data = array(
-        'name' => $user->name,
-        'email' => $user->email,
-        'page' => $user->page,
-        'college' => $user->college,
-        'course' => $user->course,
-        'forename' => $user->firstname,
-        'surname' => $user->lastname,
-        'top' => $user->top,
-        'rank' => $user->rank,
-        'avatar' => $user->avatar );
-    return view('profile')->with($data);
 
 });
 
@@ -73,7 +77,7 @@ Route::get('/profile/edit', function () {
     return view('editprofile');
 });
 
-// Route::post('/profile/edit', 'UserController@update_avatar');
+    
 
 Route::post('/profile/edit', 'UserController@update_profile');
 
