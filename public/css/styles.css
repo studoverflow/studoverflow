@@ -885,8 +885,8 @@ footer a:visited {
 }
 
 .avatariconxs {
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     position: absolute;
     top: 2px;
     left: 2px;
@@ -900,7 +900,7 @@ footer a:visited {
 
 .beforeiconxs {
     position: relative;
-    padding-left: 30px !important;
+    padding-left: 20px !important;
 }
 
 .avatar {

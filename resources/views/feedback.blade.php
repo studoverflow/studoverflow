@@ -9,28 +9,25 @@
 			<div class="col-sm-12">
 				<form class="form-group" action="" method="">
 					<div class="col-sm-offset-2 col-sm-8 marginbottom5">
-					<label>Name</label>
-					<input class="form-control" type="text" name="name">
+						<label>Name</label>
+						<input class="form-control" type="text" name="name">
 					</div>
 					<div class="col-sm-offset-2 col-sm-8 marginbottom5">
-					<label>E-Mail</label>
-					<input class="form-control" type="text" name="email">
+						<label>E-Mail</label>
+						<input class="form-control" type="text" name="email">
 					</div>
 					<div class="col-sm-offset-2 col-sm-8 marginbottom5">
-					<label>Betreff</label>
-					<input class="form-control" type="text" name="titel">
+						<label>Betreff</label>
+						<input class="form-control" type="text" name="titel">
 					</div>
 					<div class="col-sm-offset-2 col-sm-8 marginbottom5">
-					<label>Nachricht</label>
-					<textarea class="form-control feedbackmassage" name="text"></textarea>
+						<label>Nachricht</label>
+						<textarea class="form-control feedbackmassage" name="text"></textarea>
 					</div>
 					<div class="col-sm-offset-2 col-sm-8 margintop20">
-					<input type="submit" class="btn btn-black">
+						<input type="submit" class="btn btn-black">
 					</div>
-
-					
 				</form>
-
 			</div>
 		</article>
 	</section>
