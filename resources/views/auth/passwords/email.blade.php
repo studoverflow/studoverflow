@@ -29,7 +29,7 @@
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
                                     <button type="submit" class="btn btn-primary">
-                                        <i class="fa fa-btn fa-envelope"></i>Passwort Reset-Link Senden
+                                        <i class="fa fa-btn fa-envelope"></i> Passwort Reset-Link Senden
                                     </button>
                                 </div>
                             </div>
@@ -38,6 +38,6 @@
                 </div>
             </div>
         </div>
-    s</div>
+    </div>
 </section>
 @endsection

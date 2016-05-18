@@ -97,6 +97,8 @@ Route::get('/question={id}', function ($id) {
     return view('question')->with($data);
 });
 
+Route::post('/question=ok', 'QuestionController@answer');
+
 Route::get('/imprint', function () {
     return view('imprint');
 });
@@ -109,12 +111,8 @@ Route::get('/legalnotice', function () {
     return view('legalnotice');
 });
 
-// Route::get('/feedback', function () {
-//     return view('feedback');
-// });
-
-
 Route::get('/feedback', 'FeedbackController@feedback');
+
 Route::post('/feedback', 'FeedbackController@send');
 
 
