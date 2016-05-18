@@ -109,9 +109,14 @@ Route::get('/legalnotice', function () {
     return view('legalnotice');
 });
 
-Route::get('/feedback', function () {
-    return view('feedback');
-});
+// Route::get('/feedback', function () {
+//     return view('feedback');
+// });
+
+
+Route::get('/feedback', 'FeedbackController@feedback');
+Route::post('/feedback', 'FeedbackController@send');
+
 
 Route::get('/search', function () {
     return view('search');

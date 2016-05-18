@@ -7,27 +7,46 @@
 	<section class="container">
 		<article class="row">
 			<div class="col-sm-12">
-				<form class="form-group" action="" method="">
-					<div class="col-sm-offset-2 col-sm-8 marginbottom5">
-						<label>Name</label>
-						<input class="form-control" type="text" name="name">
-					</div>
-					<div class="col-sm-offset-2 col-sm-8 marginbottom5">
-						<label>E-Mail</label>
-						<input class="form-control" type="text" name="email">
-					</div>
-					<div class="col-sm-offset-2 col-sm-8 marginbottom5">
-						<label>Betreff</label>
-						<input class="form-control" type="text" name="titel">
-					</div>
-					<div class="col-sm-offset-2 col-sm-8 marginbottom5">
-						<label>Nachricht</label>
-						<textarea class="form-control feedbackmassage" name="text"></textarea>
-					</div>
-					<div class="col-sm-offset-2 col-sm-8 margintop20">
-						<input type="submit" class="btn btn-black">
-					</div>
-				</form>
+			    @if ( $errors->count() > 0 )
+			        <div class="col-sm-offset-2 col-sm-10">
+			        <div class="alert alert-danger" role="alert">
+			            <p>Leider sind folgende Fehler aufgetreten:</p>
+			            <ul>
+			                @foreach( $errors->all() as $message )
+			                    <li>{{ $message }}</li>
+			                @endforeach
+			            </ul>
+			        </div>
+			        </div>
+			    @endif
+			    @if (Session::get('sendsuccess'))
+			        <div class="col-sm-offset-2 col-sm-10">
+			        <div class="alert alert-success" role="alert">Wir haben Deine Nachricht erhalten. Vielen Dank dafür!</div>
+			        </div>
+			    @endif
+			    {!! Form::open(array('action' => 'FeedbackController@feedback', 'method' => 'post', 'class' => 'form-horizontal')) !!}
+			    <div class="form-group">
+			        {!! Form::label('email', 'E-Mail Adresse', array('class' => 'col-sm-2 control-label')) !!}
+			        <div class="col-sm-10">
+			            {!! Form::text('email', '', array('class' => 'form-control', 'placeholder' => 'Deine E-Mail Adresse')) !!}
+			        </div>
+			    </div>
+			    <div class="form-group">
+			        {!! Form::label('titel', 'Betreff', array('class' => 'col-sm-2 control-label')) !!}
+			        <div class="col-sm-10">
+			            {!! Form::text('titel', '', array('class' => 'form-control', 'placeholder' => 'Betreff')) !!}
+			        </div>
+			    </div>
+			    <div class="form-group">
+			        {!! Form::label('message', 'Nachricht', array('class' => 'col-sm-2 control-label')) !!}
+			        <div class="col-sm-10">
+			            {!! Form::textarea('message', '', array('class' => 'form-control', 'placeholder' => 'Deine Nachricht')) !!}
+			        </div>
+			    </div>
+			    <div class="col-sm-offset-2 col-sm-10">
+			        {!! Form::submit('NACHRICHT ABSENDEN', array('class' => 'btn btn-default'));  !!}
+			    </div>
+			    {!! Form::close() !!}
 			</div>
 		</article>
 	</section>
