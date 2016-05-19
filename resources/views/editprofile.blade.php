@@ -60,7 +60,9 @@
                         <label>Studiengang ändern</label>
                         <p><input class="form-control input-lg" type="text" name="course"></p>
                     </div>
-                    <div class="col-md-12"><input class="btn btn-primary" type="submit" value="Änderungen bestätigen"></div>
+                    <div class="col-md-12">
+                        <input class="btn btn-primary" type="submit" value="Änderungen bestätigen">
+                    </div>
                 </form>
             </div>
         </article>

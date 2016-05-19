@@ -29,7 +29,9 @@
                                 <h3>Deine Statistik</h3>
                             </div>
                             <div class="col-md-2">
-                                <input type="button" class="btn btn-black messagebtn" value="Neue Frage stellen">
+                                <button onclick="location.href='/create';" type="submit" class="btn btn-primary btnRadius">
+                                        <i class="fa fa-btn fa-pencil"></i> Neue Frage
+                                </button>
                             </div>
                         </div>
                     </div>
