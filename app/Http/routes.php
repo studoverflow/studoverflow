@@ -133,7 +133,7 @@ Route::get('/question={id}', function ($id) {
     return view('question')->with($data);
 });
 
-Route::post('/question=ok', 'QuestionController@answer');
+Route::post('/question={qid}', 'QuestionController@answer');
 
 Route::get('/search', function () {
     return view('search');

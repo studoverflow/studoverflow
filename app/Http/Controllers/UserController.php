@@ -12,7 +12,7 @@ class UserController extends Controller
 {
     public function update_profile(Request $request){
 
-            if($request->hasFile('avatar')){
+        if($request->hasFile('avatar')){
 
             $avatar = $request->file('avatar');
             $filename = time() . '.' . $avatar->getClientOriginalExtension();

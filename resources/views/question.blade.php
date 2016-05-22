@@ -27,43 +27,27 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-12">
-                    @if ( $errors->count() > 0 )
-                        <div class="col-sm-offset-2 col-sm-10">
-                        <div class="alert alert-danger" role="alert">
-                            <p>Leider sind folgende Fehler aufgetreten:</p>
-                            <ul>
-                                @foreach( $errors->all() as $message )
-                                    <li>{{ $message }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                        </div>
-                    @endif
-                    @if (Session::get('sendsuccess'))
-                        <div class="col-sm-offset-2 col-sm-10">
-                        <div class="alert alert-success" role="alert">Vielen Dank für die Antwort</div>
-                        </div>
-                    @endif
-                    {!! Form::open(array('action' => 'QuestionController@answer', 'method' => 'post', 'class' => 'form-horizontal')) !!}
+                    <form action="/question={{$question_id}}" method="POST">
                     <div class="form-group">
                     </div>
                     <div class="form-group">
                        
-                        <div class="col-sm-12">
-                            {!! Form::text('titel', '', array('class' => 'form-control', 'placeholder' => 'Titel')) !!}
+                        <div class="col-sm-12 marginbottom10">
+                            <input class="form-control" type="text" name="titel" placeholder="Titel">
                         </div>
                     </div>
                     <div class="form-group">
                        
-                        <div class="col-sm-12">
-                            {!! Form::textarea('message', '', array('class' => 'form-control marginbottom5', 'placeholder' => 'Deine Nachricht')) !!}
-                            {!! Form::hidden('question_id', '', array('class' => 'form-control marginbottom5', 'value' => '{{$question_id}}')) !!}
+                        <div class="col-sm-12 marginbottom20">
+                            <textarea class="form-control"  name="text" placeholder="Nachricht" rows="10" ></textarea>
+                            <input type="hidden" name="qid" value="{{$question_id}}">
+                            <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
                         </div>
                     </div>
                     <div class="col-sm-12">
-                        {!! Form::submit('Antworten', array('class' => 'btn btn-black messagebtn'));  !!}
+                        <input type="submit" class="btn btn-black messagebtn">
                     </div>
-                    {!! Form::close() !!}
+                    </form>
                 </div>
         </div>
     </div>
@@ -104,7 +88,7 @@
             <div class="row">
                 <div class="col-xs-12 col-md-12 column marginbottom5 margintop10">
                     <h1>Es sind noch keine Antworten vorhanden</h1>
-                    <h1>ToDo: Schöner machen wenn alle Funktionen laufen</h1>
+                    
                 </div>
             </div>
         </div>
