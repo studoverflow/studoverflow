@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Auth;
 use Image;
 use App\User;
+use DB;
 
 
 class UserController extends Controller {
@@ -76,10 +77,52 @@ class UserController extends Controller {
     // SHOW PROFILE
 
     public function showOwnProfile(){
-        if(Auth::guest()){
-            return view('welcome');
+
+        $top = DB::select('select * from topanswers where user_id = ?', [Auth::user()->id]);
+
+        foreach ($top as $key) {
+            if(Auth::guest()){
+                return view('welcome');
+            } else {
+                $user = User::find(Auth::user()->id);
+                $data = array(
+                    'name' => $user->name,
+                    'email' => $user->email,
+                    'page' => $user->page,
+                    'college' => $user->college,
+                    'course' => $user->course,
+                    'forename' => $user->firstname,
+                    'surname' => $user->lastname,
+                    'top' => $key->anzahl,
+                    'rank' => $user->rank,
+                    'avatar' => $user->avatar );
+                return view('profile')->with($data);
+            }
+        }
+    }
+
+    public function showProfile($id){
+
+        $top = DB::select('select * from topanswers where user_id = ?', [$id]);
+
+        if($top != null){
+            foreach ($top as $key) {
+                    $user = User::find($id);
+                    $data = array(
+                        'name' => $user->name,
+                        'email' => $user->email,
+                        'page' => $user->page,
+                        'college' => $user->college,
+                        'course' => $user->course,
+                        'forename' => $user->firstname,
+                        'surname' => $user->lastname,
+                        'top' => $key->anzahl,
+                        'rank' => $user->rank,
+                        'avatar' => $user->avatar );
+                        return view('profile')->with($data);
+                }
         } else {
-            $user = User::find(Auth::user()->id);
+            $user = User::find($id);
             $data = array(
                 'name' => $user->name,
                 'email' => $user->email,
@@ -88,27 +131,11 @@ class UserController extends Controller {
                 'course' => $user->course,
                 'forename' => $user->firstname,
                 'surname' => $user->lastname,
-                'top' => $user->top,
+                'top' => '0',
                 'rank' => $user->rank,
                 'avatar' => $user->avatar );
-            return view('profile')->with($data);
+                return view('profile')->with($data);
         }
-    }
-
-    public function showProfile($id){
-        $user = User::find($id);
-        $data = array(
-            'name' => $user->name,
-            'email' => $user->email,
-            'page' => $user->page,
-            'college' => $user->college,
-            'course' => $user->course,
-            'forename' => $user->firstname,
-            'surname' => $user->lastname,
-            'top' => $user->top,
-            'rank' => $user->rank,
-            'avatar' => $user->avatar );
-        return view('profile')->with($data);
     }
 
 }

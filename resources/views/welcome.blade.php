@@ -30,7 +30,7 @@
                             </div>
                             <div class="col-md-2">
                                 <button onclick="location.href='/create';" type="submit" class="btn btn-primary btnRadius">
-                                        <i class="fa fa-btn fa-pencil"></i> Neue Frage
+                                        <i class="fa fa-btn fa-pencil"></i> Frage verfassen
                                 </button>
                             </div>
                         </div>
