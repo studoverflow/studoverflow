@@ -6,13 +6,13 @@
 	<section class="container">
 		<article class="row">
 			<div class="col-md-12">
-			    <div class="form-group">
+			    <form class="form-group" action="/create" method="POST">
                     <div class="col-md-12">
                         <div class="col-md-2">
                             <label>Betreff</label>
                         </div>
                         <div class="col-md-8">
-                            <input class="form-control" placeholder="Betreff" name="betreff" type="text">
+                            <input class="form-control" placeholder="Titel" name="titel" type="text">
                         </div>
                     </div>
                     <div class="col-md-12 margintop15">
@@ -20,7 +20,8 @@
                             <label>Frage</label>
                         </div>
                         <div class="col-md-8">                            
-                            <textarea class="form-control" placeholder="Deine Frage" name="question" cols="50" rows="10" id="message"></textarea>
+                            <textarea class="form-control" placeholder="Deine Frage" name="text" cols="50" rows="10" id="message"></textarea>
+                            <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
                         </div>
                     </div>
                     <div class="col-md-12 margintop15">
@@ -30,7 +31,7 @@
                             </button>
                         </div>
                     </div>
-			    </div>
+			    </form>
 			</div>
 		</article>
 	</section>

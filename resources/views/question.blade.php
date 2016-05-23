@@ -13,7 +13,9 @@
                     <img class="text-center avatar" src="/img/upload/avatar/{{ $avatar }}">
                 </div>
                 <div class="col-xs-9 col-md-11 column messagemain">
-                    {{$text}}
+                <?php
+                 echo nl2br($text);
+                ?>
                 </div>
             </div>
             <div class="col-xs-12 col-md-12 column questionbot marginbottom20">
@@ -67,7 +69,9 @@
                             <img class="text-center avatar" src="/img/upload/avatar/{{ $usersanswer->avatar }}">
                         </div>
                         <div class="col-xs-9 col-md-11 column messagemain">
-                            {{$out->text}}
+                            <?php
+                            echo nl2br($out->text);
+                            ?>
                         </div>
                     </div>
                     <div class="col-xs-12 col-md-12 column messagebot marginbottom15">

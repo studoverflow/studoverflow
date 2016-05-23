@@ -7,7 +7,7 @@
         <article class="row">
             <article class="col-sm-12">
                 <div class="col-sm-12 questionheader">
-                    <h1 class="text-center questionheaderfont">Beliebte Fragen</h1>
+                    <h1 class="text-center questionheaderfont">Unbeantwortete Fragen</h1>
                 </div>
                 @foreach($unanswered as $key)
                     <?php $question = App\Question::find($key->id); ?>

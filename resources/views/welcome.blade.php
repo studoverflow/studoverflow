@@ -7,7 +7,7 @@
             <article class="col-xs-12">
                 <div class="col-xm-12 ">
                     <h1 class="text-center studoverflow">
-                        <span class="fa fa-stack-overflow" aria-hidden="true"></span>StudOverflow
+                        <span class="fa fa-stack-overflow" aria-hidden="true"></span> StudOverflow
                     </h1>
                 @if(Auth::guest())
                     <p class="text-center">

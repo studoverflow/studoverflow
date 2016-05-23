@@ -104,7 +104,7 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="{{ url('/ask') }}">
+                                    <a href="{{ url('/create') }}">
                                         <span class="fa fa-btn fa-pencil"></span> Frage verfassen
                                     </a>
                                 </li>
