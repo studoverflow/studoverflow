@@ -14,8 +14,12 @@
 // HOME / AUTH
 
 Route::auth();
-Route::get('/', 'HomeController@goHome');
-Route::get('/home', 'HomeController@goHome');
+// Route::get('/', 'HomeController@goHome');
+// Route::get('/home', 'HomeController@goHome');
+
+Route::get('/', function(){
+	return view('welcome');
+});
 
 // QUESTIONS / ANSWERS
 
