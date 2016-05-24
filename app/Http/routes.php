@@ -14,12 +14,8 @@
 // HOME / AUTH
 
 Route::auth();
-// Route::get('/', 'HomeController@goHome');
-// Route::get('/home', 'HomeController@goHome');
-
-Route::get('/', function(){
-	return view('welcome');
-});
+Route::get('/', 'IndexController@goHome');
+Route::get('/home', 'IndexController@goHome');
 
 // QUESTIONS / ANSWERS
 
@@ -39,10 +35,10 @@ Route::post('/feedback', 'FeedbackController@send');
 // NAVIGATION
 
 Route::get('/history', 'HistoryController@show');
-Route::get('/new', 'HomeController@showNew');
-Route::get('/popular', 'HomeController@showPop');
-Route::get('/unanswered', 'HomeController@showUna');
-Route::get('/overview', 'HomeController@showOver');
+Route::get('/new', 'NewQuestionController@show');
+Route::get('/popular', 'PopularQuestionController@show');
+Route::get('/unanswered', 'UnansweredQuestionController@show');
+Route::get('/overview', 'QuestionOverviewController@show');
 Route::get('/search', 'SearchController@getSearch');
 
 // USER

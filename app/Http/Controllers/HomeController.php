@@ -22,38 +22,9 @@ class HomeController extends Controller{
      * @return \Illuminate\Http\Response
      */
 
-    
-    public function index()
+        public function index()
     {
         return view('/');
-    }
-
-    public function goHome(){
-        return view('welcome');
-    }
-
-    // New Questions
-
-    public function showNew(){
-        return view('newquestions');
-    }
-
-    // Popular Questions
-
-    public function showPop(){
-        return view('popularquestions');
-    }
-
-    // Unanswered Questions
-
-    public function showUna(){
-        return view('unansweredquestions');
-    }
-
-    // Overview Questions
-
-    public function showOver(){
-        return view('questionsoverview');
     }
 
 }
