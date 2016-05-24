@@ -903,6 +903,24 @@ footer a:visited {
     margin-right: 20px;
 }
 
+/* Margin LEFT*/
+
+.marginleft5 {
+    margin-left: 5px;
+}
+
+.marginleft10 {
+    margin-left: 10px;
+}
+
+.marginleft15 {
+    margin-left: 15px;
+}
+
+. .marginleft20 {
+    margin-left: 20px;
+}
+
 
 /* Margin BOT */
 
@@ -924,4 +942,9 @@ footer a:visited {
 
 .marginbottom40 {
     margin-bottom: 40px;
+}
+
+.btnquestions {
+    color: #ffffff;
+    background-color: #111111;
 }

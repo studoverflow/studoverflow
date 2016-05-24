@@ -57,6 +57,21 @@ class QuestionController extends Controller {
         }
     }
 
+    public function showAnswerQuestion($id){
+        $question = Question::find($id);
+        $user = User::find($question->user_id);
+        $data = array(
+            'name' => $user->name,
+            'user_id' => $user->id,
+            'titel' => $question->titel,
+            'text' => $question->text,
+            'date' => $question->date,
+            'edit' => $question->edit,
+            'question_id' => $question->id,
+            'avatar' => $user->avatar );
+        return view('newanswer')->with($data);
+    }
+
     // QUESTION
 
     // POST
@@ -125,6 +140,8 @@ class QuestionController extends Controller {
             'avatar' => $user->avatar );
         return view('question')->with($data);
     }
+
+
 
 
 }

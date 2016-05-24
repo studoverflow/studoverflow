@@ -19,41 +19,19 @@
                 </div>
             </div>
             <div class="col-xs-12 col-md-12 column questionbot marginbottom20">
-                <a href="#"><i class="fa fa-btn fa-bolt"></i> Frage melden</a>
+                @if(!Auth::guest())
+                    <button onclick="location.href='/answer={{$question_id}}'" class="btnquestions marginleft10"><i class="fa fa-arrow-right" aria-hidden="true"></i> Etwas zu dieser Frage schreiben</button>
+                                    @if(Auth::user()->id != $user_id)
+                    <button class="btnquestions marginleft10"><i class="fa fa-btn fa-bolt" aria-hidden="true"></i> Frage melden</button>
+                @endif
+                @else
+                    <button onclick="location.href='/register'" class="btnquestions marginleft10"><i class="fa fa-arrow-right" aria-hidden="true"></i> Jetzt Mitglied werden und Antworten!</button>
+                @endif
             </div>
         </article>
     </article>
 
     <!-- Antworten Bereich -->
-
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-md-12">
-                    <form action="/question={{$question_id}}" method="POST">
-                    <div class="form-group">
-                    </div>
-                    <div class="form-group">
-                       
-                        <div class="col-sm-12 marginbottom10">
-                            <input class="form-control" type="text" name="titel" placeholder="Titel">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                       
-                        <div class="col-sm-12 marginbottom20">
-                            <textarea class="form-control"  name="text" placeholder="Nachricht" rows="10" ></textarea>
-                            <input type="hidden" name="qid" value="{{$question_id}}">
-                            <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
-                        </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <input type="submit" class="btn btn-black messagebtn">
-                    </div>
-                    </form>
-                </div>
-        </div>
-    </div>
-
 
     <?php $answer = DB::select('select * from answers where question_id = ?', [$question_id]); ?>
     @if($answer != null) 
@@ -75,18 +53,45 @@
                         </div>
                     </div>
                     <div class="col-xs-12 col-md-12 column messagebot marginbottom15">
-                        <a href="#"><i class="fa fa-btn fa-star-o"></i> Hilfreichste Antwort</a>
+                    @if(!Auth::guest())
+                        <!-- View für Frageersteller -->
+                        @if(Auth::user()->id == $user_id)
+                            @if(Auth::user()->id != $out->user_id)
+                               <button onclick="toggleStar('$out->id')" class="btnquestions marginleft10 "><i id="star" class="fa fa-btn fa-star-o"></i> Hilfreiche Antwort</button>
+                               <button class="btnquestions marginleft10"><i class="fa fa-bolt"></i> Antwort melden</button> 
+                            @else
+                               <button class="btnquestions marginleft10"><i class="fa fa-trash"></i> Antwort löschen</button> 
+                            @endif
+                        @else
+                        <!-- View für Andere User -->
+                            @if($out->user_id == $user_id)
+                                Frageersteller
+                            @else
+                                @if($out->top == "1")
+                                    <i class="fa fa-star" aria-hidden="true"> Der Fragesteller fand diese Antwort hilfreich</i>
+                                @else
+                                    <i class="fa fa-btn fa-star-o"> Antwort wurde noch nicht bewertet</i>
+                                @endif
+                                @if(!Auth::guest())
+                                    @if(Auth::user()->id == $out->user_id)
+                                        <button class="btnquestions marginleft10"><i class="fa fa-trash"></i> Antwort löschen</button>     
+                                    @endif
+                                @endif
+                            @endif
+                        @endif
+                    @else
+                        <!-- View für Gäste -->
+                        @if($out->top == "1")
+                            <i class="fa fa-star" aria-hidden="true"> Der Fragesteller fand diese Antwort hilfreich</i>
+                        @else
+                            <i class="fa fa-btn fa-star-o"> Antwort wurde noch nicht bewertet</i>
+                        @endif
+                    @endif
+
                     </div>
                 </article>
             </article>
         @endforeach
-<!--         <div class="container marginbottom40">
-            <div class="row">
-                <div class="col-xs-12 col-md-12 column marginbottom5 margintop10">
-                    <input type="button" class="btn btn-black messagebtn" value="Antworten">
-                </div>
-            </div>
-        </div> -->
     @else
         <div class="container marginbottom40">
             <div class="row">
@@ -97,5 +102,19 @@
             </div>
         </div>
     @endif
+
+    <script type="text/javascript">
+
+    function toggleStar(){
+
+    var element = document.getElementById("star");
+    element.classList.toggle("fa-star");
+    element.classList.toggle("fa-star-o");
+
+    }
+
+    </script>
+    
+
 </section>
 @endsection

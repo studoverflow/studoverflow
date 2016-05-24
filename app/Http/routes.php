@@ -23,6 +23,7 @@ Route::get('/create', 'QuestionController@getCreateQuestion');
 Route::post('/create', 'QuestionController@createQuestion');
 Route::get('/question={id}', 'QuestionController@showQuestion');
 Route::post('/question={qid}', 'QuestionController@answer');
+Route::get('/answer={id}', 'QuestionController@showAnswerQuestion');
 
 // FOOTER
 
