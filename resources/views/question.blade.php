@@ -63,9 +63,9 @@
 
 
                         @if($out->top == "1")
-                            <button id="starbtn" onclick="top({{$out->id}}, '0')" class="btnquestions marginleft10 btntop"><i id="star" class="fa fa-btn fa-star"></i> Hilfreiche Antwort</button>
+                            <button id="starbtn" onclick="top({{$out->id}})" class="btnquestions marginleft10 btntop"><i id="star" class="fa fa-btn fa-star"></i> Hilfreiche Antwort</button>
                         @else
-                            <button id="starbtn" onclick="top({{$out->id}}, '1')" class="btnquestions marginleft10 btntop"><i id="star" class="fa fa-btn fa-star-o"></i> Hilfreiche Antwort</button>
+                            <button id="starbtn" onclick="top({{$out->id}})" class="btnquestions marginleft10 btntop"><i id="star" class="fa fa-btn fa-star-o"></i> Hilfreiche Antwort</button>
                         @endif
 
 
@@ -126,7 +126,7 @@
 
     <script type="text/javascript">
 
-    function top(qid, top){
+    function top(qid){
 
         $.ajaxSetup({
             headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
@@ -134,18 +134,14 @@
        
         var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
         
-        var value = top;
         var id = qid;
-
-        console.log(value);
 
         $.ajax({
             url: '/question={{$question_id}}',
             type: 'POST',
-            data: {_token: CSRF_TOKEN, id: id, value: value},
+            data: {_token: CSRF_TOKEN, id: id},
             dataType: 'JSON',
             success: function (data) {
-            console.log();
             }
         });
     }

@@ -8,27 +8,28 @@ Route::get('/', 'IndexController@goHome');
 Route::get('/home', 'IndexController@goHome');
 
 
-
-
+// QUESTIONS / ANSWERS
 
 Route::post('/question={qid}',array('before'=>'csrf','uses'=>function(){
 
     if(Request::ajax())
     {
     	$answer = $_POST['id'];
-    	$value = $_POST['value'];
-
-    DB::table('answers')
-            ->where('id', $answer)
-            ->update(['top' => $value]);
-
-       return $answer;
+    	$top = DB::select('select * from answers where id = ?', [$answer]);
+    	foreach ($top as $key) {
+	    	if($key->top == '1'){
+	    		DB::table('answers')
+		            ->where('id', $answer)
+		            ->update(['top' => 0]);
+	    	} else {
+	    		DB::table('answers')
+		            ->where('id', $answer)
+		            ->update(['top' => 1]);
+	    	}
+    	}
+       	return $answer;
     }
-
 }));
-
-
-// QUESTIONS / ANSWERS
 
 Route::get('/create', 'QuestionController@getCreateQuestion');
 Route::post('/create', 'QuestionController@createQuestion');
