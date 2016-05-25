@@ -1,4 +1,5 @@
-@extends('layouts.app') @section('content')
+@extends('layouts.app') 
+@section('content')
 <section class="container-fluid" id="question">
 
     <!-- Frage Bereich -->
@@ -57,7 +58,20 @@
                         <!-- View für Frageersteller -->
                         @if(Auth::user()->id == $user_id)
                             @if(Auth::user()->id != $out->user_id)
-                               <button onclick="toggleStar('$out->id')" class="btnquestions marginleft10 "><i id="star" class="fa fa-btn fa-star-o"></i> Hilfreiche Antwort</button>
+
+
+
+
+                        @if($out->top == "1")
+                            <button id="starbtn" onclick="top({{$out->id}}, '0')" class="btnquestions marginleft10 btntop"><i id="star" class="fa fa-btn fa-star"></i> Hilfreiche Antwort</button>
+                        @else
+                            <button id="starbtn" onclick="top({{$out->id}}, '1')" class="btnquestions marginleft10 btntop"><i id="star" class="fa fa-btn fa-star-o"></i> Hilfreiche Antwort</button>
+                        @endif
+
+
+
+
+                               <input type="hidden" value="$out->id" name="aid">
                                <button class="btnquestions marginleft10"><i class="fa fa-bolt"></i> Antwort melden</button> 
                             @else
                                <button class="btnquestions marginleft10"><i class="fa fa-trash"></i> Antwort löschen</button> 
@@ -65,12 +79,12 @@
                         @else
                         <!-- View für Andere User -->
                             @if($out->user_id == $user_id)
-                                Frageersteller
+                                Frage Ersteller
                             @else
                                 @if($out->top == "1")
-                                    <i class="fa fa-star" aria-hidden="true"> Der Fragesteller fand diese Antwort hilfreich</i>
+                                    <i class="fa fa-star" aria-hidden="true"></i> {{$name}}, gefällt diese Antwort
                                 @else
-                                    <i class="fa fa-btn fa-star-o"> Antwort wurde noch nicht bewertet</i>
+                                    <i class="fa fa-btn fa-star-o"></i>
                                 @endif
                                 @if(!Auth::guest())
                                     @if(Auth::user()->id == $out->user_id)
@@ -81,10 +95,14 @@
                         @endif
                     @else
                         <!-- View für Gäste -->
-                        @if($out->top == "1")
-                            <i class="fa fa-star" aria-hidden="true"> Der Fragesteller fand diese Antwort hilfreich</i>
+                        @if($out->user_id == $user_id)
+                            Frage Ersteller
                         @else
-                            <i class="fa fa-btn fa-star-o"> Antwort wurde noch nicht bewertet</i>
+                            @if($out->top == "1")
+                                <i class="fa fa-star" aria-hidden="true"></i> {{$name}}, gefällt diese Antwort
+                            @else
+                                <i class="fa fa-btn fa-star-o"></i>
+                            @endif
                         @endif
                     @endif
 
@@ -103,17 +121,47 @@
         </div>
     @endif
 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
+
     <script type="text/javascript">
 
-    function toggleStar(){
+    function top(qid, top){
 
-    var element = document.getElementById("star");
-    element.classList.toggle("fa-star");
-    element.classList.toggle("fa-star-o");
+        $.ajaxSetup({
+            headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
+        });
+       
+        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+        
+        var value = top;
+        var id = qid;
 
+        console.log(value);
+
+        $.ajax({
+            url: '/question={{$question_id}}',
+            type: 'POST',
+            data: {_token: CSRF_TOKEN, id: id, value: value},
+            dataType: 'JSON',
+            success: function (data) {
+            console.log();
+            }
+        });
     }
 
+        document.getElementById("starbtn").addEventListener("click", function (e) {
+            var target = document.getElementById("star");
+            target.classList.toggle("fa-star");
+            target.classList.toggle("fa-star-o");
+            }, false);
+    
+
+
+
     </script>
+
+
     
 
 </section>

@@ -18,7 +18,27 @@ class QuestionController extends Controller {
 
     // ANSWER
 
-     public function answer(Request $request){
+    public function top(Request $request){
+
+        $qid = $request->input('qid');
+
+        $question = Question::find($qid);
+        $user = User::find($question->user_id);
+        $data = array(
+            'name' => $user->name,
+            'user_id' => $user->id,
+            'titel' => $question->titel,
+            'text' => $question->text,
+            'date' => $question->date,
+            'edit' => $question->edit,
+            'question_id' => $question->id,
+            'avatar' => $user->avatar );
+
+            return view('question')->with($data);  
+
+    }
+
+    public function answer(Request $request){
 
 
         $qid = $request->input('qid');
@@ -78,39 +98,7 @@ class QuestionController extends Controller {
 
     public function createQuestion(Request $request){
 
-        if($request->titel != null && $request->text != null) {
-            
-            $user = Auth::user();
-            $titel = $request->input('titel');
-            $text = $request->input('text');
-            $datecurr = date("Y-m-d");
-
-
-            $qid = DB::table('questions')->insertGetId(
-                ['user_id' => $user->id,
-                'titel' => $titel,
-                'text' => $text,
-                'date' => $datecurr]
-
-            ); 
-
-            $question = Question::find($qid);
-            $user = User::find($question->user_id);
-            $data = array(
-                'name' => $user->name,
-                'user_id' => $user->id,
-                'titel' => $question->titel,
-                'text' => $question->text,
-                'date' => $question->date,
-                'edit' => $question->edit,
-                'question_id' => $question->id,
-                'avatar' => $user->avatar );
-
-            return view('question')->with($data);
-
-        } else {
-            return view('welcome');
-        }
+  
     }
 
     // GET

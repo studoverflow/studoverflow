@@ -29,7 +29,7 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-12">
-                    <form action="/question={{$question_id}}" method="POST">
+                    <form action="/answer={{$question_id}}" method="POST">
                     <div class="form-group">
                     </div>
                     <div class="form-group">

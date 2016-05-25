@@ -40,6 +40,10 @@
     <link rel="stylesheet" href="/css/font-awesome.min.css" />
     <link rel="stylesheet" href="/css/animate.min.css" />
     <link rel="stylesheet" href="/css/styles.css" />
+
+    <meta name="_token" content="{!! csrf_token() !!}"/>
+
+
 </head>
 
 <body id="app-layout">
@@ -158,7 +162,8 @@
         <!-- /container -->
     </footer>
     <!-- JavaScripts -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>
     {{--

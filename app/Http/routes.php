@@ -1,15 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the controller to call when that URI is requested.
-|
-*/
 
 // HOME / AUTH
 
@@ -17,12 +7,33 @@ Route::auth();
 Route::get('/', 'IndexController@goHome');
 Route::get('/home', 'IndexController@goHome');
 
+
+
+
+
+Route::post('/question={qid}',array('before'=>'csrf','uses'=>function(){
+
+    if(Request::ajax())
+    {
+    	$answer = $_POST['id'];
+    	$value = $_POST['value'];
+
+    DB::table('answers')
+            ->where('id', $answer)
+            ->update(['top' => $value]);
+
+       return $answer;
+    }
+
+}));
+
+
 // QUESTIONS / ANSWERS
 
 Route::get('/create', 'QuestionController@getCreateQuestion');
 Route::post('/create', 'QuestionController@createQuestion');
 Route::get('/question={id}', 'QuestionController@showQuestion');
-Route::post('/question={qid}', 'QuestionController@answer');
+Route::post('/answer={qid}', 'QuestionController@answer');
 Route::get('/answer={id}', 'QuestionController@showAnswerQuestion');
 
 // FOOTER
