@@ -58,19 +58,12 @@
                         <!-- View für Frageersteller -->
                         @if(Auth::user()->id == $user_id)
                             @if(Auth::user()->id != $out->user_id)
-
-
-
-
-                        @if($out->top == "1")
-                            <button id="starbtn" onclick="top({{$out->id}})" class="btnquestions marginleft10 btntop"><i id="star" class="fa fa-btn fa-star"></i> Hilfreiche Antwort</button>
-                        @else
-                            <button id="starbtn" onclick="top({{$out->id}})" class="btnquestions marginleft10 btntop"><i id="star" class="fa fa-btn fa-star-o"></i> Hilfreiche Antwort</button>
-                        @endif
-
-
-
-
+                                <!-- Antworten Bewerten -->
+                                @if($out->top == "1")
+                                    <button id="starbtn" onclick="top({{$out->id}})" class="btnquestions marginleft10 btntop"><i id="star" class="fa fa-btn fa-star"></i> Hilfreiche Antwort</button>
+                                @else
+                                    <button id="starbtn" onclick="top({{$out->id}})" class="btnquestions marginleft10 btntop"><i id="star" class="fa fa-btn fa-star-o"></i> Hilfreiche Antwort</button>
+                                @endif
                                <input type="hidden" value="$out->id" name="aid">
                                <button class="btnquestions marginleft10"><i class="fa fa-bolt"></i> Antwort melden</button> 
                             @else
@@ -82,7 +75,7 @@
                                 Frage Ersteller
                             @else
                                 @if($out->top == "1")
-                                    <i class="fa fa-star" aria-hidden="true"></i> {{$name}}, gefällt diese Antwort
+                                    <i class="fa fa-star" aria-hidden="true"></i> {{$name}}, fand diese Antwort hilfreich
                                 @else
                                     <i class="fa fa-btn fa-star-o"></i>
                                 @endif
@@ -99,7 +92,7 @@
                             Frage Ersteller
                         @else
                             @if($out->top == "1")
-                                <i class="fa fa-star" aria-hidden="true"></i> {{$name}}, gefällt diese Antwort
+                                <i class="fa fa-star" aria-hidden="true"></i> {{$name}}, fand diese Antwort hilfreich
                             @else
                                 <i class="fa fa-btn fa-star-o"></i>
                             @endif
