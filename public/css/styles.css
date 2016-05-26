@@ -993,6 +993,14 @@ footer a:visited {
     margin-top: 20px;
 }
 
+.margintop40 {
+    margin-top: 40px;
+}
+
+.margintop80 {
+    margin-top: 80px;
+}
+
 .margquestion {
     margin-bottom: 50px;
 }

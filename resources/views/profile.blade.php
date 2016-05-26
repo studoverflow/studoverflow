@@ -1,16 +1,31 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="container-fluid margintop20" id="profile">
+<section class="container-fluid margintop40" id="profile">
     <h1 class="text-center studoverflow">Profil 
     @if (!Auth::guest() && Auth::user()->name == $name) <a href="/editprofile"" class="editsize">Edit</a> @endif</h1> 
-    <article class="container">
+    <article class="container margintop80">
         <div class="row">
             <div class="col-md-3 col-md-offset-1">
                 <p><img class="profilpad avatar" src="img/upload/avatar/{{$avatar}}">
                 </p>
                 <p>
-                    <b>Rang:</b> {{ $rank }}
+                    <b>Rang:</b> 
+                    @if($top == "0")
+                        {{ $rank }}
+                    @endif
+                    @if($top == "1")
+                        Anfänger
+                    @endif
+                    @if($top == "2")
+                        Helfer
+                    @endif
+                    @if($top == "3")
+                        Sympathisant
+                    @endif
+                    @if($top >= "4")
+                        Held
+                    @endif
                 </p>
                 <p>
                     <b>Top-Antwort:</b> {{ $top }} mal
