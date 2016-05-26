@@ -75,37 +75,41 @@
                     <div class="row">
                        <div class="col-md-12 statsrow">                           
                             <div class="col-md-6">gegebene TOP Antworten</div>
-                            @foreach($counttop as $top)
-                                @if($top->anzahl != null)
-                                    <div class="col-md-6">{{ $top->anzahl }}</div>
+                            @if($counttop == null)
+                                0
                                 @else
-                                    <div class="col-md-6">0</div>
-                                @endif
-                            @endforeach
+                                @foreach($counttop as $top)
+                                    @if($top->anzahl != 0)
+                                        <div class="col-md-6">{{ $top->anzahl }}</div>
+                                    @else
+                                        <div class="col-md-6">0</div>
+                                    @endif
+                                @endforeach
+                            @endif
                         </div>
                     </div>
                     <div class="row">
                        <div class="col-md-12 statsrow">                           
                             <div class="col-md-6">Dein derzeitiger Rang</div>
                             <div class="col-md-6">
-                            @foreach($counttop as $top)
-                                @if($top->anzahl != null)                                        
-                                    @if($top->anzahl == "1")
-                                        Anfänger
-                                    @endif
-                                    @if($top->anzahl == "2")
-                                        Helfer
-                                    @endif
-                                    @if($top->anzahl == "3")
-                                        Sympathisant
-                                    @endif
-                                    @if($top->anzahl >= "4")
-                                        Held
-                                    @endif
-                                @else
-                                {{ Auth::user()->rank }}
+                        @if($counttop == null)
+                            Neuling
+                        @else
+                            @foreach($counttop as $top)                                   
+                                @if($top->anzahl == "1")
+                                    Anfänger
                                 @endif
+                                @if($top->anzahl == "2")
+                                    Helfer
+                                @endif
+                                @if($top->anzahl == "3")
+                                    Sympathisant
+                                @endif
+                                @if($top->anzahl >= "4")
+                                    Held
+                                @endif   
                             @endforeach
+                        @endif
                         </div>
                         </div>
                     </div>
