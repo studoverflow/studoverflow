@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div class="col-xs-12 col-md-12 column questionbot marginbottom20">
-                <button class="btnquestions"><i class="fa fa-btn fa-bolt" aria-hidden="true"></i> Frage melden</button>
+                <button onclick="goBack()" class="btnquestions marginleft10"><i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i> Zurück</button>
             </div>
         </article>
     </article>
@@ -48,9 +48,6 @@
                         <input type="submit" class="btn btn-black messagebtn">
                     </div>
                 </form>
-            </div>
-            <div class="col-md-12 margintop20">
-                <button onclick="goBack()" class="btnquestions marginleft10"><i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i> Zurück</button>
             </div>
         </div>
     </div>
