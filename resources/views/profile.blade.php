@@ -4,7 +4,7 @@
 <section class="container-fluid margintop20" id="profile">
     <h1 class="text-center studoverflow">Profil 
     @if (!Auth::guest() && Auth::user()->name == $name) <a href="/editprofile"" class="editsize">Edit</a> @endif</h1> 
-    <section class="container">
+    <article class="container">
         <div class="row">
             <div class="col-md-3 col-md-offset-1">
                 <p><img class="profilpad avatar" src="img/upload/avatar/{{$avatar}}">
@@ -48,7 +48,7 @@
                 </p>
             </div>
         </div>
-    </section>
+    </article>
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-12 column backbtn">

@@ -3,7 +3,7 @@
 @section('content')
 <section id="privacypolicy" class="container-fluid">
 	<h1 class="text-center studoverflow">Datenschutz</h1>
-	<section class="container">
+	<article class="container">
 		<article class="row">
 			<div class="col-ms-12">
 				Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst.
@@ -21,6 +21,6 @@
 				aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.
 			</div>
 		</article>
-	</section>
+	</article>
 </section>
 @endsection

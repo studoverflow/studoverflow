@@ -3,7 +3,7 @@
 @section('content')
 <section id="createquestion" class="container-fluid">
 	<h1 class="text-center studoverflow">Neue Frage erstellen</h1>
-	<section class="container">
+	<article class="container">
 		<article class="row">
 			<div class="col-md-12">
 			    <form class="form-group" action="/create" method="POST">
@@ -37,6 +37,6 @@
                 </div>
 			</div>
 		</article>
-	</section>
+	</article>
 </section>
 @endsection

@@ -3,7 +3,7 @@
 @section('content')
 <section id="imprint" class="container-fluid">
 	<h1 class="text-center studoverflow">Impressum</h1>
-	<section class="container">
+	<article class="container">
 		<article class="row">
 			<div class="col-sm-12">
 				<div class="text-center">
@@ -64,6 +64,6 @@
 				Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
 			</div>
 		</article>
-	</section>
+	</article>
 </section>
 @endsection

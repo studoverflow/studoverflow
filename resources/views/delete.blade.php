@@ -1,7 +1,7 @@
 @extends('layouts.app') 
 @section('content')
 <section class="container-fluid" id="delete">
-        <article class="container">
+    <article class="container">
         <article class="row">
             <div class="col-xs-12 col-md-12 column questiontop">
                 <h3>Möchtest du diesen Beitrag von dir wirklich Löschen?</h3>

@@ -2,7 +2,7 @@
 
 @section('content')
 <section class="container-fluid" id="report">
-    <section class="container">
+    <article class="container">
         <article class="row">
             <article class="col-md-12">
             	 <div class="col-xs-12 col-md-12 column questiontop">
@@ -25,7 +25,7 @@
             </article>
 
         </article>
-    </section>
+    </article>
 </section>
 
 @endsection

@@ -6,7 +6,7 @@ $questions = DB::select('select * from questions order by date desc');
 $answers = DB::select('select * from countanswer');
 ?>
 <section class="container-fluid" id="new">
-    <section class="container">
+    <article class="container">
         <article class="row">
             <article class="col-sm-12">
                 <div class="col-sm-12 questiontop">
@@ -35,8 +35,6 @@ $answers = DB::select('select * from countanswer');
                 @endforeach
             </article>
         </article>
-        <!--/row-->
-    </section>
-    <!--/container-->
+    </article>
 </section>
 @endsection

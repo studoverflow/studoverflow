@@ -2,7 +2,7 @@
 
 @section('content')
  <section class="container-fluid" id="welcome">
-    <section class="container">
+    <article class="container">
         <article class="row">
             <article class="col-xs-12">
                 <div class="col-xm-12 ">
@@ -92,8 +92,6 @@
                     </div>
                 @endif
             </article>
-        <!--/row
-    </section>
-    <!--/container-->
+    </article>
 </section>
 @endsection

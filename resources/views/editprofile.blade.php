@@ -3,7 +3,7 @@
 @section('content')
 <section class="container-fluid" id="edit">
     <h1 class="text-center studoverflow">Profil anpassen</h1>
-    <section class="container">
+    <article class="container">
         <article class="row">
             <div class="col-md-offset-2 col-md-10">
                 <form enctype="multipart/form-data" action="/editprofile" method="POST">
@@ -71,6 +71,6 @@
                 </form>
             </div>
         </article>
-    </section>
+    </article>
 </section>
 @endsection

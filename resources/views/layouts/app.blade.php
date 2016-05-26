@@ -42,7 +42,7 @@
 </head>
 
 <body id="app-layout">
-    <header class="scaleheader">
+    <header class="scaleheader test">
         <nav class="navbar navbar-trans navbar-fixed-top navborderbot" role="navigation">
             <div class="container">
                 <div class="navbar-header">

@@ -4,7 +4,7 @@
 <section id="feedback" class="container-fluid">
 	<h1 class="text-center studoverflow">Feedback</h1>
 	<h2 class="text-center studoverflow">Deine Meinung ist uns wichtig</h2>
-	<section class="container">
+	<article class="container">
 		<article class="row">
 			<div class="col-sm-12">
 			    @if ( $errors->count() > 0 )
@@ -49,6 +49,6 @@
 			    {!! Form::close() !!}
 			</div>
 		</article>
-	</section>
+	</article>
 </section>
 @endsection

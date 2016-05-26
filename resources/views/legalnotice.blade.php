@@ -3,7 +3,7 @@
 @section('content')
 <section id="legalnotice" class="container-fluid">
 	<h1 class="text-center studoverflow">Rechtliche Hinweise</h1>
-	<section class="container">
+	<article class="container">
 		<article class="row">
 			<div class="col-sm-12">
 				Alle Fragen und Antworten innerhalb unseres Internetdienstes sind Beiträge der Nutzer von StudOverflow.
@@ -20,5 +20,5 @@
 				eines Arztes verwendet werden sollten.
 			</div>
 		</article>
-	</section>
+	</article>
 </section>

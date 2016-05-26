@@ -6,6 +6,9 @@ body {
     font-family: 'Poppins', sans-serif;
     height: 100%;
     font-size: 12px;
+
+
+    overflow:hidden;
 }
 
 
@@ -80,15 +83,21 @@ img {
 }
 
 section {
-    margin-bottom: 48px;
     padding-bottom: 50px;
     padding-top: 40px;
     margin-top: 20px;
     min-height: 100%;
-    min-height: calc(100% - 0);
+    min-height: calc(100% - 10);
     text-decoration: none;
     transform-style: preserve-3d;
+    top:3.1%;
+    height:100%;
+    overflow:scroll;
+    width:100%;
+    margin-bottom: 20px;
 }
+
+
 
 footer {
     background-color: #2b2b2b;
@@ -1057,4 +1066,9 @@ footer a:visited {
 
 .backbtn {
     text-align: right;
+}
+
+.test {
+    position: fixed;
+    position: relative;
 }
