@@ -575,6 +575,26 @@ footer a:visited {
     color: #337ab7;
 }
 
+/*
+ * Error
+ */
+
+#error {
+    background: #daecee;
+    color: #111111;
+    text-align: center;
+}
+
+#error a:link,
+#error a:visited,
+#error a:active {
+    color: #ffffff;
+}
+
+#error a:hover {
+    color: #337ab7;
+}
+
 /*********************************
  *                               *
  * CLASS Area                    *
