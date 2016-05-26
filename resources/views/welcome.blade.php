@@ -87,7 +87,26 @@
                     <div class="row">
                        <div class="col-md-12 statsrow">                           
                             <div class="col-md-6">Dein derzeitiger Rang</div>
-                            <div class="col-md-6">{{ Auth::user()->rank }}</div>
+                            <div class="col-md-6">
+                            @foreach($counttop as $top)
+                                @if($top->anzahl != null)                                        
+                                    @if($top->anzahl == "1")
+                                        Anfänger
+                                    @endif
+                                    @if($top->anzahl == "2")
+                                        Helfer
+                                    @endif
+                                    @if($top->anzahl == "3")
+                                        Sympathisant
+                                    @endif
+                                    @if($top->anzahl >= "4")
+                                        Held
+                                    @endif
+                                @else
+                                {{ Auth::user()->rank }}
+                                @endif
+                            @endforeach
+                        </div>
                         </div>
                     </div>
                 @endif
