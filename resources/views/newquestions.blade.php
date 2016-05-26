@@ -6,7 +6,7 @@
     <section class="container">
         <article class="row">
             <article class="col-sm-12">
-                <div class="col-sm-12 questionheader">
+                <div class="col-sm-12 questiontop">
                     <h1 class="text-center questionheaderfont">Neuste Fragen</h1>
                 </div>
                 @foreach($questions as $question)

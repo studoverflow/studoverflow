@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="container-fluid" id="profile">
+<section class="container-fluid margintop20" id="profile">
     <h1 class="text-center studoverflow">Profil 
     @if (!Auth::guest() && Auth::user()->name == $name) <a href="/editprofile"" class="editsize">Edit</a> @endif</h1> 
     <section class="container">

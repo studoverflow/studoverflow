@@ -34,12 +34,17 @@ body {
     .scalefooter {
         font-size: 8px;
     }
+
 }
 
-@media (min-width:501px) {
+@media (max-width:769px) {
     .scalefooter {
         font-size: 10px;
     }
+        .scaleheader {
+        font-size: 10px;
+    }
+
 }
 
 
@@ -75,8 +80,10 @@ img {
 }
 
 section {
+    margin-bottom: 48px;
     padding-bottom: 50px;
-    padding-top: 60px;
+    padding-top: 40px;
+    margin-top: 20px;
     min-height: 100%;
     min-height: calc(100% - 0);
     text-decoration: none;

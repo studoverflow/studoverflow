@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
-
     <script type="text/javascript">
         var totalCount = 5;
-
         function ChangeIt() {
             var num = Math.ceil(Math.random() * totalCount);
             document.body.background = 'img/' + num + '.jpg';
@@ -42,12 +39,10 @@
     <link rel="stylesheet" href="/css/styles.css" />
 
     <meta name="_token" content="{!! csrf_token() !!}"/>
-
-
 </head>
 
 <body id="app-layout">
-    <header>
+    <header class="scaleheader">
         <nav class="navbar navbar-trans navbar-fixed-top navborderbot" role="navigation">
             <div class="container">
                 <div class="navbar-header">
