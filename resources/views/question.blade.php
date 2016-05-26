@@ -23,12 +23,11 @@
                 @if(!Auth::guest())
                     @if(Auth::user()->id == $user_id)
                         <button onclick="window.location.href='/deleteQuestion={{$question_id}}'" class="btnquestions marginleft10"><i class="fa fa-trash"></i> Frage löschen</button> 
-                    @else
+                    @endif
                         <button onclick="location.href='/answer={{$question_id}}'" class="btnquestions marginleft10"><i class="fa fa-arrow-right" aria-hidden="true"></i> Etwas zu dieser Frage schreiben</button>
-                                    @if(Auth::user()->id != $user_id)
+                    @if(Auth::user()->id != $user_id)
                         <button onclick="location.href='/reportQuestion={{$question_id}}'" class="btnquestions marginleft10"><i class="fa fa-btn fa-bolt" aria-hidden="true"></i> Frage melden</button>
                     @endif
-                @endif
                 @else
                     <button onclick="location.href='/register'" class="btnquestions marginleft10 backbtn"><i class="fa fa-arrow-right" aria-hidden="true"></i> Jetzt Mitglied werden und Antworten!</button>
                 @endif

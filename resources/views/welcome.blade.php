@@ -19,6 +19,7 @@
                 @else
                     <?php $countquestions = DB::select('select count(*) as count from questions where user_id = ?', [Auth::user()->id]); ?>
                     <?php $countanswers = DB::select('select count(*) as count from answers where user_id = ?', [Auth::user()->id]); ?>
+                    <?php $counttop = DB::select('select * from topanswers where user_id = ?', [Auth::user()->id]); ?>
                 <div class="col-md-12">
                     <h3 class="text-center">Willommen zurück {{ Auth::user()->name }}<h3>
                 </div>
@@ -69,6 +70,24 @@
                                     <div class="col-md-6">0</div>
                                 @endif
                             @endforeach
+                        </div>
+                    </div>
+                    <div class="row">
+                       <div class="col-md-12 statsrow">                           
+                            <div class="col-md-6">gegebene TOP Antworten</div>
+                            @foreach($counttop as $top)
+                                @if($top->anzahl != null)
+                                    <div class="col-md-6">{{ $top->anzahl }}</div>
+                                @else
+                                    <div class="col-md-6">0</div>
+                                @endif
+                            @endforeach
+                        </div>
+                    </div>
+                    <div class="row">
+                       <div class="col-md-12 statsrow">                           
+                            <div class="col-md-6">Dein derzeitiger Rang</div>
+                            <div class="col-md-6">{{ Auth::user()->rank }}</div>
                         </div>
                     </div>
                 @endif
