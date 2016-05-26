@@ -7,15 +7,15 @@
     <article class="container">
         <article class="row">
             <article class="col-sm-12">
-                <div class="col-sm-12 questionheader">
+                <div class="col-sm-12 questiontop">
                     <h1 class="text-center questionheaderfont">Verlauf</h1>
                 </div>
-                <div class="col-sm-12 questionwhite">
+                <div class="col-sm-12  historyrow">
                     <h3 class="text-center studoverflow">Fragen</h3>
                 </div>
                 @foreach($questions as $question)
                     <?php $user = App\User::find($question->user_id); ?>
-                    <div class="col-sm-12 historyrow">
+                    <div class="col-sm-12 questionwhite">
                         <div class="col-sm-6">
                             <b><a href="/question={{$question->id}}">
                             <i class="fa fa-question-circle-o" aria-hidden="true"></i> 
@@ -30,11 +30,11 @@
                         </div>
                     </div>
                 @endforeach
-                <div class="col-sm-12 questionwhite">
+                <div class="col-sm-12 historyrow">
                     <h3 class="text-center studoverflow">Antworten</h3>
                 </div>
                 @foreach($answers as $answer) 
-                    <div class="col-sm-12 historyrow">
+                    <div class="col-sm-12 questionwhite">
                         <div class="col-sm-6">
                             <b><a href="/question={{$answer->question_id}}">
                             <i class="fa fa-question-circle-o" aria-hidden="true"></i> 

@@ -494,7 +494,7 @@ footer a:visited {
  */
 
 #history {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(84, 145, 189, 0.8);
     color: #111111;
 }
 
@@ -694,9 +694,7 @@ footer a:visited {
     background-color: lightgreen;
 }
 
-.historyrow {
-    background-color: #5491bd;
-}
+
 
 .icon-bar {
     background-color: #fff;
@@ -899,13 +897,22 @@ footer a:visited {
     font-weight: bold;
 }
 
-.questionwhite {
+.historyrow {
     background-color: #ffffff;
+    border-left: 2px #ffffff solid;
+    border-left: 2px #ffffff solid;
+    border-right: 2px #ffffff solid;
+}
+
+.questionwhite {
+    background-color: lightgrey;
     padding-top: 5px;
     padding-bottom: 5px;
     color: #111111;
-    border-bottom: 2px #111111 solid;
-    border-top:2px #111111 solid;
+    border-top:1px #111111 solid;
+    border-left: 2px #ffffff solid;
+    border-right: 2px #ffffff solid;
+
 }
 
 .questionheader {
