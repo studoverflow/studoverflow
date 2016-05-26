@@ -1,3 +1,12 @@
+
+function goBack() {
+    window.history.back();
+}
+
+
+
+
+
 // Scroll animation
 /*
 

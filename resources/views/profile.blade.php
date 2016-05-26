@@ -3,7 +3,7 @@
 @section('content')
 <section class="container-fluid" id="profile">
     <h1 class="text-center studoverflow">Profil 
-    @if (!Auth::guest() && Auth::user()->name == $name) <a href="/profile/edit"" class="editsize">Edit</a> @endif</h1> 
+    @if (!Auth::guest() && Auth::user()->name == $name) <a href="/editprofile"" class="editsize">Edit</a> @endif</h1> 
     <section class="container">
         <div class="row">
             <div class="col-md-3 col-md-offset-1">
@@ -49,5 +49,12 @@
             </div>
         </div>
     </section>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-12 column backbtn">
+                  <button onclick="goBack()" class="btnquestions marginleft10"><i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i> Zurück</button>
+            </div>
+        </div>
+    </div>
 </section>
 @endsection

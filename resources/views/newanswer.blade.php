@@ -1,6 +1,6 @@
 @extends('layouts.app') 
 @section('content')
-<section class="container-fluid" id="question">
+<section class="container-fluid" id="createanswer">
 
     <!-- Frage Bereich -->
 
@@ -29,17 +29,15 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-md-12">
-                    <form action="/answer={{$question_id}}" method="POST">
+                <form action="/answer={{$question_id}}" method="POST">
                     <div class="form-group">
                     </div>
-                    <div class="form-group">
-                       
+                    <div class="form-group">           
                         <div class="col-sm-12 marginbottom10">
                             <input class="form-control" type="text" name="titel" placeholder="Titel">
                         </div>
                     </div>
-                    <div class="form-group">
-                       
+                    <div class="form-group">       
                         <div class="col-sm-12 marginbottom20">
                             <textarea class="form-control"  name="text" placeholder="Nachricht" rows="10" ></textarea>
                             <input type="hidden" name="qid" value="{{$question_id}}">
@@ -49,9 +47,12 @@
                     <div class="col-sm-12">
                         <input type="submit" class="btn btn-black messagebtn">
                     </div>
-                    </form>
-                </div>
+                </form>
+            </div>
+            <div class="col-md-12 margintop20">
+                <button onclick="goBack()" class="btnquestions marginleft10"><i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i> Zurück</button>
+            </div>
         </div>
     </div>
-
+</section>
 @endsection

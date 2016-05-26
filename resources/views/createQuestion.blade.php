@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<section id="feedback" class="container-fluid">
+<section id="createquestion" class="container-fluid">
 	<h1 class="text-center studoverflow">Neue Frage erstellen</h1>
 	<section class="container">
 		<article class="row">
@@ -25,13 +25,16 @@
                         </div>
                     </div>
                     <div class="col-md-12 margintop15">
-                        <div class="col-md-offset-2 col-md-10">
+                        <div class="col-md-offset-2 col-md-5">
                             <button onclick="location.href='/create';" type="submit" id="createQuestion" class="btn btn-primary">
                                 <i class="fa fa-btn fa-pencil"></i> Frage stellen
                             </button>
                         </div>
                     </div>
 			    </form>
+                <div class="col-md-12 margintop20">
+                    <button onclick="goBack()" class="btnquestions marginleft10"><i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i> Zurück</button>
+                </div>
 			</div>
 		</article>
 	</section>

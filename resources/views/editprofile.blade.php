@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="container" id="edit">
+<section class="container-fluid" id="edit">
     <h1 class="text-center studoverflow">Profil anpassen</h1>
     <section class="container">
         <article class="row">
             <div class="col-md-offset-2 col-md-10">
-                <form enctype="multipart/form-data" action="/profile/edit" method="POST">
+                <form enctype="multipart/form-data" action="/editprofile" method="POST">
                     <div class="col-md-4">
                         <p><img class="profilpad avatar" src="/img/upload/avatar/{{Auth::user()->avatar}}"></p>
                     </div>
@@ -60,9 +60,14 @@
                         <label>Studiengang ändern</label>
                         <p><input class="form-control input-lg" type="text" name="course"></p>
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                         <input class="btn btn-primary" type="submit" value="Änderungen bestätigen">
+
                     </div>
+                    <div class="col-xs-6 col-md-6 column backbtn">
+                        <button onclick="goBack()" class="btnquestions marginleft10"><i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i> Zurück</button>
+                    </div>
+
                 </form>
             </div>
         </article>

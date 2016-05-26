@@ -21,23 +21,37 @@
             </div>
             <div class="col-xs-12 col-md-12 column questionbot marginbottom20">
                 @if(!Auth::guest())
-                    <button onclick="location.href='/answer={{$question_id}}'" class="btnquestions marginleft10"><i class="fa fa-arrow-right" aria-hidden="true"></i> Etwas zu dieser Frage schreiben</button>
+                    @if(Auth::user()->id == $user_id)
+                        <button onclick="window.location.href='/deleteQuestion={{$question_id}}'" class="btnquestions marginleft10"><i class="fa fa-trash"></i> Frage löschen</button> 
+                    @else
+                        <button onclick="location.href='/answer={{$question_id}}'" class="btnquestions marginleft10"><i class="fa fa-arrow-right" aria-hidden="true"></i> Etwas zu dieser Frage schreiben</button>
                                     @if(Auth::user()->id != $user_id)
-                    <button class="btnquestions marginleft10"><i class="fa fa-btn fa-bolt" aria-hidden="true"></i> Frage melden</button>
+                        <button onclick="location.href='/reportQuestion={{$question_id}}'" class="btnquestions marginleft10"><i class="fa fa-btn fa-bolt" aria-hidden="true"></i> Frage melden</button>
+                    @endif
                 @endif
                 @else
-                    <button onclick="location.href='/register'" class="btnquestions marginleft10"><i class="fa fa-arrow-right" aria-hidden="true"></i> Jetzt Mitglied werden und Antworten!</button>
+                    <button onclick="location.href='/register'" class="btnquestions marginleft10 backbtn"><i class="fa fa-arrow-right" aria-hidden="true"></i> Jetzt Mitglied werden und Antworten!</button>
                 @endif
             </div>
         </article>
     </article>
 
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-12 column backbtn">
+                  <button onclick="goBack()" class="btnquestions marginleft10"><i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i> Zurück</button>
+            </div>
+        </div>
+    </div>
+  
+
     <!-- Antworten Bereich -->
 
     <?php $answer = DB::select('select * from answers where question_id = ?', [$question_id]); ?>
     @if($answer != null) 
+        <?php $counter = null; ?>
         @foreach($answer as $out)
-            <?php $usersanswer = App\User::find($out->user_id); ?>
+            <?php $usersanswer = App\User::find($out->user_id);  $counter++?>
             <article class="container">
                 <article class="row">
                     <div class="col-xs-12 col-md-12 column messagetop">
@@ -49,8 +63,7 @@
                         </div>
                         <div class="col-xs-9 col-md-11 column messagemain">
                             <?php
-                            echo nl2br($out->text);
-                            ?>
+                            echo nl2br($out->text);                            ?>
                         </div>
                     </div>
                     <div class="col-xs-12 col-md-12 column messagebot marginbottom15">
@@ -60,14 +73,14 @@
                             @if(Auth::user()->id != $out->user_id)
                                 <!-- Antworten Bewerten -->
                                 @if($out->top == "1")
-                                    <button id="starbtn" onclick="top({{$out->id}})" class="btnquestions marginleft10 btntop"><i id="star" class="fa fa-btn fa-star"></i> Hilfreiche Antwort</button>
+                                    <button id="starbtn{{$counter}}" onclick="top({{$out->id}})" class="btnquestions marginleft10 btntop"><i id="star{{$counter}}" class="fa fa-btn fa-star"></i> Hilfreiche Antwort</button>
                                 @else
-                                    <button id="starbtn" onclick="top({{$out->id}})" class="btnquestions marginleft10 btntop"><i id="star" class="fa fa-btn fa-star-o"></i> Hilfreiche Antwort</button>
+                                    <button id="starbtn{{$counter}}" onclick="top({{$out->id}})" class="btnquestions marginleft10 btntop"><i id="star{{$counter}}" class="fa fa-btn fa-star-o"></i> Hilfreiche Antwort</button>
                                 @endif
                                <input type="hidden" value="$out->id" name="aid">
-                               <button class="btnquestions marginleft10"><i class="fa fa-bolt"></i> Antwort melden</button> 
+                               <button onclick="window.location.href='/reportAnswer={{$out->id}}'" class="btnquestions marginleft10"><i class="fa fa-bolt"></i> Antwort melden</button> 
                             @else
-                               <button class="btnquestions marginleft10"><i class="fa fa-trash"></i> Antwort löschen</button> 
+                               <button onclick="window.location.href='/deleteAnswer={{$out->id}}'" class="btnquestions marginleft10"><i class="fa fa-trash"></i> Antwort löschen</button> 
                             @endif
                         @else
                         <!-- View für Andere User -->
@@ -81,7 +94,7 @@
                                 @endif
                                 @if(!Auth::guest())
                                     @if(Auth::user()->id == $out->user_id)
-                                        <button class="btnquestions marginleft10"><i class="fa fa-trash"></i> Antwort löschen</button>     
+                                        <button onclick="window.location.href='/deleteAnswer={{$out->id}}'" class="btnquestions marginleft10"><i class="fa fa-trash"></i> Antwort löschen</button>      
                                     @endif
                                 @endif
                             @endif
@@ -102,7 +115,22 @@
                     </div>
                 </article>
             </article>
+            <script type="text/javascript">
+                document.getElementById("starbtn{{$counter}}").addEventListener("click", function (e) {
+                var target = document.getElementById("star{{$counter}}");
+                target.classList.toggle("fa-star");
+                target.classList.toggle("fa-star-o");
+                }, false);
+            </script>
         @endforeach
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-12 column backbtn">
+                  <button onclick="goBack()" class="btnquestions marginleft10"><i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i> Zurück</button>
+            </div>
+        </div>
+    </div>
+
     @else
         <div class="container marginbottom40">
             <div class="row">
@@ -113,6 +141,8 @@
             </div>
         </div>
     @endif
+
+
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <meta name="csrf-token" content="{{ csrf_token() }}" />
@@ -139,19 +169,7 @@
         });
     }
 
-        document.getElementById("starbtn").addEventListener("click", function (e) {
-            var target = document.getElementById("star");
-            target.classList.toggle("fa-star");
-            target.classList.toggle("fa-star-o");
-            }, false);
-    
-
-
-
     </script>
-
-
-    
 
 </section>
 @endsection
