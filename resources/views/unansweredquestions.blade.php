@@ -3,7 +3,7 @@
 @section('content')
 <?php $unanswered = DB::select('select * from unanswered'); ?>
 <section class="container-fluid" id="new">
-    <article class="container">
+    <article class="container marginbottom80">
         <article class="row">
             <article class="col-sm-12">
                 <div class="col-sm-12 questiontop">

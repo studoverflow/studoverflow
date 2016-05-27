@@ -6,9 +6,6 @@ body {
     font-family: 'Poppins', sans-serif;
     height: 100%;
     font-size: 12px;
-
-
-    overflow:hidden;
 }
 
 
@@ -18,10 +15,12 @@ body {
  *                               *
  *********************************/
 
-@media (min-width:768px) {
-    h1 {
-        font-size: 3em;
+@media (min-width:991px) {
+
+    nav {
+        font-size: 
     }
+
 }
 
 @media (min-width:768px) {
@@ -30,6 +29,9 @@ body {
         height: 90%;
         width: 100%;
         vertical-align: middle;
+    }
+    h1 {
+        font-size: 3em;
     }
 }
 
@@ -90,9 +92,6 @@ section {
     min-height: calc(100% - 10);
     text-decoration: none;
     transform-style: preserve-3d;
-    top:3.1%;
-    height:100%;
-    overflow:scroll;
     width:100%;
     margin-bottom: 20px;
 }
@@ -1070,6 +1069,10 @@ footer a:visited {
 
 .marginbottom40 {
     margin-bottom: 40px;
+}
+
+.marginbottom80 {
+    margin-bottom: 80px;
 }
 
 /* NEUES Sonstige Buttons */

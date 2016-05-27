@@ -124,7 +124,7 @@
         @endforeach
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-md-12 column backbtn marginbottom20">
+            <div class="col-xs-12 col-md-12 column backbtn marginbottom40">
                   <button onclick="goBack()" class="btnquestions marginleft10"><i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i> Zurück</button>
             </div>
         </div>
@@ -133,7 +133,7 @@
     @else
         <div class="container marginbottom40">
             <div class="row">
-                <div class="col-xs-12 col-md-12 column marginbottom20 margintop10">
+                <div class="col-xs-12 col-md-12 column marginbottom40 margintop10">
                     <h1>Es sind noch keine Antworten vorhanden</h1>
                     
                 </div>

@@ -81,6 +81,8 @@ class QuestionController extends Controller {
 
     }
 
+    // START POST INSERT ANSWER
+
     public function answer(Request $request){
 
 
@@ -106,19 +108,31 @@ class QuestionController extends Controller {
             
             $user = Auth::user();
 
+        //     Answer::create(
+        //     ['user_id' => $user->id,
+        //     'question_id' => $qid,
+        //     'titel' => $titel,
+        //     'text' => $text,
+        //     'date' => $datecurr]
+        // );
+
             DB::table('answers')->insertGetId(
                 ['user_id' => $user->id,
                 'question_id' => $qid,
                 'titel' => $titel,
                 'text' => $text,
                 'date' => $datecurr]
-
             );
-            return view('question')->with($data);        
+
+            return view('question')->with($data);    
+
         } else {
+
             return view('question')->with($data);
         }
     }
+
+    // ------------------------------------------------------------
 
     public function showAnswerQuestion($id){
         $question = Question::find($id);
@@ -135,8 +149,10 @@ class QuestionController extends Controller {
         return view('newanswer')->with($data);
     }
 
+
     // QUESTION
 
+    // DELETE QUESTION
 
     public function showDeleteQuestion($id){
 
@@ -164,9 +180,9 @@ class QuestionController extends Controller {
         return view('history');
     }
 
+    // ------------------------------------------------------------
 
-
-    // POST
+    // POST INSERT QUESTION
 
     public function createQuestion(Request $request){
 
@@ -206,6 +222,8 @@ class QuestionController extends Controller {
 
   
     }
+
+    // ------------------------------------------------------------
 
     // GET
 

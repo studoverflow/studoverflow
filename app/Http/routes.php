@@ -10,10 +10,13 @@ Route::get('/home', 'IndexController@goHome');
 // QUESTIONS / ANSWERS
 
 Route::get('/create', 'QuestionController@getCreateQuestion');
-Route::post('/create', 'QuestionController@createQuestion');
 Route::get('/question={id}', 'QuestionController@showQuestion');
-Route::post('/answer={qid}', 'QuestionController@answer');
 Route::get('/answer={id}', 'QuestionController@showAnswerQuestion');
+
+// INSERT
+
+Route::post('/create', 'QuestionController@createQuestion');
+Route::post('/answer={qid}', 'QuestionController@answer');
 
 // DELETE
 
