@@ -146,7 +146,7 @@ class QuestionController extends Controller {
             'edit' => $question->edit,
             'question_id' => $question->id,
             'avatar' => $user->avatar );
-        return view('newanswer')->with($data);
+        return view('createAnswer')->with($data);
     }
 
 

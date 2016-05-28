@@ -5,7 +5,7 @@
 	<h1 class="text-center studoverflow">Impressum</h1>
 	<article class="container">
 		<article class="row">
-			<div class="col-sm-12">
+			<div class="col-sm-12 col-md-12">
 				<div class="text-center">
 					Angaben gemäß § 5 TMG:
 					<h3>StudOverflow</h3>

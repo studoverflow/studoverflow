@@ -5,7 +5,7 @@
 	<h1 class="text-center studoverflow">Rechtliche Hinweise</h1>
 	<article class="container">
 		<article class="row">
-			<div class="col-sm-12">
+			<div class="col-sm-12 col-md-12">
 				Alle Fragen und Antworten innerhalb unseres Internetdienstes sind Beiträge der Nutzer von StudOverflow.
 				Die Beiträge können von StudOverflow hinsichtlich ihrer Vollständigkeit und Richtigkeit nicht überprüft werden, 
 				sodass auch keinerlei Garantien diesbezüglich von gutefrage.net abgegeben werden können. StudOverflow ist somit weder

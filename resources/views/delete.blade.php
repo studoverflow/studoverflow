@@ -3,21 +3,21 @@
 <section class="container-fluid" id="delete">
     <article class="container">
         <article class="row">
-            <div class="col-xs-12 col-md-12 column questiontop">
+            <div class="col-sm-12 col-md-12 column questiontop">
                 <h3>Möchtest du diesen Beitrag von dir wirklich Löschen?</h3>
                 LÖSCHEN von {{$titel}} geschrieben am {{$date}}
             </div>
-            <div class="col-xs-12 col-md-12 column messagemain">
-                <div class="col-xs-3 col-md-1 column messageimg">
+            <div class="col-sm-12 col-md-12 column messagemain">
+                <div class="col-sm-1 col-md-1 column messageimg">
                     <img class="text-center avatar" src="/img/upload/avatar/{{ $avatar }}">
                 </div>
-                <div class="col-xs-9 col-md-11 column messagemain">
+                <div class="col-sm-9 col-md-11 column messagemain">
                 <?php
                  echo nl2br($text);
                 ?>
                 </div>
             </div>
-            <div class="col-xs-12 col-md-12 column questionbot marginbottom20">
+            <div class="col-sm-12 col-md-12 column questionbot marginbottom20">
                 <form class="marginbottom10" action="/delete{{$value}}" method="POST">
                     <button type="submit" class="btnquestions marginleft10"><i class="fa fa-btn fa-bolt" aria-hidden="true"></i> Unwiederruflich Löschen</button>
                     @if($value == "Question")

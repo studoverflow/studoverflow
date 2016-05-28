@@ -42,16 +42,16 @@
                     <?php $countanswers = DB::select('select count(*) as count from answers where user_id = ?', [Auth::user()->id]); ?>
                     <?php $counttop = DB::select('select * from topanswers where user_id = ?', [Auth::user()->id]); ?>
                 <div class="col-md-12 col-sm-12">
-                    <h3 class="text-center">Willommen zurück {{ Auth::user()->name }}<h3>
+                    <h3 class="text-center">Willommen {{ Auth::user()->name }}<h3>
                 </div>
                 <div class="col-md-12 col-sm-12 welcomeinfo text-center">
                     <div class="row">
                         <div class="col-md-12 statsrow">
-                            <div class="col-md-10 col-sm-10">
+                            <div class="col-md-9 col-sm-9">
                                 <h3>Deine Statistik</h3>
                             </div>
-                            <div class="col-md-2 col-sm-2">
-                                <button onclick="location.href='/create';" type="submit" class="btn btn-primary btnRadius">
+                            <div class="col-md-3 col-sm-3">
+                                <button onclick="location.href='/create';" type="submit" class="btn btn-black btnRadius messagebtn">
                                         <i class="fa fa-btn fa-pencil"></i> Frage verfassen
                                 </button>
                             </div>
@@ -59,7 +59,7 @@
                     </div>
                     <div class="row">
                        <div class="col-md-12 col-sm-12 statsrow">                           
-                            <div class="col-md-6">
+                            <div class="col-md-6 col-sm-6">
                                 User
                             </div>
                             <div class="col-md-6 col-sm-6">
@@ -95,7 +95,7 @@
                     </div>
                     <div class="row">
                        <div class="col-md-12 col-sm-12 statsrow">                           
-                            <div class="col-md-6">gegebene TOP Antworten</div>
+                            <div class="col-md-6 col-sm-6">gegebene TOP Antworten</div>
                             @if($counttop == null)
                                 0
                                 @else

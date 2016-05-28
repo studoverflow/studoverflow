@@ -6,20 +6,20 @@
 
     <article class="container">
         <article class="row">
-            <div class="col-xs-12 col-md-12 column questiontop">
+            <div class="col-sm-12 col-md-12 column questiontop">
                 <b>FRAGE:</b> {{$titel}} von <a href="/profile={{$user_id}}">{{$name}}</a> am {{$date}}
             </div>
-            <div class="col-xs-12 col-md-12 column messagemain">
-                <div class="col-xs-3 col-md-1 column messageimg">
+            <div class="col-sm-12 col-md-12 column messagemain">
+                <div class="col-sm-1 col-md-1 column messageimg">
                     <img class="text-center avatar" src="/img/upload/avatar/{{ $avatar }}">
                 </div>
-                <div class="col-xs-9 col-md-11 column messagemain">
+                <div class="col-sm-11 col-md-11 column messagemain">
                 <?php
                  echo nl2br($text);
                 ?>
                 </div>
             </div>
-            <div class="col-xs-12 col-md-12 column questionbot marginbottom20">
+            <div class="col-sm-12 col-md-12 column questionbot marginbottom20">
                 @if(!Auth::guest())
                     @if(Auth::user()->id == $user_id)
                         <button onclick="window.location.href='/deleteQuestion={{$question_id}}'" class="btnquestions marginleft10"><i class="fa fa-trash"></i> Frage löschen</button> 
@@ -37,7 +37,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-md-12 column backbtn">
+            <div class="col-sm-12 col-md-12 column backbtn">
                   <button onclick="goBack()" class="btnquestions marginleft10"><i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i> Zurück</button>
             </div>
         </div>
@@ -53,19 +53,19 @@
             <?php $usersanswer = App\User::find($out->user_id);  $counter++?>
             <article class="container">
                 <article class="row">
-                    <div class="col-xs-12 col-md-12 column messagetop">
+                    <div class="col-sm-12 col-md-12 column messagetop">
                         <b>ANTWORT:</b> {{$out->titel}} von <a href="/profile={{$usersanswer->id}}">{{$usersanswer->name}}</a> am {{$out->date}}
                     </div>
-                    <div class="col-xs-12 col-md-12 column messagemain">
-                        <div class="col-xs-3 col-md-1 column messageimg">
+                    <div class="col-sm-12 col-md-12 column messagemain">
+                        <div class="col-sm-1 col-md-1 column messageimg">
                             <img class="text-center avatar" src="/img/upload/avatar/{{ $usersanswer->avatar }}">
                         </div>
-                        <div class="col-xs-9 col-md-11 column messagemain">
+                        <div class="col-sm-1 col-md-11 column messagemain">
                             <?php
                             echo nl2br($out->text);                            ?>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-md-12 column messagebot marginbottom15">
+                    <div class="col-sm-12 col-md-12 column messagebot marginbottom15">
                     @if(!Auth::guest())
                         <!-- View für Frageersteller -->
                         @if(Auth::user()->id == $user_id)
@@ -127,7 +127,7 @@
         @endforeach
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-md-12 column backbtn marginbottom40">
+            <div class="col-sm-12 col-md-12 column backbtn marginbottom40">
                   <button onclick="goBack()" class="btnquestions marginleft10"><i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i> Zurück</button>
             </div>
         </div>
@@ -136,7 +136,7 @@
     @else
         <div class="container marginbottom40">
             <div class="row">
-                <div class="col-xs-12 col-md-12 column marginbottom40 margintop10">
+                <div class="col-sm-12 col-md-12 column marginbottom40 margintop10">
                     <h1>Es sind noch keine Antworten vorhanden</h1>
                     
                 </div>

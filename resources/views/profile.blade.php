@@ -6,7 +6,7 @@
     @if (!Auth::guest() && Auth::user()->name == $name) <a href="/editprofile"" class="editsize">Edit</a> @endif</h1> 
     <article class="container margintop80">
         <div class="row">
-            <div class="col-md-3 col-md-offset-1">
+            <div class="col-sm-offset-1 col-sm-3 col-md-3 col-md-offset-1">
                 <p><img class="profilpad avatar" src="img/upload/avatar/{{$avatar}}">
                 </p>
                 <p>
@@ -31,7 +31,7 @@
                     <b>Top-Antwort:</b> {{ $top }} mal
                 </p>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-4">
                 <p>
                     <b class="profil">User </b>
                     </br>{{ $name }}
@@ -50,7 +50,7 @@
                     </br>{{ $email }}
                 </p>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-4">
                 <p>
                     <b class="profil">Homepage</b>
                     </br>{{ $page }}
@@ -66,7 +66,7 @@
     </article>
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-md-12 column backbtn">
+            <div class="col-sm-12 col-md-12 column backbtn">
                   <button onclick="goBack()" class="btnquestions marginleft10"><i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i> Zurück</button>
             </div>
         </div>
