@@ -58,7 +58,28 @@
                 </div>
                 <div class="navbar-collapse collapse" id="navbar-collapsible">
                     <ul class="nav navbar-nav navbar-left">
-                        <li {{{ (Request::is( 'new') ? 'class=active' : '') }}}>
+
+                    <!-- NEU -->
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true"">
+                                Neue/Beliebte/Unbeantwortete Fragen<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li {{{ (Request::is( 'new') ? 'class=active' : '') }}}>
+                                    <a href="{{ url('/new') }}">Neue Fragen</a>
+                                </li>
+                                <li {{{ (Request::is( 'popular') ? 'class=active' : '') }}}>
+                                    <a href="{{ url('/popular') }}">Beliebte Fragen</a>
+                                </li>
+                                <li {{{ (Request::is( 'unanswered') ? 'class=active' : '') }}}>
+                                    <a href="{{ url('/unanswered') }}">Unbeantwortete Fragen</a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+<!--                     <li {{{ (Request::is( 'new') ? 'class=active' : '') }}}>
                             <a href="{{ url('/new') }}">Neue Fragen</a>
                         </li>
                         <li {{{ (Request::is( 'popular') ? 'class=active' : '') }}}>
@@ -66,7 +87,7 @@
                         </li>
                         <li {{{ (Request::is( 'unanswered') ? 'class=active' : '') }}}>
                             <a href="{{ url('/unanswered') }}">Unbeantwortete Fragen</a>
-                        </li>
+                        </li> -->
                         <li {{{ (Request::is( 'overview') ? 'class=active' : '') }}}>
                             <a href="{{ url('/overview') }}">Übersicht</a>
                         </li>
@@ -75,6 +96,8 @@
                                 <span class="fa fa-btn fa-search" aria-hidden="true"></span> Suchen
                             </a>
                         </li>
+
+
                     </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
