@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('college')->default('---');
             $table->string('course')->default('---');
             $table->string('rank')->default('Neuling');
+            $table->string('rights')->default('user');
             $table->string('avatar')->default('default.jpg');
             $table->rememberToken();
             $table->timestamps();
