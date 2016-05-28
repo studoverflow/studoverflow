@@ -4,7 +4,9 @@ function goBack() {
 }
 
 
-
+function searchFor(suchbegriff) {
+    alert("works!!!");
+}
 
 
 // Scroll animation
@@ -50,12 +52,10 @@ function closeLogin(){
 	$('#login').modal('hide');
 };
 
-*/
 
 
 
 // Registration
-
 function registrationEvent(name){
 
 
@@ -169,4 +169,4 @@ function regbEmail(args){
         element.classList.remove("fieldred");
         errText.innerHTML = "";
     }
-}
+*/
