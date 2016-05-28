@@ -115,11 +115,14 @@
                 </article>
             </article>
             <script type="text/javascript">
-                document.getElementById("starbtn{{$counter}}").addEventListener("click", function (e) {
-                var target = document.getElementById("star{{$counter}}");
-                target.classList.toggle("fa-star");
-                target.classList.toggle("fa-star-o");
-                }, false);
+                var press = document.getElementById("starbtn{{$counter}}");
+                if(press){
+                    press.addEventListener("click", function (e) {
+                    var target = document.getElementById("star{{$counter}}");
+                    target.classList.toggle("fa-star");
+                    target.classList.toggle("fa-star-o");
+                    }, false);
+                }
             </script>
         @endforeach
     <div class="container">

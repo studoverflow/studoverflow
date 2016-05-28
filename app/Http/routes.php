@@ -30,6 +30,25 @@ Route::post('/deleteQuestion', 'QuestionController@deleteQuestion');
 Route::get('/reportQuestion={id}', 'ReportController@reportQuestionShow');
 Route::get('/reportAnswer={id}', 'ReportController@reportAnswerShow');
 
+Route::post('/report',array('before'=>'csrf','uses'=>function(){
+
+    if(Request::ajax())
+    {
+    	$string = $_POST['dataString'];
+
+    	$data = array(
+    		'message' => $string );
+
+
+    	Mail::raw($string, function($message){
+    		$message->from('studoverflow@stephenbeck.de', 'StudOverflow');
+    		$message->to('studoverflow@stephenbeck.de', 'StudOverflow')->subject('Report!');
+    	});
+
+    	
+       	return $string;
+    }
+}));
 
 // FOOTER
 

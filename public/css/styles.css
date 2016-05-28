@@ -1086,7 +1086,8 @@ footer a:visited {
     text-align: right;
 }
 
-.test {
-    position: fixed;
-    position: relative;
+.reportsuccess {
+    display: none;
+    color: #ffffff;
+    text-align: center;
 }
