@@ -510,7 +510,7 @@ footer a:visited {
  */
 
 #createquestion {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(84, 145, 189, 0.8);
     color: #111111;
 }
 
@@ -1087,8 +1087,11 @@ footer a:visited {
 
 .reportsuccess {
     display: none;
-    color: #ffffff;
     text-align: center;
+    color: #111111;
+    background-color: #ffffff;
+    border: 1px green solid;
+    border-radius: 20px;
 }
 
 .studoverflowhead {
@@ -1104,4 +1107,11 @@ footer a:visited {
     #padding-left: 20px; 
     padding-right: 20px; 
     border-radius: 20px;
+}
+
+.notvalid {
+    display: none; 
+    color:red; 
+    background-color: #ffffff;
+    border: 1px red solid;
 }

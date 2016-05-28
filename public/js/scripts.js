@@ -32,18 +32,89 @@ function report(id, value, user){
     var text = document.getElementById('text').value;
     var dataString = value + "-" + id + " wurde von " + user  + " mit der Nachricht: " + text + " gemeldet."
     console.log(dataString);
-    $.ajax({
-        url: '/report',
-        type: 'POST',
-        data: {_token: CSRF_TOKEN, dataString: dataString},
-        dataType: 'JSON',
-        success: function (data) {
-        }
-    });
-    $("#reportdiv").hide();
-    $("#success").show();
+    if(text != ""){
+        $.ajax({
+            url: '/report',
+            type: 'POST',
+            data: {_token: CSRF_TOKEN, dataString: dataString},
+            dataType: 'JSON',
+            success: function (data) {
+            }
+        });
+        text = text.replace(/\n/g, '<br>');
+        $("#reportmessage").append(text);
+        $("#reportdiv").hide();
+        $("#success").show();
+    } else {
+        $("#errordiv").show();
+    } 
 }
 
+function answer(){
+
+    var qid = document.getElementById('qid').value;
+    var titel = document.getElementById('titel').value;
+    var text = document.getElementById('text').value;
+
+    $.ajaxSetup({
+        headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
+    });
+
+    if(text != "" && titel != ""){
+        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+        var text = document.getElementById('text').value;
+        console.log(titel);
+        $.ajax({
+            url: '/answer',
+            type: 'POST',
+            data: {_token: CSRF_TOKEN, qid: qid, titel: titel, text: text},
+            dataType: 'JSON',
+            success: function (data) {
+            }
+        });
+        $("#createhead").prepend("FRAGE: " + titel + " von ");
+        text = text.replace(/\n/g, '<br>');
+        $("#createmain").prepend(text);
+        $("#answerdiv").hide();
+        $("#answerback").hide();
+        $('#showanswer').show();
+        $("#showthumbs").show();
+    } else {
+        $("#errordiv").show();
+    }
+}
+
+function question(){
+
+    $.ajaxSetup({
+        headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
+    });
+    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+    var titel = document.getElementById('titel').value;
+    var text = document.getElementById('text').value;
+
+    if(text != "" && titel != ""){
+        console.log(titel + " " + text);
+        $.ajax({
+            url: '/create',
+            type: 'POST',
+            data: {_token: CSRF_TOKEN, titel: titel, text: text},
+            dataType: 'JSON',
+            success: function (data) {
+            }
+        });
+
+        $("#createhead").prepend("FRAGE: " + titel + " von ");
+        text = text.replace(/\n/g, '<br>');
+        $("#createmain").prepend(text);
+        $("#questiondiv").hide();
+        $("#showquestion").show();
+        $("#showthumbs").show();
+    } else {
+        $("#errordiv").show();
+    }
+
+}
 
 // Scroll animation
 /*

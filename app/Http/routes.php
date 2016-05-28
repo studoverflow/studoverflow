@@ -1,6 +1,5 @@
 <?php
 
-
 // HOME / AUTH
 
 Route::auth();
@@ -15,8 +14,53 @@ Route::get('/answer={id}', 'QuestionController@showAnswerQuestion');
 
 // INSERT
 
-Route::post('/create', 'QuestionController@createQuestion');
-Route::post('/answer={qid}', 'QuestionController@answer');
+Route::post('/create', array('before'=>'csrf','uses'=>function(){
+
+    if(Request::ajax() != null){
+
+        $user = Auth::user();
+        $titel = $_POST['titel'];
+        $text = $_POST['text'];
+        $datecurr = date("Y-m-d");
+
+        DB::table('questions')->insertGetId(
+            ['user_id' => $user->id,
+            'titel' => $titel,
+            'text' => $text,
+            'date' => $datecurr]);
+
+        return 1;
+    }
+}));
+
+Route::post('/answer', array('before'=>'csrf','uses'=>function(){
+
+    if(Request::ajax()){
+
+        $qid = $_POST['qid'];
+        $titel = $_POST['titel'];
+        $text = $_POST['text'];
+        $datecurr = date("Y-m-d");
+        $userAnswer = Auth::user();
+        
+        //     Answer::create(
+        //     ['user_id' => $user->id,
+        //     'question_id' => $qid,
+        //     'titel' => $titel,
+        //     'text' => $text,
+        //     'date' => $datecurr]
+        // );
+
+        DB::table('answers')->insertGetId(
+            ['user_id' => $userAnswer->id,
+            'question_id' => $qid,
+            'titel' => $titel,
+            'text' => $text,
+            'date' => $datecurr]);
+
+        return 1;
+    }
+}));
 
 // DELETE
 
@@ -46,7 +90,7 @@ Route::post('/report',array('before'=>'csrf','uses'=>function(){
     	});
 
     	
-       	return $string;
+       	return 1;
     }
 }));
 
@@ -94,6 +138,7 @@ Route::post('/question={qid}',array('before'=>'csrf','uses'=>function(){
 		            ->update(['top' => 1]);
 	    	}
     	}
-       	return $answer;
+
+       	return 1;
     }
 }));

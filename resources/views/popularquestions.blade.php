@@ -14,7 +14,7 @@ $answers = DB::select('select * from countanswer');
                 </div>
                 @foreach($answers as $answer)
                     @foreach($questions as $question)
-                        @if($answer->anzahl > 0 && $answer->id==$question->id)
+                        @if($answer->anzahl > 2 && $answer->id==$question->id)
                             <?php $user = App\User::find($question->user_id); ?>
                             <div class="col-sm-12 col-md-12 question">
                                 <div class="col-sm-6 col-md-6">
