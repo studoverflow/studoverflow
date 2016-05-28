@@ -3,9 +3,45 @@ function goBack() {
     window.history.back();
 }
 
+function top(qid){
 
-function searchFor(suchbegriff) {
-    alert("works!!!");
+    $.ajaxSetup({
+        headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
+    });
+       
+    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+        
+    var id = qid;
+
+    $.ajax({
+        url: '/question={{$question_id}}',
+        type: 'POST',
+        data: {_token: CSRF_TOKEN, id: id},
+        dataType: 'JSON',
+        success: function (data) {
+        }
+    });
+}
+
+function report(id, value, user){
+
+    $.ajaxSetup({
+        headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
+    });
+    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+    var text = document.getElementById('text').value;
+    var dataString = value + "-" + id + " wurde von " + user  + " mit der Nachricht: " + text + " gemeldet."
+    console.log(dataString);
+    $.ajax({
+        url: '/report',
+        type: 'POST',
+        data: {_token: CSRF_TOKEN, dataString: dataString},
+        dataType: 'JSON',
+        success: function (data) {
+        }
+    });
+    $("#reportdiv").hide();
+    $("#success").show();
 }
 
 

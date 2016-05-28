@@ -144,34 +144,5 @@
         </div>
     @endif
 
-
-
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <meta name="csrf-token" content="{{ csrf_token() }}" />
-
-    <script type="text/javascript">
-
-    function top(qid){
-
-        $.ajaxSetup({
-            headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
-        });
-       
-        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-        
-        var id = qid;
-
-        $.ajax({
-            url: '/question={{$question_id}}',
-            type: 'POST',
-            data: {_token: CSRF_TOKEN, id: id},
-            dataType: 'JSON',
-            success: function (data) {
-            }
-        });
-    }
-
-    </script>
-
 </section>
 @endsection
