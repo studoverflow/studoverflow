@@ -6,6 +6,7 @@ body {
     font-family: 'Poppins', sans-serif;
     height: 100%;
     font-size: 12px;
+    overflow: auto;
 }
 
 
@@ -87,13 +88,11 @@ img {
 section {
     padding-bottom: 50px;
     padding-top: 40px;
-    margin-top: 20px;
     min-height: 100%;
     min-height: calc(100% - 10);
     text-decoration: none;
     transform-style: preserve-3d;
     width:100%;
-    margin-bottom: 20px;
 }
 
 
@@ -103,7 +102,6 @@ footer {
     border-top: 2px solid #fff !important;
     color: #fff;
     height: 50px;
-    min-height: 20px;
     padding-top: 2px;
     padding-bottom: 2px;
 }
@@ -899,8 +897,9 @@ footer a:visited {
 .historyrow {
     background-color: #ffffff;
     border-left: 2px #ffffff solid;
-    border-left: 2px #ffffff solid;
     border-right: 2px #ffffff solid;
+    border-top: 2px #111111 solid;
+    border-bottom: 1px #111111 solid;
 }
 
 .questionwhite {
