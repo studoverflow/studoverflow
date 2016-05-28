@@ -4,9 +4,9 @@
  <section class="container-fluid" id="welcome">
     <article class="container">
         <article class="row">
-            <article class="col-xs-12">
-                <div class="col-xm-12 ">
-                    <h1 class="text-center studoverflow">
+            <article class="col-md-12 col-sm-12">
+                <div class="col-md-12 col-sm-12">
+                    <h1 class="text-center studoverflowhead">
                         <span class="fa fa-stack-overflow" aria-hidden="true"></span> StudOverflow
                     </h1>
                 @if(Auth::guest())
@@ -15,6 +15,27 @@
                             Jetzt Mitglied werden
                         </a>
                     </p>
+                    <div class="col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6 welcomeinfo">
+                        <p>
+                            <h3><i class="fa fa-info" aria-hidden="true"></i> Was ist StudOverflow?</h3>
+                        </p>
+                        <p class="margintop20">
+                            Jedes Semester stehen Studenten vor den gleichen Problemen.
+                            Der eine hat Probleme mit dem Programmieren, der andere in Mathematik.
+                        </p>
+                        <p>
+                        Vielleicht sind es auch nur allgemeine Fragen zum Studium, Studiengang oder Kurs.
+                        Der Dozent wirft mit Fachbegriffen um sich oder erklärt etwas unnötig kompliziert?
+                        </p>
+                        <p>
+                        In den Vorlesungen passiert es schnell, dass man nicht mehr mitkommt.
+                        Unser Konzept basiert darauf, dass sich Studenten gegenseitig helfen.
+                        </p>
+                        <p>
+                        Wir möchten den Studierenden eine Plattform schaffen, auf der ihre Fragen rund um das
+                        Studium von Kommilitonen schnell und einfach beantwortet werden.
+                        </p>
+                    </div>
                 </div>  
                 @else
                     <?php $countquestions = DB::select('select count(*) as count from questions where user_id = ?', [Auth::user()->id]); ?>
