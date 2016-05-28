@@ -8,7 +8,7 @@
             <form class="form-group" action="/create" method="POST">
                 <div class="col-md-12">
                     <div class="col-md-8 col-md-offset-2">
-                        <input class="form-control" placeholder="Suchbegriff hier eingeben..." name="suchbegriff" type="text" onkeyup="searchFor(this.value);">
+                        <input class="form-control" placeholder="Suchbegriff hier eingeben..." name="suchbegriff" type="text" onkeyup="">
                     </div>
                 </div>
                 <div class="col-md-12 margintop15">
