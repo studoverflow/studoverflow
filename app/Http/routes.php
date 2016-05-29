@@ -17,7 +17,7 @@ Route::get('/searchResults', function(){
     }
 });
 
-Route::post('/searchForm', array('before'=>'csrf','uses'=>function(){
+Route::post('/searchForm', function(){
     if (Request::ajax()) {
         return var_dump(Response::json(Request::all()));
     }
