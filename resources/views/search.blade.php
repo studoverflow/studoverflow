@@ -51,7 +51,7 @@
     //     });
 
 function search(){
-
+    var test = "";
     $.ajaxSetup({
          headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -60,17 +60,19 @@ function search(){
 
         var suchbegriff = document.getElementById('suchbegriff').value;
         var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-
         $.ajax({
+
             url: '/search',
             type: 'POST',
             data: {_token: CSRF_TOKEN, suchbegriff: suchbegriff},
             dataType: 'JSON',
-            success: function (data) {
+            success:function(data) {
+
                 console.log(data);
+                
             }
         });
-
+        
 }
 
 /*        $.ajax({

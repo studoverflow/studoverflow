@@ -31,8 +31,7 @@ Route::post('/search', array('before'=>'csrf','uses'=>function(){
         $suchbegriff = $_POST['suchbegriff'];
 
 
-
-        return $suchbegriff;
+        return json_encode($suchbegriff);
     }
 }));
 
