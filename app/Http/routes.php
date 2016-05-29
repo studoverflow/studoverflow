@@ -6,36 +6,17 @@ Route::auth();
 Route::get('/', 'IndexController@goHome');
 Route::get('/home', 'IndexController@goHome');
 
-// Search Question
-
-// Route::get('/searchResults', function(){
-    
-//     if(Request::ajax()){        
-//     	$resultset = DB::select('select text from answers where id = 1');  
-
-//         return $resultset;
-//     }
-// });
-
-// Route::post('/searchForm', function(){
-//     if (Request::ajax()) {
-//         return var_dump(Response::json(Request::all()));
-//     }
-// });
-
-
 Route::post('/search', array('before'=>'csrf','uses'=>function(){
 
     if(Request::ajax() != null){
+        $resultset = DB::table('answers')
+                ->where('text', 'like', '%'.$_POST['suchbegriff'].'%')
+                ->orWhere('titel', 'like', '%'.$_POST['suchbegriff'].'%')
+                ->get();
 
-        $suchbegriff = $_POST['suchbegriff'];
-
-
-        return json_encode($suchbegriff);
+        return json_encode($resultset);
     }
 }));
-
-
 
 // QUESTIONS / ANSWERS
 
@@ -148,7 +129,6 @@ Route::post('/editprofile', 'UserController@update_profile');
 Route::get('/editprofile', 'UserController@editProfile');
 Route::get('/profile', 'UserController@showOwnProfile');
 Route::get('/profile={id}', 'UserController@showProfile');
-
 
 // TOP ANSWER
 
