@@ -1,7 +1,6 @@
-<?php
+<?php namespace App\Http\Middleware;
 
-namespace App\Http\Middleware;
-
+use Closure;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken as BaseVerifier;
 
 class VerifyCsrfToken extends BaseVerifier
@@ -15,6 +14,13 @@ class VerifyCsrfToken extends BaseVerifier
         //
     ];
 
+
+      /** 
+      * Determine if the session and input CSRF tokens match. 
+      * 
+      * @param \Illuminate\Http\Request $request 
+      * @return bool      
+      */
     protected function tokensMatch($request){
 
     	$token = $request->ajax() ? $request->header('X-CSRF-Token') : $request->input('_token');

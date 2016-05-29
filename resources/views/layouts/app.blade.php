@@ -39,7 +39,7 @@
     <link rel="stylesheet" href="/css/animate.min.css" />
     <link rel="stylesheet" href="/css/styles.css" />
 
-    <meta name="_token" content="{!! csrf_token() !!}"/>
+    <meta name="csrf-token" content="{{ csrf_token() }}"/>
 </head>
 
 <body id="app-layout">

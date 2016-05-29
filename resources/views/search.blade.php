@@ -1,25 +1,75 @@
 @extends('layouts.app')
 
 @section('content')
+<?php $questions = DB::select('select * from questions order by date desc'); ?>
 <section class="container-fluid" id="search">
     <h1 class="text-center studoverflow">Frage suchen</h1>
     <div class="container">
         <div class="row">
-            <form class="form-group" action="/create" method="POST">
-                <div class="col-md-12">
-                    <div class="col-md-8 col-md-offset-2">
-                        <input class="form-control" placeholder="Suchbegriff hier eingeben..." name="suchbegriff" type="text" onkeyup="">
-                    </div>
-                </div>
-                <div class="col-md-12 margintop15">
-                    <div class="col-md-offset-9 col-md-3">
-                        <button onclick="location.href='/create';" type="submit" id="createQuestion" class="btn btn-primary">
-                            <i class="fa fa-btn fa-pencil"></i> Suchen
-                        </button>
-                    </div>
-                </div>
-            </form>                                                       
+            <div class="col-md-8 col-md-offset-2">
+                <form id="searchForm" class="form-group" action="/search">
+                    <!-- Hidden Token Element -->
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <!-- Inputfeld-->
+                    <input type="text" id="suchbegriff" class="form-control" placeholder="Suchbegriff hier eingeben...">
+                    <!-- Send Button-->
+                    <input type="submit" value="Search..." class="btn btn-primary">
+                </form>                    
+            </div>
+<!--
+            <div class="col-md-12 margintop15">
+                <button type="button" class="btn btn-warning" id="searchResults"> Suchen... </button>
+            </div>
+-->
+            <div id="searchResultsData">
+                
+            </div>
+
+            <div id="postResultsData">
+                
+            </div>
+
+
         </div>
     </div>
 </section>
 @endsection
+
+<script type="text/javascript"  src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script type="text/javascript">
+    $.ajaxSetup({
+         headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+         }
+     });
+
+    $(document).ready(function(){
+
+        $('#searchForm').submit(function(){
+            var suchb = $('#suchbegriff').val();
+
+            $.post('searchForm', { suchbegriff:suchb }, function(data){
+                console.log(data);
+                $('#postResultsData').html(data);
+            })
+        });
+
+/*        $.ajax({
+            type: "POST",
+            url: "searchForm",
+            data: dataString;
+        });
+*/
+
+/*
+        $(document).ready(function(){
+            $("#searchResults").click(function(){
+               $.get('searchResults', function(data){
+                   $('#searchResultsData').append(data);
+                   console.log(data);
+               });
+            });
+        });
+    */    
+    });
+</script>

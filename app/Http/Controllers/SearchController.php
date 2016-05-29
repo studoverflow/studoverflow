@@ -18,5 +18,23 @@ class SearchController extends Controller {
 	public function getSearch(){
 		return view('search');
 	}
+    
+    public function searchQuestion(Request $request){
+        
+        if(null != $request && null != $request->suchbegriff){
+            $data = array(
+                'suchbegriff' => $request->suchbegriff
+            );
+        
+            return view('search')->with($data);
+        } else{
+            $data = array(
+                'suchbegriff' => '!!! Geben Sie bitte einen Suchbegriff ein !!!'
+            );
+
+            return view('search')->with($data);
+        }
+        
+    }
 
 }

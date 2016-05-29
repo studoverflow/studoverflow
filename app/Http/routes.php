@@ -6,6 +6,23 @@ Route::auth();
 Route::get('/', 'IndexController@goHome');
 Route::get('/home', 'IndexController@goHome');
 
+// Search Question
+
+Route::get('/searchResults', function(){
+    
+    if(Request::ajax()){        
+    	$resultset = DB::select('select text from answers where id = 1');  
+
+        return $resultset;
+    }
+});
+
+Route::post('/searchForm', array('before'=>'csrf','uses'=>function(){
+    if (Request::ajax()) {
+        return var_dump(Response::json(Request::all()));
+    }
+});
+
 // QUESTIONS / ANSWERS
 
 Route::get('/create', 'QuestionController@getCreateQuestion');
