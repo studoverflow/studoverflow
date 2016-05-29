@@ -8,20 +8,35 @@ Route::get('/home', 'IndexController@goHome');
 
 // Search Question
 
-Route::get('/searchResults', function(){
+// Route::get('/searchResults', function(){
     
-    if(Request::ajax()){        
-    	$resultset = DB::select('select text from answers where id = 1');  
+//     if(Request::ajax()){        
+//     	$resultset = DB::select('select text from answers where id = 1');  
 
-        return $resultset;
-    }
-});
+//         return $resultset;
+//     }
+// });
 
-Route::post('/searchForm', function(){
-    if (Request::ajax()) {
-        return var_dump(Response::json(Request::all()));
+// Route::post('/searchForm', function(){
+//     if (Request::ajax()) {
+//         return var_dump(Response::json(Request::all()));
+//     }
+// });
+
+
+Route::post('/search', array('before'=>'csrf','uses'=>function(){
+
+    if(Request::ajax() != null){
+
+        $suchbegriff = $_POST['suchbegriff'];
+
+
+
+        return $suchbegriff;
     }
-});
+}));
+
+
 
 // QUESTIONS / ANSWERS
 

@@ -13,7 +13,7 @@
                     <!-- Inputfeld-->
                     <input type="text" id="suchbegriff" class="form-control" placeholder="Suchbegriff hier eingeben...">
                     <!-- Send Button-->
-                    <input type="submit" value="Search..." class="btn btn-primary">
+                    <input type="button" onclick="search()" value="Search..." class="btn btn-primary">
                 </form>                    
             </div>
 <!--
@@ -37,22 +37,41 @@
 
 <script type="text/javascript"  src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 <script type="text/javascript">
+
+
+    // $(document).ready(function(){
+
+    //     $('#searchForm').submit(function(){
+    //         var suchb = $('#suchbegriff').val();
+
+    //         $.post('searchForm', { suchbegriff:suchb }, function(data){
+    //             console.log(data);
+    //             $('#postResultsData').html(data);
+    //         })
+    //     });
+
+function search(){
+
     $.ajaxSetup({
          headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
          }
      });
 
-    $(document).ready(function(){
+        var suchbegriff = document.getElementById('suchbegriff').value;
+        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 
-        $('#searchForm').submit(function(){
-            var suchb = $('#suchbegriff').val();
-
-            $.post('searchForm', { suchbegriff:suchb }, function(data){
+        $.ajax({
+            url: '/search',
+            type: 'POST',
+            data: {_token: CSRF_TOKEN, suchbegriff: suchbegriff},
+            dataType: 'JSON',
+            success: function (data) {
                 console.log(data);
-                $('#postResultsData').html(data);
-            })
+            }
         });
+
+}
 
 /*        $.ajax({
             type: "POST",
@@ -71,5 +90,5 @@
             });
         });
     */    
-    });
+    // });
 </script>

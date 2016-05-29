@@ -41,7 +41,7 @@
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-12">
-                        <input onclick="answer()" class="btn btn-black messagebtn marginbottom40" value="Antworten">
+                        <input type="button" onclick="answer()" class="btn btn-black messagebtn marginbottom40" value="Antworten">
                     </div>
                 </form>
                 <div class="col-sm-12 col-md-12 margintop10 notvalid" id="errordiv">
