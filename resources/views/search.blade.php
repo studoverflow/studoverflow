@@ -20,25 +20,3 @@
     </div>
 </section>
 @endsection
-
-<script type="text/javascript">
-    function search(){
-        $.ajaxSetup({
-             headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-             }
-         });
-        var suchbegriff = document.getElementById('suchbegriff').value;
-        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-        $.ajax({
-            url: '/search',
-            type: 'POST',
-            data: {_token: CSRF_TOKEN, suchbegriff: suchbegriff},
-            dataType: 'JSON',
-            success:function(data) {
-                
-                console.log(data);
-            }
-        });
-    }
-</script>

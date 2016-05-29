@@ -3,6 +3,36 @@ function goBack() {
     window.history.back();
 }
 
+function search(){
+    $.ajaxSetup({
+         headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+         }
+     });
+    var suchbegriff = document.getElementById('suchbegriff').value;
+    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+    $.ajax({
+        url: '/search',
+        type: 'POST',
+        data: {_token: CSRF_TOKEN, suchbegriff: suchbegriff},
+        dataType: 'JSON',
+        success:function(data) {
+            console.log(data);
+            alert(data);
+
+            var test = JSON.stringify(data).split('{');
+            for (var i = 0; i < test.length; i++){
+                console.log(test[i]);
+            }
+            
+            var elements = test[1].split(',');
+            for (var i = 1; i < elements.length; i++){
+                console.log(elements[i]);
+            }
+       }
+    });
+}
+
 function top(qid){
 
     $.ajaxSetup({
