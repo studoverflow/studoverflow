@@ -37,7 +37,7 @@
                         <div class="col-sm-12 col-md-12 marginbottom20">
                             <textarea class="form-control"  name="text" id="text" placeholder="Nachricht" rows="10" ></textarea>
                             <input type="hidden" name="qid" id="qid" value="{{$question_id}}">
-                            <input type="hidden" name="_token" value="{{{ csrf_token() }}}" />
+                            <input type="hidden" id="_token" name="_token" value="{{{ csrf_token() }}}" />
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-12">

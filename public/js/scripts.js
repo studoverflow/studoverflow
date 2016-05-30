@@ -36,8 +36,10 @@ function search(){
 function top(qid){
 
     $.ajaxSetup({
-        headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
-    });
+         headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+         }
+     });
        
     var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
         
@@ -56,8 +58,11 @@ function top(qid){
 function report(id, value, user){
 
     $.ajaxSetup({
-        headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
-    });
+         headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+         }
+     });
+    
     var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
     var text = document.getElementById('text').value;
     var dataString = value + "-" + id + " wurde von " + user  + " mit der Nachricht: " + text + " gemeldet."
@@ -87,8 +92,10 @@ function answer(){
     var text = document.getElementById('text').value;
 
     $.ajaxSetup({
-        headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
-    });
+         headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+         }
+     });
 
     if(text != "" && titel != ""){
         var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
@@ -117,8 +124,11 @@ function answer(){
 function question(){
 
     $.ajaxSetup({
-        headers: { 'X-CSRF-Token' : $('meta[name=_token]').attr('content') }
-    });
+         headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+         }
+     });
+    
     var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
     var titel = document.getElementById('titel').value;
     var text = document.getElementById('text').value;
