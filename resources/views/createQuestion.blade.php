@@ -51,11 +51,11 @@
             </div>
         </article>
     </article>
-    <article class="container text-center margintop40" id="showthumbs" style="display: none;">
+    <article class="container text-center" id="showthumbs" style="display: none;">
         <article class="row">
             <div class="col-sm-12 col-md-12 column">
                 <h1 class="marginbottom20">Vielen Dank für deine Frage</h1>
-                <img src="/img/thumbs.png">
+                <img src="/img/thumbs.png" style="height:50px">
             </div>
         </article>
     </article>
