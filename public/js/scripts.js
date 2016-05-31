@@ -187,11 +187,11 @@ function validateEmail(){
     var email = document.getElementById('email').value;
     var regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (regex.test(email)){
-        console.log('ACK');
         document.getElementById('email').setAttribute('style','border: 1px solid #2eb82e; opacity: 0.75');
+        document.getElementById('emailHint').setAttribute('style','display:none');
     } else {
-        console.log('NACK');
         document.getElementById('email').setAttribute('style','border: 1px solid #a94442; opacity: 0.75');
+        document.getElementById('emailHint').setAttribute('style','display:block; margin: 5px 0 0 0; ');
     }    
 }
 

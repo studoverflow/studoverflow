@@ -32,6 +32,7 @@
                                     @if ($errors->has('email'))
                                         <span class="help-block"> <strong>{{ $errors->first('email') }}</strong> </span>
                                     @endif
+                                    <label id="emailHint" style="display:none">Geben Sie bitte eine valide E-Mailadresse ein</label>
                                 </div>
                             </div>
                             <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
