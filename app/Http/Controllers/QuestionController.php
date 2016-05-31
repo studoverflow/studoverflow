@@ -17,8 +17,41 @@ use DB;
 
 class QuestionController extends Controller {
 
-    // ANSWER
+    // EDIT
 
+    public function showEditQuestion($id){
+
+        $question = Question::find($id);
+        $user = User::find($question->user_id);
+
+        if(Auth::guest()){
+            return view('welcome');
+        }
+        if($user->id != Auth::user()->id){
+            return view('welcome');
+        }
+        if($user->id == Auth::user()->id){
+
+            $data = array(
+                'name' => $user->name,
+                'user_id' => $user->id,
+                'titel' => $question->titel,
+                'text' => $question->text,
+                'date' => $question->date,
+                'edit' => $question->edit,
+                'question_id' => $question->id,
+                'avatar' => $user->avatar );
+
+            return view('editQuestion')->with($data);
+        }
+
+    }
+
+    public function showEditAnswer(){
+        //
+    }
+
+    // ANSWER
 
     public function showDeleteAnswer($id){
 

@@ -81,6 +81,12 @@ Route::post('/deleteAnswer', 'QuestionController@deleteAnswer');
 Route::get('/deleteQuestion={id}', 'QuestionController@ShowDeleteQuestion');
 Route::post('/deleteQuestion', 'QuestionController@deleteQuestion');
 
+// EDIT ARTIKEL
+
+Route::get('/editQuestion={id}', 'QuestionController@showEditQuestion');
+Route::get('/editAnswer={id}', 'QuestionController@showEditAnswer');
+
+
 // REPORT
 
 Route::get('/reportQuestion={id}', 'ReportController@reportQuestionShow');
