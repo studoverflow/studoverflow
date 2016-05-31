@@ -38,7 +38,7 @@ function answer(){
             success: function (data) {
             }
         });
-        $("#createhead").prepend("FRAGE: " + titel + " von ");
+        $("#createhead").prepend("ANTWORT: " + titel + " von ");
         text = text.replace(/\n/g, '<br>');
         $("#createmain").prepend(text);
         $("#answerdiv").hide();
@@ -77,6 +77,11 @@ function editQuestion(){
             success: function (data) {
             }
         });
+        $('#questiondiv').hide();
+        $("#createhead").prepend("ANTWORT: " + titel + " von ");
+        text = text.replace(/\n/g, '<br>');
+        $("#createmain").prepend(text);
+        $('#editwork').show();
     } else {
         $("#errordiv").show();
     }
@@ -106,6 +111,11 @@ function editAnswer(){
             success: function (data) {
             }
         });
+        $('#answerdiv').hide();
+        $("#createhead").prepend("FRAGE: " + titel + " von ");
+        text = text.replace(/\n/g, '<br>');
+        $("#createmain").prepend(text);
+        $('#editwork').show();
     } else {
         $("#errordiv").show();
     }
