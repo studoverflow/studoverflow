@@ -14,8 +14,9 @@
                     <img class="text-center avatar" src="/img/upload/avatar/{{ $avatar }}">
                 </div>
                 <div class="col-sm-11 col-md-11 column messagemain">
+                @if($edit != null) Frage wurde editiert am {{ $edit }} </br></br>@endif 
                 <?php
-                 echo nl2br($text);
+                    echo nl2br($text);
                 ?>
                 </div>
             </div>
@@ -70,8 +71,10 @@
                             <img class="text-center avatar" src="/img/upload/avatar/{{ $usersanswer->avatar }}">
                         </div>
                         <div class="col-sm-1 col-md-11 column messagemain">
+                            @if($out->edit != null) Frage wurde editiert am {{ $out->edit }} </br></br>@endif
                             <?php
-                            echo nl2br($out->text);                            ?>
+                            echo nl2br($out->text);
+                            ?>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-12 column messagebot marginbottom15">
@@ -114,7 +117,7 @@
                             @endif
                         @endif
                         @if(Auth::user()->rights == 'Admin' || Auth::user()->rights == 'Moderator')
-                            <button onclick="window.location.href='/deleteQuestion={{$question_id}}'" class="btnquestions marginleft10"><i class="fa fa-trash"></i> Entfernen</button> 
+                            <button onclick="window.location.href='/deleteAnswer={{$out->id}}'" class="btnquestions marginleft10"><i class="fa fa-trash"></i> Entfernen</button> 
                         @endif
                     @else
                         <!-- View für Gäste -->

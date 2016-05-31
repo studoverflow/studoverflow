@@ -160,3 +160,45 @@ Route::post('/question={qid}',array('before'=>'csrf','uses'=>function(){
        	return 1;
     }
 }));
+
+// EDIT
+
+Route::post('/editQuestion',array('before'=>'csrf','uses'=>function(){
+
+    if(Request::ajax())
+    {
+        $qid = $_POST['qid'];
+        $titel = $_POST['titel'];
+        $text = $_POST['text'];
+        $time = date("H:i");
+        $date = date("Y-m-d");
+        $stamp = $date . " " . $time;
+            
+                DB::table('questions')
+                    ->where('id', $qid)
+                    ->update(['titel' => $titel, 'text' => $text, 'edit' => $stamp]);
+        
+
+        return 1;
+    }
+}));
+
+Route::post('/editAnswer',array('before'=>'csrf','uses'=>function(){
+
+    if(Request::ajax())
+    {
+        $aid = $_POST['aid'];
+        $titel = $_POST['titel'];
+        $text = $_POST['text'];
+        $time = date("H:i");
+        $date = date("Y-m-d");
+        $stamp = $date . " " . $time;
+            
+                DB::table('answers')
+                    ->where('id', $aid)
+                    ->update(['titel' => $titel, 'text' => $text, 'edit' => $stamp]);
+        
+
+        return 1;
+    }
+}));

@@ -69,7 +69,7 @@ class QuestionController extends Controller {
                 'answer_id' => $answer->id,
                 'avatar' => $user->avatar );
 
-            return view('editQuestion')->with($data);
+            return view('editAnswer')->with($data);
         }
     }
 

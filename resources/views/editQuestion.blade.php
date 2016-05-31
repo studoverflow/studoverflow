@@ -17,6 +17,7 @@
                         <div class="col-sm-offset-2 col-md-offset-2 col-sm-8 col-md-8">                            
                             <textarea class="form-control" id="text" name="text" cols="50" rows="10" id="message">{{ $text }}</textarea>
                             <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+                            <input type="hidden" name="qid" id="qid" value="{{$question_id}}">
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-12 margintop15">

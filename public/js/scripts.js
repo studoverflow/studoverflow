@@ -51,6 +51,67 @@ function answer(){
 }
 
 /**********
+ * EDIT *
+ **********/
+function editQuestion(){
+
+    var qid = document.getElementById('qid').value;
+    var titel = $('#titel').val();
+    var text = $('#text').val();
+    console.log(text);
+    $.ajaxSetup({
+         headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+         }
+     });
+
+    if(text != "" && titel != ""){
+        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+        var text = document.getElementById('text').value;
+        console.log(titel);
+        $.ajax({
+            url: '/editQuestion',
+            type: 'POST',
+            data: {_token: CSRF_TOKEN, qid: qid, titel: titel, text: text},
+            dataType: 'JSON',
+            success: function (data) {
+            }
+        });
+    } else {
+        $("#errordiv").show();
+    }
+}
+
+function editAnswer(){
+
+    var aid = document.getElementById('aid').value;
+    var titel = $('#titel').val();
+    var text = $('#text').val();
+    console.log(text);
+    $.ajaxSetup({
+         headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+         }
+     });
+
+    if(text != "" && titel != ""){
+        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+        var text = document.getElementById('text').value;
+        console.log(titel);
+        $.ajax({
+            url: '/editAnswer',
+            type: 'POST',
+            data: {_token: CSRF_TOKEN, aid: aid, titel: titel, text: text},
+            dataType: 'JSON',
+            success: function (data) {
+            }
+        });
+    } else {
+        $("#errordiv").show();
+    }
+}
+
+/**********
  * goBack *
  **********/
 function goBack() {
