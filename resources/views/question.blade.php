@@ -23,19 +23,23 @@
                 @if(!Auth::guest())
                     @if(Auth::user()->rights == 'User')
                         @if(Auth::user()->id == $user_id)
-                            <button onclick="window.location.href='/deleteQuestion={{$question_id}}'" class="btnquestions marginleft10"><i class="fa fa-trash"></i> Frage löschen</button> 
+                            <button onclick="window.location.href='/deleteQuestion={{$question_id}}'" class="btnquestions marginleft10"><i class="fa fa-trash"></i> Löschen</button> 
                         @endif
                     @endif
-                        <button onclick="location.href='/answer={{$question_id}}'" class="btnquestions marginleft10"><i class="fa fa-arrow-right" aria-hidden="true"></i> Etwas zu dieser Frage schreiben</button>
+                    @if(Auth::user()->id == $user_id)
+                        <button onclick="window.location.href='/editQuestion={{$question_id}}'" class="btnquestions marginleft10"><i class="fa fa-pencil-square-o"></i> Editieren</button>
+                    @endif
+                    @if(Auth::user()->rights == 'Admin' || Auth::user()->rights == 'Moderator')
+                         <button onclick="window.location.href='/deleteQuestion={{$question_id}}'" class="btnquestions marginleft10"><i class="fa fa-trash"></i> Entfernen</button> 
+                    @endif
+                    <button onclick="location.href='/answer={{$question_id}}'" class="btnquestions marginleft10"><i class="fa fa-arrow-right" aria-hidden="true"></i> Etwas zu dieser Frage schreiben</button>
                     @if(Auth::user()->id != $user_id)
                         <button onclick="location.href='/reportQuestion={{$question_id}}'" class="btnquestions marginleft10"><i class="fa fa-btn fa-bolt" aria-hidden="true"></i> Frage melden</button>
                     @endif
                 @else
                     <button onclick="location.href='/register'" class="btnquestions marginleft10 backbtn"><i class="fa fa-arrow-right" aria-hidden="true"></i> Jetzt Mitglied werden und Antworten!</button>
                 @endif
-                @if(Auth::user()->rights == 'Admin' || Auth::user()->rights == 'Moderator')
-                    <button onclick="window.location.href='/deleteQuestion={{$question_id}}'" class="btnquestions marginleft10"><i class="fa fa-trash"></i> Frage entfernen</button> 
-                @endif
+
             </div>
         </article>
     </article>
@@ -85,8 +89,9 @@
                                <button onclick="window.location.href='/reportAnswer={{$out->id}}'" class="btnquestions marginleft10"><i class="fa fa-bolt"></i> Antwort melden</button> 
                             @else
                                 @if(Auth::user()->rights == 'User')
-                                    <button onclick="window.location.href='/deleteAnswer={{$out->id}}'" class="btnquestions marginleft10"><i class="fa fa-trash"></i> Antwort löschen</button> 
+                                    <button onclick="window.location.href='/editAnswer={{$out->id}}'" class="btnquestions marginleft10"><i class="fa fa-pencil-square-o"></i> Editieren</button>
                                 @endif
+                                <button onclick="window.location.href='/editAnswer={{$out->id}}'" class="btnquestions marginleft10"><i class="fa fa-pencil-square-o"></i> Editieren</button> 
                             @endif
                         @else
                         <!-- View für Andere User -->
@@ -101,14 +106,15 @@
                                 @if(!Auth::guest())
                                     @if(Auth::user()->id == $out->user_id)
                                         @if(Auth::user()->rights == 'User')
-                                            <button onclick="window.location.href='/deleteAnswer={{$out->id}}'" class="btnquestions marginleft10"><i class="fa fa-trash"></i> Antwort löschen</button>
+                                            <button onclick="window.location.href='/deleteAnswer={{$out->id}}'" class="btnquestions marginleft10"><i class="fa fa-trash"></i> Löschen</button>
                                         @endif
+                                        <button onclick="window.location.href='/editAnswer={{$out->id}}'" class="btnquestions marginleft10"><i class="fa fa-pencil-square-o"></i> Editieren</button> 
                                     @endif
                                 @endif
                             @endif
                         @endif
                         @if(Auth::user()->rights == 'Admin' || Auth::user()->rights == 'Moderator')
-                            <button onclick="window.location.href='/deleteQuestion={{$question_id}}'" class="btnquestions marginleft10"><i class="fa fa-trash"></i> Antwort entfernen</button> 
+                            <button onclick="window.location.href='/deleteQuestion={{$question_id}}'" class="btnquestions marginleft10"><i class="fa fa-trash"></i> Entfernen</button> 
                         @endif
                     @else
                         <!-- View für Gäste -->
@@ -122,7 +128,6 @@
                             @endif
                         @endif
                     @endif
-
                     </div>
                 </article>
             </article>
