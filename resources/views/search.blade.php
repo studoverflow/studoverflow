@@ -15,6 +15,8 @@
                     <input type="button" onclick="search()" value="Search..." class="btn btn-primary">
                 </form>                    
             </div>
+        </div>
+        <div class="row">
             <div id="searchResults"></div>
         </div>
     </div>

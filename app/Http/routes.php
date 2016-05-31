@@ -9,10 +9,10 @@ Route::get('/home', 'IndexController@goHome');
 Route::post('/search', array('before'=>'csrf','uses'=>function(){
 
     if(Request::ajax() != null){
-        $resultset = DB::table('answers')
-                ->where('text', 'like', '%'.$_POST['suchbegriff'].'%')
-                ->orWhere('titel', 'like', '%'.$_POST['suchbegriff'].'%')
-                ->get();
+        $resultset = DB::table('questions')
+                    ->where('text', 'like', '%'.$_POST['suchbegriff'].'%')
+                    ->orWhere('titel', 'like', '%'.$_POST['suchbegriff'].'%')
+                    ->get();
 
         return json_encode($resultset);
     }

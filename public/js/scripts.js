@@ -244,9 +244,18 @@ function search(){
         data: {_token: CSRF_TOKEN, suchbegriff: suchbegriff},
         dataType: 'JSON',
         success:function(data) {
-            console.log(data);
-            alert(data);
 
+            console.log('Jetzt gehts los:');
+            console.log(data);
+
+            for (var i = 0; i < data.length; i++){
+                console.log(i + '. Element')
+                var tmp = data[i];
+                $( "#searchResults" ).append( "<p>" +  tmp.user_id + " " +  tmp.titel + " " +  tmp.text + " " +  tmp.id + " " +  tmp.edit + " " +  tmp.date + "</p>");
+            }
+            
+            
+            /*
             var test = JSON.stringify(data).split('{');
             for (var i = 0; i < test.length; i++){
                 console.log(test[i]);
@@ -256,6 +265,7 @@ function search(){
             for (var i = 1; i < elements.length; i++){
                 console.log(elements[i]);
             }
+            */
        }
     });
 }
