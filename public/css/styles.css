@@ -582,6 +582,25 @@ footer a:visited {
 }
 
 /*
+ * Edit Answer/Question
+ */
+
+#editArtikel {
+    background: rgba(84, 145, 189, 0.8);
+    color: #111111;
+}
+
+#editArtikel a:link,
+#editArtikel a:visited,
+#editArtikel a:active {
+    color: #ffffff;
+}
+
+#editArtikel a:hover {
+    color: #337ab7;
+}
+
+/*
  * Error
  */
 
