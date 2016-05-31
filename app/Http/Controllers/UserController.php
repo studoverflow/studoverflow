@@ -12,6 +12,53 @@ use DB;
 
 class UserController extends Controller {
 
+    public function rights(Request $request){
+
+        $user = User::find($request->Input('userid'));
+        $user->rights = $request->rights;
+        $user->save();
+
+        $top = DB::select('select * from topanswers where user_id = ?', [$user->id]);
+
+        if($top != null){
+            foreach ($top as $key) {
+
+                    $data = array(
+                        'user_id' => $user->id,
+                        'name' => $user->name,
+                        'email' => $user->email,
+                        'page' => $user->page,
+                        'college' => $user->college,
+                        'course' => $user->course,
+                        'forename' => $user->firstname,
+                        'surname' => $user->lastname,
+                        'top' => $key->anzahl,
+                        'rights' => $user->rights,
+                        'rank' => $user->rank,
+                        'avatar' => $user->avatar );
+                        return view('profile')->with($data);
+                }
+        } else {
+            
+            $data = array(
+                'user_id' => $user->id,
+                'name' => $user->name,
+                'email' => $user->email,
+                'page' => $user->page,
+                'college' => $user->college,
+                'course' => $user->course,
+                'forename' => $user->firstname,
+                'surname' => $user->lastname,
+                'top' => '0',
+                'rights' => $user->rights,
+                'rank' => $user->rank,
+                'avatar' => $user->avatar );
+                return view('profile')->with($data);
+        }
+
+    }
+
+
     // EDIT PROFILE
 
     public function editProfile(){
@@ -84,6 +131,7 @@ class UserController extends Controller {
             foreach ($top as $key) {
                     $user = User::find(Auth::user()->id);
                     $data = array(
+                        'user_id' => $user->id,
                         'name' => $user->name,
                         'email' => $user->email,
                         'page' => $user->page,
@@ -93,12 +141,14 @@ class UserController extends Controller {
                         'surname' => $user->lastname,
                         'top' => $key->anzahl,
                         'rank' => $user->rank,
+                        'rights' => $user->rights,
                         'avatar' => $user->avatar );
                         return view('profile')->with($data);
                 }
         } else {
             $user = User::find(Auth::user()->id);
             $data = array(
+                'user_id' => $user->id,
                 'name' => $user->name,
                 'email' => $user->email,
                 'page' => $user->page,
@@ -108,6 +158,7 @@ class UserController extends Controller {
                 'surname' => $user->lastname,
                 'top' => '0',
                 'rank' => $user->rank,
+                'rights' => $user->rights,
                 'avatar' => $user->avatar );
                 return view('profile')->with($data);
         }
@@ -121,6 +172,7 @@ class UserController extends Controller {
             foreach ($top as $key) {
                     $user = User::find($id);
                     $data = array(
+                        'user_id' => $user->id,
                         'name' => $user->name,
                         'email' => $user->email,
                         'page' => $user->page,
@@ -129,6 +181,7 @@ class UserController extends Controller {
                         'forename' => $user->firstname,
                         'surname' => $user->lastname,
                         'top' => $key->anzahl,
+                        'rights' => $user->rights,
                         'rank' => $user->rank,
                         'avatar' => $user->avatar );
                         return view('profile')->with($data);
@@ -136,6 +189,7 @@ class UserController extends Controller {
         } else {
             $user = User::find($id);
             $data = array(
+                'user_id' => $user->id,
                 'name' => $user->name,
                 'email' => $user->email,
                 'page' => $user->page,
@@ -144,6 +198,7 @@ class UserController extends Controller {
                 'forename' => $user->firstname,
                 'surname' => $user->lastname,
                 'top' => '0',
+                'rights' => $user->rights,
                 'rank' => $user->rank,
                 'avatar' => $user->avatar );
                 return view('profile')->with($data);

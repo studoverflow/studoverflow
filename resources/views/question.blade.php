@@ -21,8 +21,10 @@
             </div>
             <div class="col-sm-12 col-md-12 column questionbot marginbottom20">
                 @if(!Auth::guest())
-                    @if(Auth::user()->id == $user_id)
-                        <button onclick="window.location.href='/deleteQuestion={{$question_id}}'" class="btnquestions marginleft10"><i class="fa fa-trash"></i> Frage löschen</button> 
+                    @if(Auth::user()->rights == 'User')
+                        @if(Auth::user()->id == $user_id)
+                            <button onclick="window.location.href='/deleteQuestion={{$question_id}}'" class="btnquestions marginleft10"><i class="fa fa-trash"></i> Frage löschen</button> 
+                        @endif
                     @endif
                         <button onclick="location.href='/answer={{$question_id}}'" class="btnquestions marginleft10"><i class="fa fa-arrow-right" aria-hidden="true"></i> Etwas zu dieser Frage schreiben</button>
                     @if(Auth::user()->id != $user_id)
@@ -30,6 +32,9 @@
                     @endif
                 @else
                     <button onclick="location.href='/register'" class="btnquestions marginleft10 backbtn"><i class="fa fa-arrow-right" aria-hidden="true"></i> Jetzt Mitglied werden und Antworten!</button>
+                @endif
+                @if(Auth::user()->rights == 'Admin' || Auth::user()->rights == 'Moderator')
+                    <button onclick="window.location.href='/deleteQuestion={{$question_id}}'" class="btnquestions marginleft10"><i class="fa fa-trash"></i> Frage entfernen</button> 
                 @endif
             </div>
         </article>
@@ -79,7 +84,9 @@
                                <input type="hidden" value="$out->id" name="aid">
                                <button onclick="window.location.href='/reportAnswer={{$out->id}}'" class="btnquestions marginleft10"><i class="fa fa-bolt"></i> Antwort melden</button> 
                             @else
-                               <button onclick="window.location.href='/deleteAnswer={{$out->id}}'" class="btnquestions marginleft10"><i class="fa fa-trash"></i> Antwort löschen</button> 
+                                @if(Auth::user()->rights == 'User')
+                                    <button onclick="window.location.href='/deleteAnswer={{$out->id}}'" class="btnquestions marginleft10"><i class="fa fa-trash"></i> Antwort löschen</button> 
+                                @endif
                             @endif
                         @else
                         <!-- View für Andere User -->
@@ -93,10 +100,15 @@
                                 @endif
                                 @if(!Auth::guest())
                                     @if(Auth::user()->id == $out->user_id)
-                                        <button onclick="window.location.href='/deleteAnswer={{$out->id}}'" class="btnquestions marginleft10"><i class="fa fa-trash"></i> Antwort löschen</button>      
+                                        @if(Auth::user()->rights == 'User')
+                                            <button onclick="window.location.href='/deleteAnswer={{$out->id}}'" class="btnquestions marginleft10"><i class="fa fa-trash"></i> Antwort löschen</button>
+                                        @endif
                                     @endif
                                 @endif
                             @endif
+                        @endif
+                        @if(Auth::user()->rights == 'Admin' || Auth::user()->rights == 'Moderator')
+                            <button onclick="window.location.href='/deleteQuestion={{$question_id}}'" class="btnquestions marginleft10"><i class="fa fa-trash"></i> Antwort entfernen</button> 
                         @endif
                     @else
                         <!-- View für Gäste -->

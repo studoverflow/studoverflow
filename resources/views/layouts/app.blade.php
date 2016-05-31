@@ -9,7 +9,6 @@
             document.body.style.backgroundRepeat = "repeat";
         }
     </script>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,6 +18,7 @@
     <meta name="author" content="Stephen Beck, Markus Jäckle">
     <meta name="description" content="Studoverflow ist ein Portal zum Informationsaustausch von Studenten">
     <meta name="email" content="info@studoverflow.de">
+    <meta name="csrf-token" content="{{ csrf_token() }}"/>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
     <!-- Fonts -->
@@ -31,17 +31,13 @@
     <!--
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         -->
-    {{--
-    <link href="{{ elixir('css/style.css') }}" rel="stylesheet">--}}
+    {{--<link href="{{ elixir('css/style.css') }}" rel="stylesheet">--}}
 
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/css/font-awesome.min.css" />
     <link rel="stylesheet" href="/css/animate.min.css" />
     <link rel="stylesheet" href="/css/styles.css" />
-
-    <meta name="csrf-token" content="{{ csrf_token() }}"/>
 </head>
-
 <body id="app-layout">
     <header class="scaleheader test">
         <nav class="navbar navbar-trans navbar-fixed-top navborderbot" role="navigation">
@@ -59,8 +55,6 @@
                 </div>
                 <div class="navbar-collapse collapse" id="navbar-collapsible">
                     <ul class="nav navbar-nav navbar-left">
-
-
                         <li {{{ (Request::is( 'overview') ? 'class=active' : '') }}}>
                             <a href="{{ url('/overview') }}">Übersicht</a>
                         </li>
@@ -83,25 +77,11 @@
                                 </li>
                             </ul>
                         </li>
-
-                        <!-- ALT -->
-
-<!--                     <li {{{ (Request::is( 'new') ? 'class=active' : '') }}}>
-                            <a href="{{ url('/new') }}">Neue Fragen</a>
-                        </li>
-                        <li {{{ (Request::is( 'popular') ? 'class=active' : '') }}}>
-                            <a href="{{ url('/popular') }}">Beliebte Fragen</a>
-                        </li>
-                        <li {{{ (Request::is( 'unanswered') ? 'class=active' : '') }}}>
-                            <a href="{{ url('/unanswered') }}">Unbeantwortete Fragen</a>
-                        </li> -->
                         <li {{{ (Request::is( 'search') ? 'class=active' : '') }}}>
                             <a href="{{ url('/search') }}">
                                 <span class="fa fa-btn fa-search" aria-hidden="true"></span> Suche
                             </a>
                         </li>
-
-
                     </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
@@ -158,7 +138,6 @@
     <script type="text/javascript">
         ChangeIt();
     </script>
-
     <footer class="container-fluid navbar-trans navbar-fixed-bottom">
         <div class="container margintop15">
             <div class="row">
@@ -192,5 +171,4 @@
     <script src="{{ elixir('js/app.js') }}"></script>
     --}}
 </body>
-
 </html>

@@ -53,11 +53,11 @@
     <article class="container" id="showanswer" style="display: none;">
         <article class="row">
             <div class="col-sm-12 col-md-12 column questiontop" id="createhead">
-                
+                {{Auth::user()->name}} am {{date("Y-m-d")}}
             </div>
             <div class="col-sm-12 col-md-12 column messagemain">
                 <div class="col-sm-1 col-md-1 column messageimg">
-                    <img class="text-center avatar" src="/img/upload/avatar/{{ $avatar }}">
+                    <img class="text-center avatar" src="/img/upload/avatar/{{ Auth::user()->avatar }}">
                 </div>
                 <div class="col-sm-11 col-md-11 column messagemain" id="createmain">
                 </div>

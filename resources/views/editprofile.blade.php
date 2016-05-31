@@ -62,12 +62,10 @@
                     </div>
                     <div class="col-sm-6 col-md-6">
                         <input class="btn btn-primary" type="submit" value="Änderungen bestätigen">
-
                     </div>
                     <div class="col-sm-6 col-md-6 column backbtn">
                         <button onclick="goBack()" class="btnquestions marginleft10"><i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i> Zurück</button>
                     </div>
-
                 </form>
             </div>
         </article>

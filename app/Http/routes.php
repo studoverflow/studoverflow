@@ -129,6 +129,7 @@ Route::post('/editprofile', 'UserController@update_profile');
 Route::get('/editprofile', 'UserController@editProfile');
 Route::get('/profile', 'UserController@showOwnProfile');
 Route::get('/profile={id}', 'UserController@showProfile');
+Route::post('/profile', 'UserController@rights');
 
 // TOP ANSWER
 

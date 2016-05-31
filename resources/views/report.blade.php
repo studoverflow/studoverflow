@@ -29,8 +29,6 @@
             </article>
         </article>
     </article>
-
-
     <div class="container" id="reportdiv">
         <article class="row">
             <article class="col-sm-12 col-md-12">
@@ -46,9 +44,5 @@
             </article>
         </article>
     </div>
-         
-
-
-
 </section>
 @endsection

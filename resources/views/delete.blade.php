@@ -4,7 +4,7 @@
     <article class="container">
         <article class="row">
             <div class="col-sm-12 col-md-12 column questiontop">
-                <h3>Möchtest du diesen Beitrag von dir wirklich Löschen?</h3>
+                <h3>Möchtest du diesen Beitrag wirklich Löschen?</h3>
                 LÖSCHEN von {{$titel}} geschrieben am {{$date}}
             </div>
             <div class="col-sm-12 col-md-12 column messagemain">
