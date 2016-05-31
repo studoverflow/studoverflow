@@ -47,8 +47,31 @@ class QuestionController extends Controller {
 
     }
 
-    public function showEditAnswer(){
-        //
+    public function showEditAnswer($id){
+        $answer = Answer::find($id);
+        $user = User::find($answer->user_id);
+
+        if(Auth::guest()){
+            return view('welcome');
+        }
+        if($user->id != Auth::user()->id){
+            return view('welcome');
+        }
+        if($user->id == Auth::user()->id){
+
+            $data = array(
+                'name' => $user->name,
+                'user_id' => $user->id,
+                'titel' => $answer->titel,
+                'text' => $answer->text,
+                'date' => $answer->date,
+                'edit' => $answer->edit,
+                'answer_id' => $answer->id,
+                'question_id' => $answer->question_id,
+                'avatar' => $user->avatar );
+
+            return view('editAnswer')->with($data);
+        }
     }
 
     // ANSWER

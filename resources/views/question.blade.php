@@ -14,8 +14,9 @@
                     <img class="text-center avatar" src="/img/upload/avatar/{{ $avatar }}">
                 </div>
                 <div class="col-sm-11 col-md-11 column messagemain">
+                @if($edit != null) Frage wurde editiert am {{ $edit }} </br></br>@endif 
                 <?php
-                 echo nl2br($text);
+                    echo nl2br($text);
                 ?>
                 </div>
             </div>
@@ -23,19 +24,23 @@
                 @if(!Auth::guest())
                     @if(Auth::user()->rights == 'User')
                         @if(Auth::user()->id == $user_id)
-                            <button onclick="window.location.href='/deleteQuestion={{$question_id}}'" class="btnquestions marginleft10"><i class="fa fa-trash"></i> Frage löschen</button> 
+                            <button onclick="window.location.href='/deleteQuestion={{$question_id}}'" class="btnquestions marginleft10"><i class="fa fa-trash"></i> Löschen</button> 
                         @endif
                     @endif
-                        <button onclick="location.href='/answer={{$question_id}}'" class="btnquestions marginleft10"><i class="fa fa-arrow-right" aria-hidden="true"></i> Etwas zu dieser Frage schreiben</button>
+                    @if(Auth::user()->id == $user_id)
+                        <button onclick="window.location.href='/editQuestion={{$question_id}}'" class="btnquestions marginleft10"><i class="fa fa-pencil-square-o"></i> Editieren</button>
+                    @endif
+                    @if(Auth::user()->rights == 'Admin' || Auth::user()->rights == 'Moderator')
+                         <button onclick="window.location.href='/deleteQuestion={{$question_id}}'" class="btnquestions marginleft10"><i class="fa fa-trash"></i> Entfernen</button> 
+                    @endif
+                    <button onclick="location.href='/answer={{$question_id}}'" class="btnquestions marginleft10"><i class="fa fa-arrow-right" aria-hidden="true"></i> Etwas zu dieser Frage schreiben</button>
                     @if(Auth::user()->id != $user_id)
                         <button onclick="location.href='/reportQuestion={{$question_id}}'" class="btnquestions marginleft10"><i class="fa fa-btn fa-bolt" aria-hidden="true"></i> Frage melden</button>
                     @endif
                 @else
                     <button onclick="location.href='/register'" class="btnquestions marginleft10 backbtn"><i class="fa fa-arrow-right" aria-hidden="true"></i> Jetzt Mitglied werden und Antworten!</button>
                 @endif
-                @if(Auth::user()->rights == 'Admin' || Auth::user()->rights == 'Moderator')
-                    <button onclick="window.location.href='/deleteQuestion={{$question_id}}'" class="btnquestions marginleft10"><i class="fa fa-trash"></i> Frage entfernen</button> 
-                @endif
+
             </div>
         </article>
     </article>
@@ -66,8 +71,10 @@
                             <img class="text-center avatar" src="/img/upload/avatar/{{ $usersanswer->avatar }}">
                         </div>
                         <div class="col-sm-1 col-md-11 column messagemain">
+                            @if($out->edit != null) Frage wurde editiert am {{ $out->edit }} </br></br>@endif
                             <?php
-                            echo nl2br($out->text);                            ?>
+                            echo nl2br($out->text);
+                            ?>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-12 column messagebot marginbottom15">
@@ -85,8 +92,9 @@
                                <button onclick="window.location.href='/reportAnswer={{$out->id}}'" class="btnquestions marginleft10"><i class="fa fa-bolt"></i> Antwort melden</button> 
                             @else
                                 @if(Auth::user()->rights == 'User')
-                                    <button onclick="window.location.href='/deleteAnswer={{$out->id}}'" class="btnquestions marginleft10"><i class="fa fa-trash"></i> Antwort löschen</button> 
+                                    <button onclick="window.location.href='/editAnswer={{$out->id}}'" class="btnquestions marginleft10"><i class="fa fa-pencil-square-o"></i> Editieren</button>
                                 @endif
+                                <button onclick="window.location.href='/editAnswer={{$out->id}}'" class="btnquestions marginleft10"><i class="fa fa-pencil-square-o"></i> Editieren</button> 
                             @endif
                         @else
                         <!-- View für Andere User -->
@@ -101,14 +109,15 @@
                                 @if(!Auth::guest())
                                     @if(Auth::user()->id == $out->user_id)
                                         @if(Auth::user()->rights == 'User')
-                                            <button onclick="window.location.href='/deleteAnswer={{$out->id}}'" class="btnquestions marginleft10"><i class="fa fa-trash"></i> Antwort löschen</button>
+                                            <button onclick="window.location.href='/deleteAnswer={{$out->id}}'" class="btnquestions marginleft10"><i class="fa fa-trash"></i> Löschen</button>
                                         @endif
+                                        <button onclick="window.location.href='/editAnswer={{$out->id}}'" class="btnquestions marginleft10"><i class="fa fa-pencil-square-o"></i> Editieren</button> 
                                     @endif
                                 @endif
                             @endif
                         @endif
                         @if(Auth::user()->rights == 'Admin' || Auth::user()->rights == 'Moderator')
-                            <button onclick="window.location.href='/deleteQuestion={{$question_id}}'" class="btnquestions marginleft10"><i class="fa fa-trash"></i> Antwort entfernen</button> 
+                            <button onclick="window.location.href='/deleteAnswer={{$out->id}}'" class="btnquestions marginleft10"><i class="fa fa-trash"></i> Entfernen</button> 
                         @endif
                     @else
                         <!-- View für Gäste -->
@@ -122,7 +131,6 @@
                             @endif
                         @endif
                     @endif
-
                     </div>
                 </article>
             </article>
