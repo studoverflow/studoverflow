@@ -78,7 +78,7 @@ function editQuestion(){
             }
         });
         $('#questiondiv').hide();
-        $("#createhead").prepend("ANTWORT: " + titel + " von ");
+        $("#createhead").prepend("FRAGE: " + titel + " von ");
         text = text.replace(/\n/g, '<br>');
         $("#createmain").prepend(text);
         $('#editwork').show();
@@ -112,7 +112,7 @@ function editAnswer(){
             }
         });
         $('#answerdiv').hide();
-        $("#createhead").prepend("FRAGE: " + titel + " von ");
+        $("#createhead").prepend("ANTWORT: " + titel + " von ");
         text = text.replace(/\n/g, '<br>');
         $("#createmain").prepend(text);
         $('#editwork').show();
