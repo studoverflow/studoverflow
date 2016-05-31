@@ -102,9 +102,11 @@ function checkForm(){
     valueCount = document.getElementById('username').value.length;
     
     if (valueCount >= 3 && valueCount <= 12){
-        document.getElementById('username').setAttribute('style','border: 2px solid #2eb82e; opacity: 0.75');
+        document.getElementById('username').setAttribute('style','border: 1px solid #2eb82e; opacity: 0.75');
+        document.getElementById('register').disabled = false;
     } else {
-        document.getElementById('username').setAttribute('style','border: 2px solid #ff3300; opacity: 0.75');
+        document.getElementById('username').setAttribute('style','border: 1px solid #ff3300; opacity: 0.75');
+        document.getElementById('register').disabled = true;
     }
 }
 
