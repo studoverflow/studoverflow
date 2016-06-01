@@ -247,7 +247,6 @@ function search(){
             document.getElementById('suchbegriff').setAttribute('style', 'form-control');
             document.getElementById('suchbegriff').setAttribute('placeholder', 'Suchbegriff hier eingeben...');
             if (null != data){
-                console.log(data);
                 /* reset page */
                 $("#searchResults").html("");            
                 /* print the searchresults */
@@ -279,7 +278,7 @@ function search(){
                             +'</div>');
                 }
             } else {
-                document.getElementById('suchbegriff').setAttribute('style', 'form-control; border: 1px solid #a94442; background-color: #a94442');
+                document.getElementById('suchbegriff').setAttribute('style', 'form-control; background-color: #a94442');
                 document.getElementById('suchbegriff').setAttribute('placeholder', 'Sie müssen einen Suchbegriff eingeben!!!');
             }
        }
