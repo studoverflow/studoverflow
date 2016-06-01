@@ -276,6 +276,15 @@ function search(){
     });
 }
 
+function searchEnter(){
+    var txt = document.getElementById("suchbegriff");
+    var button = document.getElementById("btnSearch");
+    txt.addEventListener("keypress", function(event) {
+        if (event.keyCode == 13)
+            button.click();
+    })
+}
+
 /*******
  * Top *
  *******/

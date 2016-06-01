@@ -72,7 +72,7 @@
         <article class="row">
             <div class="col-sm-12 col-md-12 column">
                 <h1 class="marginbottom20">Vielen Dank für deine Antwort</h1>
-                <img src="/img/thumbs.png">
+                <img src="/img/thumbs.png" style="height:50px">
             </div>
         </article>
     </article>
