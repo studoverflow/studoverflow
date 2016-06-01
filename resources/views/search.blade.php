@@ -19,8 +19,15 @@
             </div>
         </div>
         <div class="row">
-            <div id="searchResults" class="margintop20">
-                
+            <div class="margintop20">
+                <div class="col-sm-12 col-md-12 question">
+                    <div class="col-sm-6 col-md-6">Frage</div>
+                    <div class="col-sm-3 col-md-3">Autor</div>
+                    <div class="col-sm-3 col-md-3">Erstelldatum</div>
+                    </div>
+                <div id="searchResults">
+                    
+                </div>
             </div>
         </div>
     </div>
