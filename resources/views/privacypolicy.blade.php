@@ -2,7 +2,7 @@
 
 @section('content')
 <section id="privacypolicy" class="container-fluid">
-	<h1 class="text-center studoverflow">Datenschutz</h1>
+	<h1 class="text-center margintop80 marginbottom40">Datenschutz</h1>
 	<article class="container">
 		<article class="row">
 			<div class="col-sm-12 col-md-12">

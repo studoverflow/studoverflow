@@ -2,8 +2,8 @@
 
 @section('content')
 <section id="imprint" class="container-fluid">
-	<h1 class="text-center studoverflow">Impressum</h1>
-	<article class="container">
+	<h1 class="text-center margintop80">Impressum</h1>
+	<article class="container marginbottom40">
 		<article class="row">
 			<div class="col-sm-12 col-md-12">
 				<div class="text-center">
