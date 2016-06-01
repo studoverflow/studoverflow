@@ -17,7 +17,9 @@
             </div>
         </div>
         <div class="row">
-            <div id="searchResults"></div>
+            <div id="searchResults">
+
+            </div>
         </div>
     </div>
 </section>
