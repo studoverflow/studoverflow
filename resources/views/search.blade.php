@@ -12,13 +12,15 @@
                     <!-- Inputfeld-->
                     <input type="text" id="suchbegriff" class="form-control" placeholder="Suchbegriff hier eingeben...">
                     <!-- Send Button-->
-                    <input type="button" onclick="search()" value="Search..." class="btn btn-primary">
+                    <button type="button" onclick="search();" value="Search..." class="btn btn-black btnRadius messagebtn margintop20">
+                        <i class="fa fa-btn fa-search"></i> Suchen...
+                    </button>
                 </form>                    
             </div>
         </div>
         <div class="row">
-            <div id="searchResults">
-
+            <div id="searchResults" class="margintop20">
+                
             </div>
         </div>
     </div>

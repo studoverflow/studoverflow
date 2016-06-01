@@ -244,50 +244,44 @@ function search(){
         data: {_token: CSRF_TOKEN, suchbegriff: suchbegriff},
         dataType: 'JSON',
         success:function(data) {
-            console.log(data);
-            /* reset page */
-            $("#searchResults").html("");
-            
-            /* print the searchresults */
-            for (var i = 0; i < data.length; i++){
-                var resultSet = data[i];
-                $( "#searchResults" )
-                .append( '<div class="col-sm-12 col-md-12 question">' 
-                            +'<div class="col-sm-6 col-md-6">'
-                                +'<b>' 
-                                    +'<a href="/question=' + resultSet.id +'">'
-                                        +'<i class="fa fa-question-circle-o" aria-hidden="true"></i> '
-                                        + resultSet.titel
-                                    +'</a>'
-                                +'</b>'
-                            +'</div>'
-                            +'<div class="col-sm-3 col-md-3">'
-                                +'<b>'
-                                    +'<a class="beforeiconxs" href="/profile=' + resultSet.user_id + '">'
-                                        + '<i class="fa" aria-hidden="true">'
-                                        +'<img class="avatariconxs" src="/img/upload/avatar/' + resultSet.avatar + '"></i>' 
-                                        + resultSet.name 
-                                    + '</a>'
-                                +'</b>'
-                            +'</div>'
-                            +'<div class="col-sm-3 col-md-3">'
-                                +'<i class="fa fa-clock-o" aria-hidden="true"></i> '
-                                + resultSet.date
-                            +'</div>'
-                        +'</div>');
+            document.getElementById('suchbegriff').setAttribute('style', 'form-control');
+            document.getElementById('suchbegriff').setAttribute('placeholder', 'Suchbegriff hier eingeben...');
+            if (null != data){
+                console.log(data);
+                /* reset page */
+                $("#searchResults").html("");            
+                /* print the searchresults */
+                for (var i = 0; i < data.length; i++){
+                    var resultSet = data[i];
+                    $( "#searchResults" )
+                    .append( '<div class="col-sm-12 col-md-12 question">' 
+                                +'<div class="col-sm-6 col-md-6">'
+                                    +'<b>' 
+                                        +'<a href="/question=' + resultSet.id +'">'
+                                            +'<i class="fa fa-question-circle-o" aria-hidden="true"></i> '
+                                            + resultSet.titel
+                                        +'</a>'
+                                    +'</b>'
+                                +'</div>'
+                                +'<div class="col-sm-3 col-md-3">'
+                                    +'<b>'
+                                        +'<a class="beforeiconxs" href="/profile=' + resultSet.user_id + '">'
+                                            + '<i class="fa" aria-hidden="true">'
+                                            +'<img class="avatariconxs" src="/img/upload/avatar/' + resultSet.avatar + '"></i>' 
+                                            + resultSet.name 
+                                        + '</a>'
+                                    +'</b>'
+                                +'</div>'
+                                +'<div class="col-sm-3 col-md-3">'
+                                    +'<i class="fa fa-clock-o" aria-hidden="true"></i> '
+                                    + resultSet.date
+                                +'</div>'
+                            +'</div>');
+                }
+            } else {
+                document.getElementById('suchbegriff').setAttribute('style', 'form-control; border: 1px solid #a94442; background-color: #a94442');
+                document.getElementById('suchbegriff').setAttribute('placeholder', 'Sie müssen einen Suchbegriff eingeben!!!');
             }
-
-            /*
-            var test = JSON.stringify(data).split('{');
-            for (var i = 0; i < test.length; i++){
-                console.log(test[i]);
-            }
-            
-            var elements = test[1].split(',');
-            for (var i = 1; i < elements.length; i++){
-                console.log(elements[i]);
-            }
-            */
        }
     });
 }

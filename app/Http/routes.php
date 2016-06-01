@@ -8,22 +8,18 @@ Route::get('/home', 'IndexController@goHome');
 
 Route::post('/search', array('before'=>'csrf','uses'=>function(){
 
-    if(Request::ajax() != null){
-        /*
-        $resultset = DB::table('questions')
-                    ->join('users', 'users.id', '=', 'questions.user_id')
-                    ->where('text', 'like', '%'.$_POST['suchbegriff'].'%')
-                    ->orWhere('titel', 'like', '%'.$_POST['suchbegriff'].'%')
-                    ->get();
-        */
+    if(null != $_POST['suchbegriff']){
+        if(Request::ajax() != null){
+            $resultset = DB::table('users')
+                        ->join('questions', 'users.id', '=', 'questions.user_id')
+                        ->where('text', 'like', '%'.$_POST['suchbegriff'].'%')
+                        ->orWhere('titel', 'like', '%'.$_POST['suchbegriff'].'%')
+                        ->get();
 
-        $resultset = DB::table('users')
-                    ->join('questions', 'users.id', '=', 'questions.user_id')
-                    ->where('text', 'like', '%'.$_POST['suchbegriff'].'%')
-                    ->orWhere('titel', 'like', '%'.$_POST['suchbegriff'].'%')
-                    ->get();
-
-        return json_encode($resultset);
+            return json_encode($resultset);
+        }
+    } else {
+        return json_encode(null);
     }
 }));
 

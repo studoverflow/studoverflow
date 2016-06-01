@@ -747,6 +747,7 @@ footer a:visited {
 
 .messagebtn:hover{
     color: #337ab7;
+    border-color: #337ab7;
 }
 
 .messagemain {
