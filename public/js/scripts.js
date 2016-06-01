@@ -251,10 +251,26 @@ function search(){
             for (var i = 0; i < data.length; i++){
                 console.log(i + '. Element')
                 var tmp = data[i];
-                $( "#searchResults" ).append( "<p>" +  tmp.user_id + " " +  tmp.titel + " " +  tmp.text + " " +  tmp.id + " " +  tmp.edit + " " +  tmp.date + "</p>");
+                $( "#searchResults" )
+                .append( '<div class="col-sm-12 col-md-12 question">\"' 
+                        +'<div class="col-sm-6 col-md-6">'
+                        +'<b>' 
+                        +'<a href="/question=' + tmp.id +'‚">'
+                        +'<i class="fa fa-question-circle-o" aria-hidden="true"></i>'
+                        +'</a>'
+                        +'</b>'
+                        +'</div>'
+                        +'<div class="col-sm-3 col-md-3">'
+                        +'<b>'
+                        +'<a class="beforeiconxs" href="/profile=2"><i class="fa" aria-hidden="true"><img class="avatariconxs" src="/img/upload/avatar/default.jpg"></i> Chief Master</a>'
+                        +'</b>'
+                        +'</div>'
+                        +'<div class="col-sm-3 col-md-3">'
+                        +'<i class="fa fa-clock-o" aria-hidden="true"></i>' + tmp.date
+                        +'</div>'
+                        +'</div>');
             }
-            
-            
+
             /*
             var test = JSON.stringify(data).split('{');
             for (var i = 0; i < test.length; i++){
