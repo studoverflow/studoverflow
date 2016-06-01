@@ -15,11 +15,9 @@
  * Answer *
  **********/
 function answer(){
-
     var qid = document.getElementById('qid').value;
     var titel = document.getElementById('titel').value;
     var text = document.getElementById('text').value;
-
     $.ajaxSetup({
          headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -54,7 +52,6 @@ function answer(){
  * EDIT *
  **********/
 function editQuestion(){
-
     var qid = document.getElementById('qid').value;
     var titel = $('#titel').val();
     var text = $('#text').val();
@@ -88,7 +85,6 @@ function editQuestion(){
 }
 
 function editAnswer(){
-
     var aid = document.getElementById('aid').value;
     var titel = $('#titel').val();
     var text = $('#text').val();
@@ -132,7 +128,6 @@ function goBack() {
  * Question *
  ************/
 function question(){
-
     $.ajaxSetup({
          headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -153,7 +148,6 @@ function question(){
             success: function (data) {
             }
         });
-
         $("#createhead").prepend("FRAGE: " + titel + " von ");
         text = text.replace(/\n/g, '<br>');
         $("#createmain").prepend(text);
@@ -163,7 +157,6 @@ function question(){
     } else {
         $("#errordiv").show();
     }
-
 }
 
 /*******************
@@ -198,13 +191,11 @@ function validateEmail(){
  * Report *
  **********/
 function report(id, value, user){
-
     $.ajaxSetup({
          headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
          }
      });
-    
     var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
     var text = document.getElementById('text').value;
     var dataString = value + "-" + id + " wurde von " + user  + " mit der Nachricht: " + text + " gemeldet."
@@ -253,7 +244,7 @@ function search(){
                 for (var i = 0; i < data.length; i++){
                     var resultSet = data[i];
                     $( "#searchResults" )
-                    .append( '<div class="col-sm-12 col-md-12 question">' 
+                    .append('<div class="col-sm-12 col-md-12 question">' 
                                 +'<div class="col-sm-6 col-md-6">'
                                     +'<b>' 
                                         +'<a href="/question=' + resultSet.id +'">'
@@ -289,17 +280,13 @@ function search(){
  * Top *
  *******/
 function top(qid){
-
     $.ajaxSetup({
          headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
          }
      });
-       
     var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-        
     var id = qid;
-
     $.ajax({
         url: '/question={{$question_id}}',
         type: 'POST',
