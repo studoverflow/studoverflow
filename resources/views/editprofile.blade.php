@@ -3,7 +3,7 @@
 @section('content')
 <section class="container-fluid" id="edit">
     <h1 class="text-center studoverflow margintop80">Profil anpassen</h1>
-    <article class="container">
+    <article class="container marginbottom80">
         <article class="row">
             <div class="col-sm-offset-10 col-sm-10 col-md-offset-2 col-md-10">
                 <form enctype="multipart/form-data" action="/editprofile" method="POST">
@@ -63,7 +63,7 @@
                     <div class="col-sm-6 col-md-6">
                         <input class="btn btn-primary" type="submit" value="Änderungen bestätigen">
                     </div>
-                    <div class="col-sm-6 col-md-6 column backbtn">
+                    <div class="col-sm-6 col-md-6 column backbtn margintop10">
                         <button onclick="goBack()" class="btnquestions marginleft10"><i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i> Zurück</button>
                     </div>
                 </form>
