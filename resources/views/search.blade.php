@@ -6,14 +6,15 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                    <!-- Hidden Token Element -->
+                <div class="input-group">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <!-- Inputfeld-->
                     <input type="text" id="suchbegriff" onkeyup="searchEnter()" class="form-control" placeholder="Suchbegriff hier eingeben...">
-                    <!-- Send Button-->
-                    <button type="button" id="btnSearch" onclick="search();" value="Search..." class="btn btn-black btnRadius messagebtn margintop20">
-                        <i class="fa fa-btn fa-search"></i> Suchen
+                    <span class="input-group-btn">
+                        <button id="btnSearch" onclick="search();" class="btn btn-default searchButton" type="button" value="Search...">
+                        <i class="fa fa-btn fa-search"></i>
                     </button>
+                  </span>
+                </div><!-- /input-group -->
             </div>
         </div>
         <div class="row">
