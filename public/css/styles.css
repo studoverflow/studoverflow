@@ -833,7 +833,11 @@ footer a:visited {
 }
 
 .profil {
-    font-size: 30px;
+    font-size: 16px;
+}
+
+div.profil > div.row {
+    border-bottom: 1px solid #dddddd;
 }
 
 .scroll-down {
@@ -1113,7 +1117,7 @@ footer a:visited {
 }
 
 .backbtn {
-    text-align: right;
+    text-align: left;
 }
 
 .reportsuccess {

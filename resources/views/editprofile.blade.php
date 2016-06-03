@@ -60,15 +60,17 @@
                         <label>Studiengang ändern</label>
                         <p><input class="form-control input-lg" type="text" name="course"></p>
                     </div>
-                    <div class="col-sm-6 col-md-6">
-                        <input class="btn btn-primary" type="submit" value="Änderungen bestätigen">
-                    </div>
-                    <div class="col-sm-6 col-md-6 column backbtn margintop10">
-                        <button onclick="goBack()" class="btnquestions marginleft10"><i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i> Zurück</button>
+                    <div class="col-sm-12 col-md-12">
+                        <input class="btn btn-primary" type="submit" value="Änderungen bestätigen" style="float:right">
                     </div>
                 </form>
             </div>
         </article>
     </article>
+    <div class="row">
+        <div class="col-sm-12 col-md-12 column margintop10">
+            <button onclick="goBack()" class="btnquestions backbtn marginleft10"><i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i> Zurück</button>
+        </div>
+    </div>
 </section>
 @endsection
