@@ -9,6 +9,17 @@
                 <div class="col-sm-12 col-md-12 questiontop">
                     <h1 class="text-center questionheaderfont">Übersicht</h1>
                 </div>
+                <div class="col-sm-12 col-md-12 question">
+                    <div class="col-sm-6 col-md-6">
+                        Titel:
+                    </div>
+                    <div class="col-sm-3 col-md-3">
+                        Autor:
+                    </div>
+                    <div class="col-sm-3 col-md-3">
+                        Erstelldatum:
+                    </div>
+               </div>
                 @foreach($questions as $question)
                     <?php $user = App\User::find($question->user_id); ?>
                     <div class="col-sm-12 col-md-12 question">
