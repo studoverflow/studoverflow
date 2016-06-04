@@ -21,7 +21,6 @@
                     </div>
                     <div class="col-sm-12 col-md-12 margintop15">
                         <div class="col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8">
-                            <button onclick="goBack()" class="btnquestions marginleft10"><i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i> Zurück</button>
                             <input type="button" onclick="question()" class="btn btn-black messagebtn marginbottom40" value="Frage stellen">
                             <div class="col-sm-12 col-md-12 margintop10 notvalid" id="errordiv">
                                 <h3 class="text-center">Ungültige Anfrage. Bitte zuerst alle Felder ausfüllen!</h3>
@@ -59,5 +58,10 @@
             </div>
         </article>
     </article>
+    <div class="row">
+        <div class="col-sm-12 col-md-12 column margintop10">
+            <button onclick="goBack()" class="btnquestions backbtn marginleft10"><i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i> Zurück</button>
+        </div>
+    </div>
 </section>
 @endsection
