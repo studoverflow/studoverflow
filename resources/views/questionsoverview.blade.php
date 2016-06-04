@@ -30,7 +30,14 @@
                             </a></b>
                         </div>
                         <div class="col-sm-3 col-md-3">
-                            <b><a class="beforeiconxs" href="/profile={{$user->id}}"><i class="fa" aria-hidden="true"><img class="avatariconxs" src="/img/upload/avatar/{{ $user->avatar }}"></i> {{$user->name}}</a></b>
+                            <b>
+                                <a class="beforeiconxs" href="/profile={{$user->id}}">
+                                    <i class="fa" aria-hidden="true">
+                                        <img class="avatariconxs" src="/img/upload/avatar/{{ $user->avatar }}">
+                                    </i>
+                                     {{$user->name}}
+                                 </a>
+                            </b>
                         </div>
                         <div class="col-sm-3 col-md-3">
                             <i class="fa fa-clock-o" aria-hidden="true"></i> {{$question->date}}

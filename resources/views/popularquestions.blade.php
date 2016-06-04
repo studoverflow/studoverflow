@@ -13,7 +13,6 @@ $answers = DB::select('select * from countanswer');
                     <h1 class="text-center questionheaderfont">Beliebte Fragen</h1>
                 </div>
                 <div class="col-sm-12 col-md-12 question">
-                <div class="col-sm-12 col-md-12 question">
                     <div class="col-sm-6 col-md-6">
                         Titel:
                     </div>

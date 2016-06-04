@@ -10,9 +10,15 @@
                     <h1 class="text-center questionheaderfont">Unbeantwortete Fragen</h1>
                 </div>
                 <div class="col-sm-12 col-md-12 question">
-                      <div class="col-sm-6 col-md-6">Titel:</div>
-                      <div class="col-sm-3 col-md-3">Autor:</div>
-                      <div class="col-sm-3 col-md-3">Erstelldatum:</div>
+                    <div class="col-sm-6 col-md-6">
+                        Titel:
+                    </div>
+                    <div class="col-sm-3 col-md-3">
+                        Autor:
+                    </div>
+                    <div class="col-sm-3 col-md-3">
+                        Erstelldatum:
+                    </div>
                </div>
                 @foreach($unanswered as $key)
                     <?php $question = App\Question::find($key->id); ?>

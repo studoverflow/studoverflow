@@ -10,7 +10,6 @@
                     <h1 class="text-center questionheaderfont">Neuste Fragen</h1>
                 </div>
                 <div class="col-sm-12 col-md-12 question">
-                <div class="col-sm-12 col-md-12 question">
                     <div class="col-sm-6 col-md-6">
                         Titel:
                     </div>
