@@ -19,7 +19,6 @@
         </form>
     @endif
     <article class="container margintop80">
-
             <div class="row">
                 <div class="col-md-3" align="center">
                     <img class="img-circle img-responsive" src="img/upload/avatar/{{$avatar}}">
