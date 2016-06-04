@@ -351,7 +351,7 @@ footer a:visited {
  */
 
 #imprint {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(84, 145, 189, 0.8);
     color: #111111;
 }
 
@@ -1135,7 +1135,7 @@ footer a:visited {
     background: rgba(255, 255, 255, 0.5);
     margin-top: 20px;
     padding-bottom: 20px; 
-    #padding-left: 20px; 
+    padding-left: 20px; 
     padding-right: 20px; 
     border-radius: 20px;
 }
@@ -1145,4 +1145,10 @@ footer a:visited {
     color:red; 
     background-color: #ffffff;
     border: 1px red solid;
+}
+
+.whiteboxdiv {
+    background: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border-radius: 20px;
 }
