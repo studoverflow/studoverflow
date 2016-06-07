@@ -19,7 +19,7 @@ body {
 @media (min-width:991px) {
 
     nav {
-        font-size: 
+        font-size: 14px;
     }
 
 }
@@ -70,6 +70,7 @@ a:visited {
 
 a:hover {
     text-decoration: none;
+    color: #337ab7 !important;
 }
 
 a.btn-black:hover {
@@ -80,6 +81,12 @@ a.btn-black:visited {
     color: #fff;
 }
 
+/*
+
+h1 {
+    margin: 0 0 20px 0;
+}
+*/
 img {
     height: auto;
     max-width: 100%;
@@ -684,12 +691,17 @@ footer a:visited {
     background-color: #5491bd !important;
 }
 
-.btnRadius {
-    border-radius: 5px !important;
+.buttonLeft {
+    float: left;
 }
 
-.btnRadius:hover {
-    color: #000;
+.buttonRight {
+    float: right;
+}
+
+.buttonLeft:hover, .buttonRight:hover {
+    color: #337ab7;
+    border-color: #337ab7;
 }
 
 .errorText {
@@ -741,14 +753,6 @@ footer a:visited {
     padding-bottom: 5px;
 }
 
-.messagebtn {
-    float: right;
-}
-
-.messagebtn:hover{
-    color: #337ab7;
-    border-color: #337ab7;
-}
 
 .messagemain {
     background-color: #fff;
@@ -873,8 +877,17 @@ div.profil > div.row {
     width: 35px;
 }
 
+.thumpsUpPic {
+    height: 50px;
+}
+
 .editsize {
     font-size: 20px;
+}
+
+.fa-paragraph:before {
+    font-weight: bold;
+    content: '§';
 }
 
 .question {

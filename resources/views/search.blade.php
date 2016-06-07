@@ -8,7 +8,7 @@
     </h1>
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
                 <div class="input-group">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <input type="text" id="suchbegriff" onkeyup="searchEnter()" class="form-control" placeholder="Suchbegriff hier eingeben...">

@@ -1,11 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="container-fluid margintop40" id="profile">
-    <h1 class="text-center studoverflow">Profil 
+<section class="container-fluid" id="profile">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 margintop40">
+            <button type="button" class="btn btn-black buttonLeft" onclick="goBack();">
+                <i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i>
+                 Zurück
+            </button>
+         </div>
+     </div>
+    <h1 class="text-center">Profil 
         @if (!Auth::guest() && Auth::user()->name == $name)
             <a href="/editprofile"" class="editsize" style="font-size: 12px">
-                <span class="fa fa-btn fa-pencil"></span>
+                <i class="fa fa-lock" aria-hidden="true"></i>
                 edit
             </a> 
         @endif
@@ -24,7 +32,7 @@
             <input type="submit" name="aendern" value="Ändern" class="btnquestions">
         </form>
     @endif
-    <article class="container margintop40">
+    <article class="container">
             <div class="row">
                 <div class="col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
                     <div class="row">
@@ -113,11 +121,6 @@
                     </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 col-md-12 column margintop10">
-                <button onclick="goBack()" class="btnquestions backbtn marginleft10"><i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i> Zurück</button>
             </div>
         </div>
     </article>

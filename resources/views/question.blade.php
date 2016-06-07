@@ -68,7 +68,7 @@
                         <div class="col-sm-1 col-md-1 column messageimg">
                             <img class="text-center avatar" src="/img/upload/avatar/{{ $usersanswer->avatar }}">
                         </div>
-                        <div class="col-sm-1 col-md-11 column messagemain">
+                        <div class="col-sm-11 col-md-11 column messagemain">
                             @if($out->edit != null) Frage wurde editiert am {{ $out->edit }} </br></br>@endif
                             <?php
                             echo nl2br($out->text);

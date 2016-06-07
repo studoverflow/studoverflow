@@ -51,8 +51,9 @@
                                     <h3>Deine Statistik</h3>
                                 </div>
                                 <div class="col-md-3 col-sm-3">
-                                    <button onclick="location.href='/create';" type="submit" class="btn btn-black btnRadius messagebtn">
-                                            <i class="fa fa-btn fa-pencil"></i> Frage verfassen
+                                    <button type="button" class="btn btn-black buttonRight" onclick="location.href='/create';">
+                                        <i class="fa fa-btn fa-pencil"></i>
+                                         Frage verfassen
                                     </button>
                                 </div>
                             </div>

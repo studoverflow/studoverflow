@@ -144,16 +144,20 @@
                 <div class="col-xs-12 col-md-12">
                     <div class="text-center scalefooter">
                         <a class="paddingright20" href="/imprint">
-                            <span class="fa fa-btn fa-pencil"></span> Impressum
+                            <span class="fa fa-btn fa-pencil"></span>
+                             Impressum
                         </a>
                         <a class="paddingright20" href="/privacy">
-                            <span class="fa fa-btn fa-key"></span> Datenschutz
+                            <span class="fa fa-btn fa-key"></span>
+                             Datenschutz
                         </a>
                         <a class="paddingright20" href="/legalnotice">
-                            <span class="fa fa-btn fa-info"></span> Rechtliche Hinweise
+                            <span class="fa fa-btn fa-info"></span>
+                             Rechtliche Hinweise
                         </a>
                         <a href="/feedback">
-                            <span class="fa fa-btn fa-comment-o"></span> Feedback
+                            <span class="fa fa-btn fa-comment-o"></span>
+                             Feedback
                         </a>
                     </div>
                 </div>

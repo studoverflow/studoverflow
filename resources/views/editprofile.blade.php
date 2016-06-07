@@ -1,9 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="container-fluid margintop40" id="edit">
-    <h1 class="text-center studoverflow">Profil anpassen</h1>
-    <article class="container margintop40">
+<section class="container-fluid" id="edit">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 margintop40">
+            <button type="button" class="btn btn-black buttonLeft" onclick="goBack();">
+                <i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i>
+                 Zurück
+            </button>
+         </div>
+     </div>
+    <h1 class="text-center">
+        Profil anpassen
+    </h1>
+    <article class="container">
         <article class="row">
             <div class="col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
                 <form enctype="multipart/form-data" action="/editprofile" method="POST">
@@ -81,20 +91,12 @@
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-12 margintop10">
-                            <input class="btn btn-primary" type="submit" value="Änderungen bestätigen" style="float:right">
+                            <input class="btn btn-black buttonRight marginbottom40" type="submit" value="bestätigen">
                         </div>
                     </div>
                 </form>
             </div>
         </article>
-        <div class="row">
-            <div class="col-sm-12 col-md-12 column">
-                <button onclick="goBack()" class="btnquestions backbtn marginleft10">
-                    <i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i> 
-                    Zurück
-                </button>
-            </div>
-        </div>
     </article>
 </section>
 @endsection
