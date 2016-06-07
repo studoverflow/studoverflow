@@ -61,7 +61,7 @@
                         </p>
                     </div>
                     <div class="col-sm-8 col-sm-offset-1 col-md-8 col-md-offset-1">
-                        <div class="row" style="border-bottom: 1px solid #dddddd; border-top: 1px solid #dddddd; padding: 10px 0">
+                        <div class="row borderBot borderTop borderPadding">
                             <div class="col-md-3">
                                 <label>Username:</label>
                             </div>
@@ -69,7 +69,7 @@
                                 <label>{{ $name }}</label>
                             </div>
                         </div>
-                        <div class="row" style="border-bottom: 1px solid #dddddd; padding: 10px 0">
+                        <div class="row borderBot borderPadding">
                             <div class="col-md-3">
                                 <label>Rang:</label>
                             </div>
@@ -78,7 +78,7 @@
                                 <label>{{ $rights }}</label>
                             </div>
                         </div>
-                        <div class="row" style="border-bottom: 1px solid #dddddd; padding: 10px 0">
+                        <div class="row borderBot borderPadding">
                             <div class="col-md-3">
                                 <label>Name:</label>
                             </div>
@@ -86,7 +86,7 @@
                                 <label>{{ $forename }}</label>
                             </div>
                         </div>
-                        <div class="row" style="border-bottom: 1px solid #dddddd; padding: 10px 0">
+                        <div class="row borderBot borderPadding">
                             <div class="col-md-3">
                                 <label>E-Mail:</label>
                             </div>
@@ -94,7 +94,7 @@
                                 <label>{{ $email }}</label>
                             </div>
                         </div>
-                        <div class="row" style="border-bottom: 1px solid #dddddd; padding: 10px 0">
+                        <div class="row borderBot borderPadding">
                             <div class="col-md-3">
                                 <label>Homepage:</label>
                             </div>
@@ -102,7 +102,7 @@
                                 <label>{{ $page }}</label>
                             </div>
                         </div>
-                        <div class="row" style="border-bottom: 1px solid #dddddd; padding: 10px 0">
+                        <div class="row borderBot borderPadding">
                             <div class="col-md-3">
                                 <label>Hochschule:</label>
                             </div>
@@ -110,7 +110,7 @@
                                 <label>{{ $college }}</label>
                             </div>
                         </div>
-                        <div class="row" style="border-bottom: 1px solid #dddddd; padding: 10px 0">
+                        <div class="row borderBot borderPadding">
                             <div class="col-md-3">
                                 <label>Studiengang:</label>
                             </div>

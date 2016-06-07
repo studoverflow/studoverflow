@@ -58,7 +58,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row paddingtop10" style="border-bottom: 1px solid #dddddd; border-top: 1px solid #dddddd">
+                        <div class="row borderBot borderTop borderPadding paddingtop10">
                            <div class="col-sm-12 col-md-12">
                                 <div class="col-sm-6 col-md-6">
                                     Username
@@ -68,7 +68,7 @@
                                 </div>
                            </div>
                         </div>
-                        <div class="row paddingtop10" style="border-bottom: 1px solid #dddddd">
+                        <div class="row borderBot borderPadding paddingtop10">
                             <div class="col-sm-12 col-md-12">                           
                                 <div class="col-sm-6 col-md-6">
                                     gestellte Fragen
@@ -86,7 +86,7 @@
                                 @endforeach
                             </div>
                         </div>
-                        <div class="row paddingtop10" style="border-bottom: 1px solid #dddddd">
+                        <div class="row borderBot borderPadding paddingtop10">
                            <div class="col-sm-12 col-md-12">                           
                                 <div class="col-md-6 col-sm-6">
                                     gegebene Antworten
@@ -104,7 +104,7 @@
                                 @endforeach
                             </div>
                         </div>
-                        <div class="row paddingtop10" style="border-bottom: 1px solid #dddddd">
+                        <div class="row borderBot borderPadding paddingtop10">
                            <div class="col-sm-12 col-md-12">                           
                                 <div class="col-sm-6 col-md-6">
                                     gegebene TOP Antworten
@@ -128,7 +128,7 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="row paddingtop10" style="border-bottom: 1px solid #dddddd">
+                        <div class="row borderBot borderPadding paddingtop10">
                            <div class="col-sm-12 col-md-12">                           
                                 <div class="col-sm-6 col-md-6">
                                     Dein derzeitiger Rang

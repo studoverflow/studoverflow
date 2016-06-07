@@ -665,6 +665,18 @@ footer a:visited {
     padding-left: 20px !important;
 }
 
+.borderBot {
+    border-bottom: 1px solid #dddddd;
+}
+
+.borderTop {
+    border-top: 1px solid #dddddd
+}
+
+.borderPadding {
+    padding: 10px 0;
+}
+
 .btn,
 .well,
 .panel {
