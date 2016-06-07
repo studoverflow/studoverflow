@@ -18,20 +18,6 @@
             </a> 
         @endif
     </h1>
-    @if (!Auth::guest() && Auth::user()->rights == 'Admin')
-        <form class="text-center" action="/profile" method="POST">
-            <label>Userrechte:</label>
-            <select name="rights" id="rights">
-                <option selected disabled>{{ $rights }}</option>
-                <option value="User">User</option>
-                <option value="Moderator">Moderator</option>
-                <option value="Admin">Admin</option>
-            </select>
-            <input type="hidden" name="_token" value="{{ csrf_token() }}">
-            <input type="hidden" name="userid" id="userid" value="{{ $user_id }}">
-            <input type="submit" name="aendern" value="Ändern" class="btnquestions">
-        </form>
-    @endif
     <article class="container">
             <div class="row">
                 <div class="col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
@@ -62,6 +48,26 @@
                     </div>
                     <div class="col-sm-8 col-sm-offset-1 col-md-8 col-md-offset-1">
                         <div class="row borderBot borderTop borderPadding">
+                            @if (!Auth::guest() && Auth::user()->rights == 'Admin')
+                                <form action="/profile" method="POST">
+                                    <div class="col-sm-3 col-md-3">
+                                        <label style="color: #FF3430">Userrechte:</label>
+                                    </div>
+                                    <div class="col-sm-9 col-md-9">
+                                        <select name="rights" id="rights">
+                                            <option selected disabled>{{ $rights }}</option>
+                                            <option value="User">User</option>
+                                            <option value="Moderator">Moderator</option>
+                                            <option value="Admin">Admin</option>
+                                        </select>
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                        <input type="hidden" name="userid" id="userid" value="{{ $user_id }}">
+                                        <input type="submit" name="aendern" value="Ändern" class="btnquestions">
+                                    </div>
+                                </form>
+                            @endif
+                        </div>
+                        <div class="row borderBot borderPadding">
                             <div class="col-md-3">
                                 <label>Username:</label>
                             </div>
@@ -69,15 +75,17 @@
                                 <label>{{ $name }}</label>
                             </div>
                         </div>
-                        <div class="row borderBot borderPadding">
-                            <div class="col-md-3">
-                                <label>Rang:</label>
-                            </div>
-                            <div class="col-md-9">
+                        @if (!Auth::guest() && Auth::user()->rights == 'Admin')
+                            <div class="row borderBot borderPadding">
+                                <div class="col-md-3">
+                                    <label>Rang:</label>
+                                </div>
+                                <div class="col-md-9">
 
-                                <label>{{ $rights }}</label>
+                                    <label>{{ $rights }}</label>
+                                </div>
                             </div>
-                        </div>
+                        @endif
                         <div class="row borderBot borderPadding">
                             <div class="col-md-3">
                                 <label>Name:</label>

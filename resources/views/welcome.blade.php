@@ -24,16 +24,16 @@
                             Der eine hat Probleme mit dem Programmieren, der andere in Mathematik.
                         </p>
                         <p>
-                        Vielleicht sind es auch nur allgemeine Fragen zum Studium, Studiengang oder Kurs.
-                        Der Dozent wirft mit Fachbegriffen um sich oder erklärt etwas unnötig kompliziert?
+                            Vielleicht sind es auch nur allgemeine Fragen zum Studium, Studiengang oder Kurs.
+                            Der Dozent wirft mit Fachbegriffen um sich oder erklärt etwas unnötig kompliziert?
                         </p>
                         <p>
-                        In den Vorlesungen passiert es schnell, dass man nicht mehr mitkommt.
-                        Unser Konzept basiert darauf, dass sich Studenten gegenseitig helfen.
+                            In den Vorlesungen passiert es schnell, dass man nicht mehr mitkommt.
+                            Unser Konzept basiert darauf, dass sich Studenten gegenseitig helfen.
                         </p>
                         <p>
-                        Wir möchten den Studierenden eine Plattform schaffen, auf der ihre Fragen rund um das
-                        Studium von Kommilitonen schnell und einfach beantwortet werden.
+                            Wir möchten den Studierenden eine Plattform schaffen, auf der ihre Fragen rund um das
+                            Studium von Kommilitonen schnell und einfach beantwortet werden.
                         </p>
                     </div>
                 </div>  
