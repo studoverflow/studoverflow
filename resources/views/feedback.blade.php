@@ -2,8 +2,8 @@
 
 @section('content')
 <section id="feedback" class="container-fluid">
-	<h1 class="text-center studoverflow margintop40">Feedback</h1>
-	<h2 class="text-center studoverflow">Deine Meinung ist uns wichtig</h2>
+	<h1 class="text-center margintop40">Feedback</h1>
+	<h2 class="text-center">Deine Meinung ist uns wichtig</h2>
 	<article class="container">
 		<article class="row">
 			<div class="col-sm-12 col-md-12"">

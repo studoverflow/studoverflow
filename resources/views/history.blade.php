@@ -11,7 +11,7 @@
                     <h1 class="text-center questionheaderfont">Verlauf</h1>
                 </div>
                 <div class="col-sm-12 col-md-12 historyrow">
-                    <h3 class="text-center studoverflow">Fragen</h3>
+                    <h3 class="text-center">Fragen</h3>
                 </div>
                 @foreach($questions as $question)
                     <?php $user = App\User::find($question->user_id); ?>
@@ -39,7 +39,7 @@
                     </div>
                 @endforeach
                 <div class="col-sm-12 col-md-12 historyrow">
-                    <h3 class="text-center studoverflow">Antworten</h3>
+                    <h3 class="text-center">Antworten</h3>
                 </div>
                 @foreach($answers as $answer) 
                     <div class="col-sm-12 col-md-12 question">
