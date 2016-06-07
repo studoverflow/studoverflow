@@ -22,7 +22,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-9 col-md-9">
+                        <div class="col-sm-8 col-sm-offset-1 col-md-8 col-md-offset-1">
                             <div class="row" style="border-bottom: 1px solid #dddddd; border-top: 1px solid #dddddd; padding: 10px 0">
                                 <div class="col-md-3">
                                     <b class="profil">Username:</b>

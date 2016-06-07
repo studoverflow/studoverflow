@@ -52,63 +52,62 @@
                             <b>Top-Antwort:</b> {{ $top }} mal
                         </p>
                     </div>
-                    <div class="col-sm-9 col-md-9">
-                        <div class="profil">                    
-                            <div class="row" style="border-bottom: 1px solid #dddddd; border-top: 1px solid #dddddd; padding: 10px 0">
-                                <div class="col-md-3">
-                                    <label>Username:</label>
-                                </div>
-                                <div class="col-md-9">
-                                    <input class="form-control input-md" type="text" name="username" value="{{ $name }}" disabled="">
-                                </div>
+                    <div class="col-sm-8 col-sm-offset-1 col-md-8 col-md-offset-1">
+                        <div class="row" style="border-bottom: 1px solid #dddddd; border-top: 1px solid #dddddd; padding: 10px 0">
+                            <div class="col-md-3">
+                                <label>Username:</label>
                             </div>
-                            <div class="row" style="border-bottom: 1px solid #dddddd; padding: 10px 0">
-                                <div class="col-md-3">
-                                    <label>Rang:</label>
-                                </div>
-                                <div class="col-md-9">
-                                    <input class="form-control input-md" type="text" name="username" value="{{ $rights }}" disabled="">
-                                </div>
+                            <div class="col-md-9">
+                                <label>{{ $name }}</label>
                             </div>
-                            <div class="row" style="border-bottom: 1px solid #dddddd; padding: 10px 0">
-                                <div class="col-md-3">
-                                    <label>Name:</label>
-                                </div>
-                                <div class="col-md-9">
-                                    <input class="form-control input-md" type="text" name="username" value="{{ $forename }} {{ $surname }}" disabled="">
-                                </div>
+                        </div>
+                        <div class="row" style="border-bottom: 1px solid #dddddd; padding: 10px 0">
+                            <div class="col-md-3">
+                                <label>Rang:</label>
                             </div>
-                            <div class="row" style="border-bottom: 1px solid #dddddd; padding: 10px 0">
-                                <div class="col-md-3">
-                                    <label>E-Mail:</label>
-                                </div>
-                                <div class="col-md-9">
-                                    <input class="form-control input-md" type="text" name="username" value="{{ $email }}" disabled="">
-                                </div>
+                            <div class="col-md-9">
+
+                                <label>{{ $rights }}</label>
                             </div>
-                            <div class="row" style="border-bottom: 1px solid #dddddd; padding: 10px 0">
-                                <div class="col-md-3">
-                                    <label>Homepage:</label>
-                                </div>
-                                <div class="col-md-9">
-                                    <input class="form-control input-md" type="text" name="username" value="{{ $page }}" disabled="">
-                                </div>
+                        </div>
+                        <div class="row" style="border-bottom: 1px solid #dddddd; padding: 10px 0">
+                            <div class="col-md-3">
+                                <label>Name:</label>
                             </div>
-                            <div class="row" style="border-bottom: 1px solid #dddddd; padding: 10px 0">
-                                <div class="col-md-3">
-                                    <label>Hochschule:</label>
-                                </div>
-                                <div class="col-md-9">
-                                    <input class="form-control input-md" type="text" name="username" value="{{ $college }}" disabled="">
-                                </div>
+                            <div class="col-md-9">
+                                <label>{{ $forename }}</label>
                             </div>
-                            <div class="row" style="border-bottom: 1px solid #dddddd; padding: 10px 0">
-                                <div class="col-md-3">
-                                    <label>Studiengang:</label>
-                                </div>
-                                <div class="col-md-9">
-                                    <input class="form-control input-md" type="text" name="username" value="{{ $course }}" disabled="">
-                                </div>
+                        </div>
+                        <div class="row" style="border-bottom: 1px solid #dddddd; padding: 10px 0">
+                            <div class="col-md-3">
+                                <label>E-Mail:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <label>{{ $email }}</label>
+                            </div>
+                        </div>
+                        <div class="row" style="border-bottom: 1px solid #dddddd; padding: 10px 0">
+                            <div class="col-md-3">
+                                <label>Homepage:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <label>{{ $page }}</label>
+                            </div>
+                        </div>
+                        <div class="row" style="border-bottom: 1px solid #dddddd; padding: 10px 0">
+                            <div class="col-md-3">
+                                <label>Hochschule:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <label>{{ $college }}</label>
+                            </div>
+                        </div>
+                        <div class="row" style="border-bottom: 1px solid #dddddd; padding: 10px 0">
+                            <div class="col-md-3">
+                                <label>Studiengang:</label>
+                            </div>
+                            <div class="col-md-9">
+                                <label>{{ $course }}</label>
                             </div>
                         </div>
                     </div>

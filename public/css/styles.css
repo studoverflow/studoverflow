@@ -5,7 +5,7 @@ body {
     color: #444;
     font-family: 'Poppins', sans-serif;
     height: 100%;
-    font-size: 12px;
+    font-size: 14px;
     overflow: auto;
 }
 
@@ -832,10 +832,6 @@ footer a:visited {
     padding-top: 20px;
 }
 
-.profil {
-    font-size: 16px;
-}
-
 div.profil > div.row {
     border-bottom: 1px solid #dddddd;
 }
@@ -952,10 +948,6 @@ div.profil > div.row {
     border: 1px #111111 solid;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-}
-
-.statsrow {
-    padding: 10px 0;
 }
 
 .searchButton{

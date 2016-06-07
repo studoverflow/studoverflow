@@ -41,99 +41,119 @@
                     <?php $countquestions = DB::select('select count(*) as count from questions where user_id = ?', [Auth::user()->id]); ?>
                     <?php $countanswers = DB::select('select count(*) as count from answers where user_id = ?', [Auth::user()->id]); ?>
                     <?php $counttop = DB::select('select * from topanswers where user_id = ?', [Auth::user()->id]); ?>
-                <div class="col-md-12 col-sm-12">
-                    <h3 class="text-center">Willommen {{ Auth::user()->name }}<h3>
-                </div>
-                <div class="col-md-12 col-sm-12 welcomeinfo text-center">
-                    <div class="row">
-                        <div class="col-md-12 statsrow">
-                            <div class="col-md-9 col-sm-9">
-                                <h3>Deine Statistik</h3>
-                            </div>
-                            <div class="col-md-3 col-sm-3">
-                                <button onclick="location.href='/create';" type="submit" class="btn btn-black btnRadius messagebtn">
-                                        <i class="fa fa-btn fa-pencil"></i> Frage verfassen
-                                </button>
+                    <div class="col-sm-12 col-md-12">
+                        <h3 class="text-center">Willommen {{ Auth::user()->name }}<h3>
+                    </div>
+                    <div class="col-sm-12 col-md-12 welcomeinfo">
+                        <div class="row paddingtop10">
+                            <div class="col-sm-12 col-md-12">
+                                <div class="col-sm-9 col-md-9">
+                                    <h3>Deine Statistik</h3>
+                                </div>
+                                <div class="col-md-3 col-sm-3">
+                                    <button onclick="location.href='/create';" type="submit" class="btn btn-black btnRadius messagebtn">
+                                            <i class="fa fa-btn fa-pencil"></i> Frage verfassen
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                       <div class="col-md-12 col-sm-12 statsrow">                           
-                            <div class="col-md-6 col-sm-6">
-                                User
-                            </div>
-                            <div class="col-md-6 col-sm-6">
-                                {{ Auth::user()->name }}
-                            </div>
-                       </div>
-                    </div>
-                    <div class="row">
-                       <div class="col-md-12 col-sm-12 statsrow">                           
-                        <div class="col-md-6 col-sm-6">
-                            gestellte Fragen
+                        <div class="row paddingtop10" style="border-bottom: 1px solid #dddddd; border-top: 1px solid #dddddd">
+                           <div class="col-sm-12 col-md-12">
+                                <div class="col-sm-6 col-md-6">
+                                    Username
+                                </div>
+                                <div class="col-sm-6 col-md-6">
+                                    {{ Auth::user()->name }}
+                                </div>
+                           </div>
                         </div>
-                        @foreach($countquestions as $question)
-                            @if($question->count != null)
-                                <div class="col-md-6 col-sm-6">{{ $question->count }}</div>
-                            @else
-                                <div class="col-md-6 col-sm-6">0</div>
-                            @endif
-                        @endforeach
-                        </div>
-                    </div>
-                    <div class="row">
-                       <div class="col-md-12 col-sm-12 statsrow">                           
-                            <div class="col-md-6 col-sm-6">gegebene Antworten</div>
-                            @foreach($countanswers as $answer)
-                                @if($answer->count != null)
-                                    <div class="col-md-6 col-sm-6">{{ $answer->count }}</div>
-                                @else
-                                    <div class="col-md-6 col-sm-6">0</div>
-                                @endif
-                            @endforeach
-                        </div>
-                    </div>
-                    <div class="row">
-                       <div class="col-md-12 col-sm-12 statsrow">                           
-                            <div class="col-md-6 col-sm-6">gegebene TOP Antworten</div>
-                            @if($counttop == null)
-                                0
-                                @else
-                                @foreach($counttop as $top)
-                                    @if($top->anzahl != 0)
-                                        <div class="col-md-6 col-sm-6">{{ $top->anzahl }}</div>
+                        <div class="row paddingtop10" style="border-bottom: 1px solid #dddddd">
+                            <div class="col-sm-12 col-md-12">                           
+                                <div class="col-sm-6 col-md-6">
+                                    gestellte Fragen
+                                </div>
+                                @foreach($countquestions as $question)
+                                    @if($question->count != null)
+                                        <div class="col-md-6 col-sm-6">
+                                            {{ $question->count }}
+                                        </div>
                                     @else
-                                        <div class="col-md-6 col-sm-6">0</div>
+                                        <div class="col-sm-6 col-md-6">
+                                            0
+                                        </div>
                                     @endif
                                 @endforeach
-                            @endif
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                       <div class="col-md-12 col-sm-12 statsrow">                           
-                            <div class="col-md-6 col-sm-6">Dein derzeitiger Rang</div>
-                            <div class="col-md-6 col-sm-6">
-                        @if($counttop == null)
-                            Neuling
-                        @else
-                            @foreach($counttop as $top)                                   
-                                @if($top->anzahl == "1")
-                                    Anfänger
-                                @endif
-                                @if($top->anzahl == "2")
-                                    Helfer
-                                @endif
-                                @if($top->anzahl == "3")
-                                    Sympathisant
-                                @endif
-                                @if($top->anzahl >= "4")
-                                    Held
-                                @endif   
-                            @endforeach
-                        @endif
+                        <div class="row paddingtop10" style="border-bottom: 1px solid #dddddd">
+                           <div class="col-sm-12 col-md-12">                           
+                                <div class="col-md-6 col-sm-6">
+                                    gegebene Antworten
+                                </div>
+                                @foreach($countanswers as $answer)
+                                    @if($answer->count != null)
+                                        <div class="col-sm-6 col-md-6">
+                                            {{ $answer->count }}
+                                        </div>
+                                    @else
+                                        <div class="col-sm-6 col-md-6">
+                                            0
+                                        </div>
+                                    @endif
+                                @endforeach
+                            </div>
                         </div>
+                        <div class="row paddingtop10" style="border-bottom: 1px solid #dddddd">
+                           <div class="col-sm-12 col-md-12">                           
+                                <div class="col-sm-6 col-md-6">
+                                    gegebene TOP Antworten
+                                </div>
+                                @if($counttop == null)
+                                <div class="col-sm-6 col-md-6">
+                                    0
+                                </div>
+                                @else
+                                    @foreach($counttop as $top)
+                                        @if($top->anzahl != 0)
+                                            <div class="col-sm-6 col-md-6">
+                                                {{ $top->anzahl }}
+                                            </div>
+                                        @else
+                                            <div class="col-sm-6 col-md-6">
+                                                0
+                                            </div>
+                                        @endif
+                                    @endforeach
+                                @endif
+                            </div>
                         </div>
-                    </div>
+                        <div class="row paddingtop10" style="border-bottom: 1px solid #dddddd">
+                           <div class="col-sm-12 col-md-12">                           
+                                <div class="col-sm-6 col-md-6">
+                                    Dein derzeitiger Rang
+                                </div>
+                                <div class="col-sm-6 col-md-6">
+                                    @if($counttop == null)
+                                        Neuling
+                                    @else
+                                        @foreach($counttop as $top)                                   
+                                            @if($top->anzahl == "1")
+                                                Anfänger
+                                            @endif
+                                            @if($top->anzahl == "2")
+                                                Helfer
+                                            @endif
+                                            @if($top->anzahl == "3")
+                                                Sympathisant
+                                            @endif
+                                            @if($top->anzahl >= "4")
+                                                Held
+                                            @endif   
+                                        @endforeach
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
                 @endif
             </article>
     </article>
