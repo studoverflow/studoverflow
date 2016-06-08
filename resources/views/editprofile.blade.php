@@ -91,7 +91,9 @@
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-12 margintop10">
-                            <input class="btn btn-black buttonRight marginbottom40" type="submit" value="bestätigen">
+                            <button class="btn btn-black buttonRight" type="submit" onclick="location.href='/profile';">
+                                 bestätigen
+                            </button>
                         </div>
                     </div>
                 </form>
