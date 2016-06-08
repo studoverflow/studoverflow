@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<?php $questions = DB::select('select * from questions order by date desc'); ?>
 <section class="container-fluid" id="new">
     <article class="container marginbottom80">
         <article class="row">
@@ -20,15 +19,7 @@
                         Erstelldatum:
                     </div>
                </div>
-                @foreach($questions as $question)
-                    <?php
-                        $datecurr = date("Y-m-d");
-                        $datetime1 = new DateTime($datecurr);
-                        $datetime2 = new DateTime($question->date);
-                        $interval = $datetime1->diff($datetime2);
-                    ?>
-                    @if($interval->format('%a') <= "15")
-                    <?php $user = App\User::find($question->user_id); ?>
+               @foreach($questions as $question)
                     <div class="col-sm-12 col-md-12 question">
                         <div class="col-sm-6 col-md-6">
                             <b>
@@ -40,11 +31,11 @@
                         </div>
                         <div class="col-sm-3 col-md-3">
                             <b>
-                                <a class="beforeiconxs" href="/profile={{$user->id}}">
+                                <a class="beforeiconxs" href="/profile={{$question->user_id}}">
                                     <i class="fa" aria-hidden="true">
-                                        <img class="avatariconxs" src="/img/upload/avatar/{{ $user->avatar }}">
+                                        <img class="avatariconxs" src="/img/upload/avatar/{{ $question->avatar }}">
                                     </i> 
-                                    {{$user->name}}
+                                    {{$question->name}}
                                 </a>
                             </b>
                         </div>
@@ -52,7 +43,6 @@
                             <i class="fa fa-clock-o" aria-hidden="true"></i> {{$question->date}}
                         </div>
                     </div>
-                    @endif
                 @endforeach
             </article>
         </article>

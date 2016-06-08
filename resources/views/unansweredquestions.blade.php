@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<?php $unanswered = DB::select('select * from unanswered'); ?>
 <section class="container-fluid" id="new">
     <article class="container marginbottom80">
         <article class="row">
@@ -20,9 +19,7 @@
                         Erstelldatum:
                     </div>
                </div>
-                @foreach($unanswered as $key)
-                    <?php $question = App\Question::find($key->id); ?>
-                    <?php $user = App\User::find($question->user_id); ?>
+                @foreach($questions as $question)
                     <div class="col-sm-12 col-md-12 question">
                         <div class="col-sm-6 col-md-6">
                             <b><a href="/question={{$question->id}}">
@@ -31,7 +28,7 @@
                             </a></b>
                         </div>
                         <div class="col-sm-3 col-md-3">
-                            <b><a class="beforeiconxs" href="/profile={{$user->id}}"><i class="fa" aria-hidden="true"><img class="avatariconxs" src="/img/upload/avatar/{{ $user->avatar }}"></i> {{$user->name}}</a></b>
+                            <b><a class="beforeiconxs" href="/profile={{$question->user_id}}"><i class="fa" aria-hidden="true"><img class="avatariconxs" src="/img/upload/avatar/{{ $question->avatar }}"></i> {{$question->name}}</a></b>
                         </div>
                         <div class="col-sm-3 col-md-3">
                             <i class="fa fa-clock-o" aria-hidden="true"></i> {{$question->date}}
