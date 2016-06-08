@@ -177,7 +177,7 @@ Route::post('/editQuestion',array('before'=>'csrf','uses'=>function(){
         $text = $_POST['text'];
         $time = date("H:i");
         $date = date("Y-m-d");
-        $stamp = $date . " " . $time;
+        $stamp = $date . " um " . $time;
             
                 DB::table('questions')
                     ->where('id', $qid)
@@ -197,7 +197,7 @@ Route::post('/editAnswer',array('before'=>'csrf','uses'=>function(){
         $text = $_POST['text'];
         $time = date("H:i");
         $date = date("Y-m-d");
-        $stamp = $date . " " . $time;
+        $stamp = $date . " um " . $time;
             
                 DB::table('answers')
                     ->where('id', $aid)
