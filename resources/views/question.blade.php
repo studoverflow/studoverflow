@@ -1,6 +1,14 @@
 @extends('layouts.app') 
 @section('content')
 <section class="container-fluid" id="question">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 margintop40">
+            <button type="button" class="btn btn-black buttonLeft" onclick="goBack();">
+                <i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i>
+                 Zurück
+            </button>
+        </div>
+    </div>
 <!-- Frage Bereich -->
     <article class="container">
         <article class="row">
@@ -22,37 +30,44 @@
                 @if(!Auth::guest())
                     @if(Auth::user()->rights == 'User')
                         @if(Auth::user()->id == $user_id)
-                            <button onclick="window.location.href='/deleteQuestion={{$question_id}}'" class="btnquestions marginleft10"><i class="fa fa-trash"></i> Löschen</button> 
+                            <button onclick="window.location.href='/deleteQuestion={{$question_id}}'" class="btn btn-black marginleft10">
+                                <i class="fa fa-trash"></i>
+                                 Löschen
+                            </button> 
                         @endif
                     @endif
                     @if(Auth::user()->id == $user_id)
-                        <button onclick="window.location.href='/editQuestion={{$question_id}}'" class="btnquestions marginleft10"><i class="fa fa-pencil-square-o"></i> Editieren</button>
+                        <button onclick="window.location.href='/editQuestion={{$question_id}}'" class="btn btn-black marginleft10">
+                            <i class="fa fa-pencil-square-o"></i>
+                             Editieren
+                            </button>
                     @endif
                     @if(Auth::user()->rights == 'Admin' || Auth::user()->rights == 'Moderator')
-                         <button onclick="window.location.href='/deleteQuestion={{$question_id}}'" class="btnquestions marginleft10"><i class="fa fa-trash"></i> Entfernen</button> 
+                         <button onclick="window.location.href='/deleteQuestion={{$question_id}}'" class="btn btn-black marginleft10">
+                            <i class="fa fa-trash"></i>
+                             Entfernen
+                            </button> 
                     @endif
-                    <button onclick="location.href='/answer={{$question_id}}'" class="btnquestions marginleft10"><i class="fa fa-arrow-right" aria-hidden="true"></i> Etwas zu dieser Frage schreiben</button>
+                    <button onclick="location.href='/answer={{$question_id}}'" class="btn btn-black marginleft10">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                         Etwas zu dieser Frage schreiben
+                        </button>
                     @if(Auth::user()->id != $user_id)
-                        <button onclick="location.href='/reportQuestion={{$question_id}}'" class="btnquestions marginleft10"><i class="fa fa-btn fa-bolt" aria-hidden="true"></i> Frage melden</button>
+                        <button onclick="location.href='/reportQuestion={{$question_id}}'" class="btn btn-black marginleft10">
+                            <i class="fa fa-btn fa-bolt" aria-hidden="true"></i>
+                             Frage melden
+                        </button>
                     @endif
                 @else
-                    <button onclick="location.href='/register'" class="btnquestions marginleft10 backbtn"><i class="fa fa-arrow-right" aria-hidden="true"></i> Jetzt Mitglied werden und Antworten!</button>
+                    <button onclick="location.href='/register'" class="btn btn-black marginleft10 backbtn">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                         Jetzt Mitglied werden und Antworten!
+                    </button>
                 @endif
 
             </div>
         </article>
     </article>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 col-md-12 column backbtn">
-                <button onclick="goBack()" class="btnquestions marginleft10">
-                    <i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i>
-                     Zurück
-                </button>
-            </div>
-        </div>
-    </div>
 <!-- Antworten Bereich -->
     <?php $answer = DB::select('select * from answers where question_id = ?', [$question_id]); ?>
     @if($answer != null) 
@@ -82,29 +97,29 @@
                             @if(Auth::user()->id != $out->user_id)
                                 <!-- Antworten Bewerten -->
                                 @if($out->top == "1")
-                                    <button id="starbtn{{$counter}}" onclick="top({{$out->id}})" class="btnquestions marginleft10 btntop">
+                                    <button id="starbtn{{$counter}}" onclick="top({{$out->id}})" class="btn btn-black marginleft10 btntop">
                                         <i id="star{{$counter}}" class="fa fa-btn fa-star"></i>
                                          Hilfreiche Antwort
                                      </button>
                                 @else
-                                    <button id="starbtn{{$counter}}" onclick="top({{$out->id}})" class="btnquestions marginleft10 btntop">
+                                    <button id="starbtn{{$counter}}" onclick="top({{$out->id}})" class="btn btn-black marginleft10 btntop">
                                         <i id="star{{$counter}}" class="fa fa-btn fa-star-o"></i>
                                          Hilfreiche Antwort
                                     </button>
                                 @endif
                                 <input type="hidden" value="$out->id" name="aid">
-                                <button onclick="window.location.href='/reportAnswer={{$out->id}}'" class="btnquestions marginleft10">
+                                <button onclick="window.location.href='/reportAnswer={{$out->id}}'" class="btn btn-black marginleft10">
                                     <i class="fa fa-bolt"></i>
                                      Antwort melden
                                  </button> 
                             @else
                                 @if(Auth::user()->rights == 'User')
-                                    <button onclick="window.location.href='/editAnswer={{$out->id}}'" class="btnquestions marginleft10">
+                                    <button onclick="window.location.href='/editAnswer={{$out->id}}'" class="btn btn-black marginleft10">
                                         <i class="fa fa-pencil-square-o"></i>
                                          Editieren
                                     </button>
                                 @endif
-                                <button onclick="window.location.href='/editAnswer={{$out->id}}'" class="btnquestions marginleft10">
+                                <button onclick="window.location.href='/editAnswer={{$out->id}}'" class="btn btn-black marginleft10">
                                     <i class="fa fa-pencil-square-o"></i>
                                      Editieren
                                 </button> 
@@ -115,22 +130,33 @@
                                 Frage Ersteller
                             @else
                                 @if($out->top == "1")
-                                    <i class="fa fa-star" aria-hidden="true"></i> {{$name}}, fand diese Antwort hilfreich
+                                    <button class="btn btn-black marginleft10">
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                         {{$name}}, fand diese Antwort hilfreich
+                                    </button>
                                 @else
-                                    <i class="fa fa-btn fa-star-o"></i>
+                                    <button class="btn btn-black marginleft10">
+                                        <i class="fa fa-btn fa-star-o"></i>
+                                    </button>
                                 @endif
                                 @if(!Auth::guest())
                                     @if(Auth::user()->id == $out->user_id)
                                         @if(Auth::user()->rights == 'User')
-                                            <button onclick="window.location.href='/deleteAnswer={{$out->id}}'" class="btnquestions marginleft10"><i class="fa fa-trash"></i> Löschen</button>
+                                            <button onclick="window.location.href='/deleteAnswer={{$out->id}}'" class="btn btn-black marginleft10">
+                                                <i class="fa fa-trash"></i>
+                                                 Löschen
+                                            </button>
                                         @endif
-                                        <button onclick="window.location.href='/editAnswer={{$out->id}}'" class="btnquestions marginleft10"><i class="fa fa-pencil-square-o"></i> Editieren</button> 
+                                        <button onclick="window.location.href='/editAnswer={{$out->id}}'" class="btn btn-black marginleft10">
+                                            <i class="fa fa-pencil-square-o"></i>
+                                             Editieren
+                                        </button> 
                                     @endif
                                 @endif
                             @endif
                         @endif
                         @if(Auth::user()->rights == 'Admin' || Auth::user()->rights == 'Moderator')
-                            <button onclick="window.location.href='/deleteAnswer={{$out->id}}'" class="btnquestions marginleft10">
+                            <button onclick="window.location.href='/deleteAnswer={{$out->id}}'" class="btn btn-black marginleft10">
                                 <i class="fa fa-trash"></i>
                                  Entfernen
                             </button> 
@@ -141,10 +167,14 @@
                             Frage Ersteller
                         @else
                             @if($out->top == "1")
-                                <i class="fa fa-star" aria-hidden="true"></i>
-                                 {{$name}}, fand diese Antwort hilfreich
+                                <button class="btn btn-black marginleft10">
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                     {{$name}}, fand diese Antwort hilfreich
+                                </button>
                             @else
-                                <i class="fa fa-btn fa-star-o"></i>
+                                <button class="btn btn-black marginleft10">
+                                    <i class="fa fa-btn fa-star-o"></i>
+                                </button>
                             @endif
                         @endif
                     @endif
@@ -162,21 +192,19 @@
                 }
             </script>
         @endforeach
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12 col-md-12 column backbtn marginbottom40">
-                <button onclick="goBack()" class="btnquestions marginleft10">
-                    <i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i>
-                     Zurück
-                </button>
-            </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-12 margintop20 marginbottom20">
+            <button type="button" class="btn btn-black buttonLeft" onclick="goBack();">
+                <i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i>
+                 Zurück
+            </button>
         </div>
     </div>
     @else
         <div class="container marginbottom40">
             <div class="row">
                 <div class="col-sm-12 col-md-12 column marginbottom40 margintop10">
-                    <h1>Es sind noch keine Antworten vorhanden</h1>
+                    <h3>Es sind noch keine Antworten vorhanden</h3>
                 </div>
             </div>
         </div>

@@ -73,12 +73,13 @@ a:hover {
     color: #337ab7 !important;
 }
 
-a.btn-black:hover {
-    color: #5491bd;
-}
-
 a.btn-black:visited {
     color: #fff;
+}
+
+button.btn-black:hover{
+    color: #5491bd;
+    border-color: #5491bd;
 }
 
 /*
@@ -748,8 +749,7 @@ footer a:visited {
     border-right: 2px #ffffff solid;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding: 15px 0 15px 15px;
     margin-top: 20px;
 }
 
@@ -761,8 +761,7 @@ footer a:visited {
     border-right: 2px #ffffff solid;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding: 15px 0;
 }
 
 
@@ -918,9 +917,8 @@ div.profil > div.row {
     border-right: 2px #ffffff solid;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    margin-top: 50px;
+    padding: 15px 0 15px 15px;
+    margin-top: 30px;
 }
 
 .questionbot {
@@ -931,8 +929,7 @@ div.profil > div.row {
     border-right: 2px #ffffff solid;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding: 15px 0;
 }
 
 .bold {
@@ -1128,7 +1125,7 @@ div.profil > div.row {
 
 /* NEUES Sonstige Buttons */
 
-.btnquestions {
+.btn btn-black {
     color: #ffffff;
     background-color: #111111;
 }

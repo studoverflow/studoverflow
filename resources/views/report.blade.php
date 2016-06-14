@@ -20,7 +20,7 @@
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-12 column questionbot marginbottom20">
-                    <button onclick="goBack()" class="btnquestions marginleft10"><i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i> Zurück</button>
+                    <button onclick="goBack()" class="btn btn-black marginleft10"><i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i> Zurück</button>
                 </div>
                         <div class="col-sm-12 col-md-12 reportsuccess" id="success">
                 <h4>Vielen Dank für Ihre Nachricht. Unsere Moderatoren werden den Artikel so schnell wie möglich prüfen.</h4>

@@ -42,7 +42,7 @@
                     <?php $countanswers = DB::select('select count(*) as count from answers where user_id = ?', [Auth::user()->id]); ?>
                     <?php $counttop = DB::select('select * from topanswers where user_id = ?', [Auth::user()->id]); ?>
                     <div class="col-sm-12 col-md-12">
-                        <h3 class="text-center">Willommen {{ Auth::user()->name }}<h3>
+                        <h3 class="text-center">Willkommen {{ Auth::user()->name }}<h3>
                     </div>
                     <div class="col-sm-12 col-md-12 welcomeinfo">
                         <div class="row paddingtop10">

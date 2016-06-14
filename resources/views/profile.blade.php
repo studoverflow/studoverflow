@@ -62,7 +62,7 @@
                                             </select>
                                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                             <input type="hidden" name="userid" id="userid" value="{{ $user_id }}">
-                                            <input type="submit" name="aendern" value="Ändern" class="btnquestions">
+                                            <button type="submit" name="aendern" value="Ändern" class="btn btn-black">Ändern</button>
                                         </div>
                                     </form>
                                 </div>

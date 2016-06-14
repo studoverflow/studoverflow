@@ -19,7 +19,7 @@
             </div>
             <div class="col-sm-12 col-md-12 column questionbot marginbottom20">
                 <form class="marginbottom10" action="/delete{{$value}}" method="POST">
-                    <button type="submit" class="btnquestions marginleft10"><i class="fa fa-btn fa-bolt" aria-hidden="true"></i> Unwiederruflich Löschen</button>
+                    <button type="submit" class="btn btn-black marginleft10"><i class="fa fa-btn fa-bolt" aria-hidden="true"></i> Unwiederruflich Löschen</button>
                     @if($value == "Question")
                     <input type="hidden" name="qid" value="{{$question_id}}">
                     @else
@@ -28,7 +28,7 @@
                     @endif
                     <input type="hidden" name="_token" value="{{ Session::token() }}" />
                 </form>
-                <button onclick="goBack()" class="btnquestions marginleft10"><i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i> Zurück</button>
+                <button onclick="goBack()" class="btn btn-black marginleft10"><i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i> Zurück</button>
             </div>
         </article>
     </article>

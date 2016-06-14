@@ -22,10 +22,12 @@
                 @foreach($questions as $question)
                     <div class="col-sm-12 col-md-12 question">
                         <div class="col-sm-6 col-md-6">
-                            <b><a href="/question={{$question->id}}">
-                            <i class="fa fa-question-circle-o" aria-hidden="true"></i> 
-                            {{$question->titel}}
-                            </a></b>
+                            <b>
+                                <a href="/question={{$question->id}}">
+                                    <i class="fa fa-question-circle-o" aria-hidden="true"></i> 
+                                    {{$question->titel}}
+                                </a>
+                            </b>
                         </div>
                         <div class="col-sm-3 col-md-3">
                             <b>

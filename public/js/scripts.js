@@ -138,8 +138,9 @@ function question(){
     var titel = document.getElementById('titel').value;
     var text = document.getElementById('text').value;
 
+    console.log('Titel: ' + titel + ' Text: ' + text);
+
     if(text != "" && titel != ""){
-        console.log(titel + " " + text);
         $.ajax({
             url: '/create',
             type: 'POST',

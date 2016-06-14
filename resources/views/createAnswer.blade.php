@@ -1,7 +1,14 @@
 @extends('layouts.app') 
 @section('content')
 <section class="container-fluid" id="createanswer">
-
+    <div class="row">
+        <div class="col-sm-12 col-md-12 margintop40">
+            <button type="button" class="btn btn-black buttonLeft" onclick="goBack();">
+                <i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i>
+                 Zurück
+            </button>
+         </div>
+     </div>
     <!-- Frage Bereich -->
 
     <article class="container">
@@ -20,7 +27,6 @@
                 </div>
             </div>
             <div class="col-sm-12 col-md-12 column questionbot marginbottom20">
-                <button id="answerback" onclick="goBack()" class="btnquestions marginleft10"><i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i> Zurück</button>
             </div>
         </article>
     </article>
@@ -41,7 +47,7 @@
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-12">
-                        <input type="button" onclick="answer()" class="btn btn-black messagebtn marginbottom40" value="Antworten">
+                        <input type="button" onclick="answer()" class="btn btn-black buttonRight marginbottom20" value="Senden">
                     </div>
                 </form>
                 <div class="col-sm-12 col-md-12 margintop10 notvalid" id="errordiv">
@@ -63,8 +69,8 @@
                 </div>
             </div>
             <div class="col-sm-12 col-md-12 column questionbot marginbottom20">
-                <button onclick="window.location.href='/overview'" class="btnquestions marginleft10"><i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i> Zur Fragen Übersicht</button>
-                <button onclick="window.location.href='/question={{$question_id}}'" class="btnquestions marginleft10"><i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i> Zurück zur Frage</button>
+                <button onclick="window.location.href='/overview'" class="btn btn-black marginleft10"><i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i> Zur Fragen Übersicht</button>
+                <button onclick="window.location.href='/question={{$question_id}}'" class="btn btn-black marginleft10"><i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i> Zurück zur Frage</button>
             </div>
         </article>
     </article>
@@ -72,7 +78,7 @@
         <article class="row">
             <div class="col-sm-12 col-md-12 column">
                 <h1 class="marginbottom20">Vielen Dank für deine Antwort</h1>
-                <img src="/img/thumbs.png" style="height:50px">
+                <img src="/img/thumbs.png" style="height:50px" class="marginbottom20">
             </div>
         </article>
     </article>

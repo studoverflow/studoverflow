@@ -43,12 +43,14 @@
         <nav class="navbar navbar-trans navbar-fixed-top navborderbot" role="navigation">
             <div class="container">
                 <div class="navbar-header">
+<!--
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapsible">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
+-->
                     <a class="navbar-brand" href="/">
                         <span class="fa fa-stack-overflow" aria-hidden="true"></span> StudOverflow
                     </a>
