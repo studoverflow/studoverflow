@@ -21,9 +21,7 @@
                 </div>
                 <div class="col-sm-11 col-md-11 column messagemain">
                 @if($edit != null) Frage wurde editiert am {{ $edit }} </br></br>@endif 
-                <?php
-                    echo nl2br($text);
-                ?>
+                   {!! nl2br(e($text)) !!}
                 </div>
             </div>
             <div class="col-sm-12 col-md-12 column questionbot marginbottom20">
@@ -85,9 +83,9 @@
                         </div>
                         <div class="col-sm-11 col-md-11 column messagemain">
                             @if($out->edit != null) Frage wurde editiert am {{ $out->edit }} </br></br>@endif
-                            <?php
-                            echo nl2br($out->text);
-                            ?>
+                         
+                           {!! nl2br(e($out->text)) !!}
+                            
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-12 column messagebot marginbottom15">
