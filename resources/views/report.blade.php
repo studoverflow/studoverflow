@@ -35,7 +35,9 @@
                     <div class="form-group">
                         <div class="col-sm-12 col-md-12">
                             <textarea class="form-control" placeholder="Begründung" id="text" rows="6"></textarea>
-                            <button class="margintop10 messagebtn btn-black" onclick="report('{{$id}}', '{{$value}}', '{{Auth::user()->name}}')"> Abschicken</button>
+                            <button class="btn btn-black margintop10" onclick="report('{{$id}}', '{{$value}}', '{{Auth::user()->name}}')">
+                                 Abschicken
+                             </button>
                             <div class="col-sm-12 col-md-12 margintop10 notvalid" id="errordiv">
                                 <h2 class="text-center">Ungültige Anfrage. Bitte zuerst alle Felder ausfüllen!</h2>
                             </div>
