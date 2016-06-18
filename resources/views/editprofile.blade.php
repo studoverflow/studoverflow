@@ -33,7 +33,7 @@
                             </div>
                         </div>
                         <div class="col-sm-8 col-sm-offset-1 col-md-8 col-md-offset-1">
-                            <div class="row" style="border-bottom: 1px solid #dddddd; border-top: 1px solid #dddddd; padding: 10px 0">
+                            <div class="row borderBot borderTop borderPadding">
                                 <div class="col-md-3">
                                     <b class="profil">Username:</b>
                                 </div>
@@ -41,7 +41,7 @@
                                     <input class="form-control input-md" type="text" name="username" value="{{ Auth::user()->name }}" disabled="">
                                 </div>
                             </div>
-                            <div class="row" style="border-bottom: 1px solid #dddddd; padding: 10px 0">
+                            <div class="row borderBot borderPadding">
                                 <div class="col-md-3">
                                     <b class="profil">E-Mail:</b>
                                 </div>
@@ -49,7 +49,7 @@
                                     <input class="form-control input-md" type="text" name="email" value="{{ Auth::user()->email }}">
                                 </div>
                             </div>
-                            <div class="row" style="border-bottom: 1px solid #dddddd; padding: 10px 0">
+                            <div class="row borderBot borderPadding">
                                 <div class="col-md-3">
                                     <b class="profil">Vorname:</b>
                                 </div>
@@ -57,7 +57,7 @@
                                     <input class="form-control input-md" type="text" name="firstname" value="{{ Auth::user()->firstname }}">
                                 </div>
                             </div>
-                            <div class="row" style="border-bottom: 1px solid #dddddd; padding: 10px 0">
+                            <div class="row borderBot borderPadding">
                                 <div class="col-md-3">
                                     <b class="profil">Nachname:</b>
                                 </div>
@@ -65,7 +65,7 @@
                                     <input class="form-control input-md" type="text" name="lastname" value="{{ Auth::user()->lastname }}">
                                 </div>
                             </div>
-                            <div class="row" style="border-bottom: 1px solid #dddddd; padding: 10px 0">
+                            <div class="row borderBot borderPadding">
                                 <div class="col-md-3">
                                     <b class="profil">Homepage:</b>
                                 </div>
@@ -73,7 +73,7 @@
                                     <input class="form-control input-md" type="text" name="page" value="{{ Auth::user()->page }}">
                                 </div>
                             </div>
-                            <div class="row" style="border-bottom: 1px solid #dddddd; padding: 10px 0">
+                            <div class="row borderBot borderPadding">
                                 <div class="col-md-3">
                                     <b class="profil">Hochschule:</b>
                                 </div>
@@ -81,7 +81,7 @@
                                     <input class="form-control input-md" type="text" name="college" value="{{ Auth::user()->college }}">
                                 </div>
                             </div>
-                            <div class="row" style="border-bottom: 1px solid #dddddd; padding: 10px 0">
+                            <div class="row borderBot borderPadding">
                                 <div class="col-md-3">
                                     <b class="profil">Studiengang:</b>
                                 </div>

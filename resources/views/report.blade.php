@@ -2,6 +2,14 @@
 
 @section('content')
 <section class="container-fluid" id="report">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 margintop40">
+            <button type="button" class="btn btn-black buttonLeft" onclick="goBack();">
+                <i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i>
+                 Zurück
+            </button>
+        </div>
+    </div>
     <article class="container">
         <article class="row">
             <article class="col-sm-12 col-md-12">
@@ -19,13 +27,13 @@
                         ?>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-12 column questionbot marginbottom20">
-                    <button onclick="goBack()" class="btn btn-black marginleft10"><i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i> Zurück</button>
+                <div class="col-sm-12 col-md-12 column questionbot marginbottom20"></div>
+                <div class="col-sm-12 col-md-12 reportsuccess" id="success">
+                    <h4>Vielen Dank für Ihre Nachricht. Unsere Moderatoren werden den Artikel so schnell wie möglich prüfen.</h4>
+                    <div id="reportmessage">
+                        Ihre Nachricht war:</br>
+                    </div>
                 </div>
-                        <div class="col-sm-12 col-md-12 reportsuccess" id="success">
-                <h4>Vielen Dank für Ihre Nachricht. Unsere Moderatoren werden den Artikel so schnell wie möglich prüfen.</h4>
-                <div id="reportmessage">Ihre Nachricht war:</br></div>
-        </div>
             </article>
         </article>
     </article>
@@ -35,7 +43,7 @@
                     <div class="form-group">
                         <div class="col-sm-12 col-md-12">
                             <textarea class="form-control" placeholder="Begründung" id="text" rows="6"></textarea>
-                            <button class="btn btn-black margintop10" onclick="report('{{$id}}', '{{$value}}', '{{Auth::user()->name}}')">
+                            <button class="btn btn-black buttonRight margintop10" onclick="report('{{$id}}', '{{$value}}', '{{Auth::user()->name}}')">
                                  Abschicken
                              </button>
                             <div class="col-sm-12 col-md-12 margintop10 notvalid" id="errordiv">

@@ -717,6 +717,10 @@ footer a:visited {
     border-color: #337ab7;
 }
 
+.displaynone {
+    display: none;
+}
+
 .errorText {
     color: red;
     font-size: 10px;
@@ -889,7 +893,7 @@ div.profil > div.row {
 }
 
 .thumpsUpPic {
-    height: 50px;
+    height: 100px;
 }
 
 .editsize {
@@ -989,7 +993,6 @@ div.profil > div.row {
  * Paddings & Margins            *
  *                               *
  *********************************/
-
 
 /* Padding TOP */
 

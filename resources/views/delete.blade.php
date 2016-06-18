@@ -1,6 +1,14 @@
 @extends('layouts.app') 
 @section('content')
 <section class="container-fluid" id="delete">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 margintop40">
+            <button type="button" class="btn btn-black buttonLeft" onclick="goBack();">
+                <i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i>
+                 Zurück
+            </button>
+        </div>
+    </div>
     <article class="container">
         <article class="row">
             <div class="col-sm-12 col-md-12 column questiontop">
@@ -28,7 +36,6 @@
                     @endif
                     <input type="hidden" name="_token" value="{{ Session::token() }}" />
                 </form>
-                <button onclick="goBack()" class="btn btn-black marginleft10"><i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i> Zurück</button>
             </div>
         </article>
     </article>
