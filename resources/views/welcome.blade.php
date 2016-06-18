@@ -5,7 +5,7 @@
     <article class="container">
         <article class="row">
             <article class="col-md-12 col-sm-12">
-                <div class="col-md-12 col-sm-12">
+                <div class="col-md-12 col-sm-12 marginbottom20">
                     <h1 class="text-center studoverflowhead">
                         <span class="fa fa-stack-overflow" aria-hidden="true"></span> StudOverflow
                     </h1>
