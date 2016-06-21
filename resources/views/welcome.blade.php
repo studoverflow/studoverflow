@@ -158,7 +158,7 @@
                 @endif
             </article>
             <div class="text-center paddingtop10">
-                <div class="fb-like" style="text-align: center !important;" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+                <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
                 <div class="g-follow" data-annotation="bubble" data-height="20" data-href="//plus.google.com/u/0/111031593308618237725" data-rel="publisher"></div>
                 <script src="https://apis.google.com/js/platform.js" async defer></script>
             </div>
