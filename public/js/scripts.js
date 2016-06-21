@@ -70,10 +70,7 @@ function editQuestion(){
             }
         });
         $('#questiondiv').hide();
-        $("#createhead").prepend("FRAGE: " + titel + " von ");
-        text = text.replace(/\n/g, '<br>');
-        $("#createmain").prepend(text);
-        $('#editwork').show();
+        $("#showthumbs").show();
     } else {
         $("#errordiv").show();
     }
@@ -103,10 +100,7 @@ function editAnswer(){
             }
         });
         $('#answerdiv').hide();
-        $("#createhead").prepend("ANTWORT: " + titel + " von ");
-        text = text.replace(/\n/g, '<br>');
-        $("#createmain").prepend(text);
-        $('#editwork').show();
+        $("#showthumbs").show();
     } else {
         $("#errordiv").show();
     }
