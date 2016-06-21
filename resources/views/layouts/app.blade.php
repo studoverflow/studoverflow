@@ -37,14 +37,12 @@
         <nav class="navbar navbar-trans navbar-fixed-top navborderbot" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-<!--
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapsible">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
--->
                     <a class="navbar-brand" href="/">
                         <span class="fa fa-stack-overflow" aria-hidden="true"></span> StudOverflow
                     </a>
@@ -54,9 +52,7 @@
                         <li {{{ (Request::is( 'overview') ? 'class=active' : '') }}}>
                             <a href="{{ url('/overview') }}">Übersicht</a>
                         </li>
-
                     <!-- NEU -->
-
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true"">
                                 Fragen<span class="caret"></span>
@@ -166,22 +162,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>
-<<<<<<< HEAD
     {{--
     <script src="{{ elixir('js/app.js') }}"></script>
     --}}
 
     <div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/de_DE/sdk.js#xfbml=1&version=v2.6";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-=======
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/de_DE/sdk.js#xfbml=1&version=v2.6";
+        js.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
     {{--<script src="{{ elixir('js/app.js') }}"></script>--}}
->>>>>>> a7f7d4c35ffb59b16f4674f76b0de6dc8a8fa51b
 </body>
 </html>
