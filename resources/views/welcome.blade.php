@@ -4,7 +4,7 @@
  <section class="container-fluid" id="welcome">
     <article class="container">
         <article class="row">
-            <article class="col-md-12 col-sm-12">
+            <article class="col-md-12 col-sm-12 marginbottom20">
                 <div class="col-md-12 col-sm-12">
                     <h1 class="text-center studoverflowhead">
                         <span class="fa fa-stack-overflow" aria-hidden="true"></span> StudOverflow
@@ -157,6 +157,14 @@
                         </div>
                 @endif
             </article>
+            <div class="text-center paddingtop10">
+            <div class="fb-like" style="text-align: center !important;" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+            </div>
+            <!-- Place this tag in your head or just before your close body tag. -->
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+<!-- Place this tag where you want the widget to render. -->
+<div class="g-follow" data-annotation="bubble" data-height="20" data-href="//plus.google.com/u/0/111031593308618237725" data-rel="publisher"></div>
     </article>
 </section>
 @endsection
