@@ -36,12 +36,6 @@ function answer(){
             success: function (data) {
             }
         });
-        $("#createhead").prepend("ANTWORT: " + titel + " von ");
-        text = text.replace(/\n/g, '<br>');
-        $("#createmain").prepend(text);
-        $("#answerdiv").hide();
-        $("#answerback").hide();
-        $('#showanswer').show();
         $("#showthumbs").show();
     } else {
         $("#errordiv").show();
@@ -151,9 +145,6 @@ function question(){
         });
         $("#createhead").prepend("FRAGE: " + titel + " von ");
         text = text.replace(/\n/g, '<br>');
-        $("#createmain").prepend(text);
-        $("#questiondiv").hide();
-        $("#showquestion").show();
         $("#showthumbs").show();
     } else {
         $("#errordiv").show();

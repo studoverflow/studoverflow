@@ -117,10 +117,6 @@
                                          Editieren
                                     </button>
                                 @endif
-                                <button onclick="window.location.href='/editAnswer={{$out->id}}'" class="btn btn-black marginleft10">
-                                    <i class="fa fa-pencil-square-o"></i>
-                                     Editieren
-                                </button> 
                             @endif
                         @else
                         <!-- View für Andere User -->

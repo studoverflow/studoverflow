@@ -56,29 +56,11 @@
             </div>
         </div>
     </div>
-    <article class="container" id="showanswer" style="display: none;">
-        <article class="row">
-            <div class="col-sm-12 col-md-12 column questiontop" id="createhead">
-                {{Auth::user()->name}} am {{date("Y-m-d")}}
-            </div>
-            <div class="col-sm-12 col-md-12 column messagemain">
-                <div class="col-sm-1 col-md-1 column messageimg">
-                    <img class="text-center avatar" src="/img/upload/avatar/{{ Auth::user()->avatar }}">
-                </div>
-                <div class="col-sm-11 col-md-11 column messagemain" id="createmain">
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-12 column questionbot marginbottom20">
-                <button onclick="window.location.href='/overview'" class="btn btn-black marginleft10"><i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i> Zur Fragen Übersicht</button>
-                <button onclick="window.location.href='/question={{$question_id}}'" class="btn btn-black marginleft10"><i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i> Zurück zur Frage</button>
-            </div>
-        </article>
-    </article>
-    <article class="container text-center" id="showthumbs" style="display: none;">
+    <article class="container text-center displaynone" id="showthumbs">
         <article class="row">
             <div class="col-sm-12 col-md-12 column">
                 <h1 class="marginbottom20">Vielen Dank für deine Antwort</h1>
-                <img src="/img/thumbs.png" style="height:50px" class="marginbottom20">
+                <img src="/img/thumbs.png" class="thumpsUpPic marginbottom20">
             </div>
         </article>
     </article>

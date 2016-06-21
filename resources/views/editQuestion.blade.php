@@ -40,7 +40,7 @@
 			</div>
 		</article>
 	</article>
-    <article class="container margintop80" id="editwork" style="display: none;">
+    <article class="container displaynone margintop80" id="editwork">
         <h1 class="text-center"><i class="fa fa-check-square-o" aria-hidden="true"></i> Frage erfolgreich editiert</h1>
         <article class="row">
             <div class="col-sm-12 col-md-12 column questiontop" id="createhead">
