@@ -121,7 +121,11 @@
                         @else
                         <!-- View für Andere User -->
                             @if($out->user_id == $user_id)
-                                Frage Ersteller
+                                <input type="hidden" value="$out->id" name="aid">
+                                <button onclick="window.location.href='/reportAnswer={{$out->id}}'" class="btn btn-black marginleft10">
+                                    <i class="fa fa-bolt"></i>
+                                     Antwort melden
+                                 </button> 
                             @else
                                 @if($out->top == "1")
                                     <button class="btn btn-black marginleft10">

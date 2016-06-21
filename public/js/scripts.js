@@ -37,6 +37,7 @@ function answer(){
             }
         });
         $("#showthumbs").show();
+        $("#answerdiv").hide();
     } else {
         $("#errordiv").show();
     }
@@ -146,6 +147,7 @@ function question(){
         $("#createhead").prepend("FRAGE: " + titel + " von ");
         text = text.replace(/\n/g, '<br>');
         $("#showthumbs").show();
+        $("#questiondiv").hide();
     } else {
         $("#errordiv").show();
     }
