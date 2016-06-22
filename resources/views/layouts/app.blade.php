@@ -136,19 +136,19 @@
                 <div class="col-xs-12 col-md-12">
                     <div class="text-center scalefooter">
                         <a class="paddingright20" href="/imprint">
-                            <span class="fa fa-btn fa-pencil"></span>
+                            <i class="fa fa-btn fa-paragraph"></i>
                              Impressum
                         </a>
                         <a class="paddingright20" href="/privacy">
-                            <span class="fa fa-btn fa-key"></span>
+                            <i class="fa fa-btn fa-key"></i>
                              Datenschutz
                         </a>
                         <a class="paddingright20" href="/legalnotice">
-                            <span class="fa fa-btn fa-info"></span>
+                            <i class="fa fa-btn fa-info"></i>
                              Rechtliche Hinweise
                         </a>
                         <a href="/feedback">
-                            <span class="fa fa-btn fa-comment-o"></span>
+                            <i class="fa fa-btn fa-comment-o"></i>
                              Feedback
                         </a>
                     </div>

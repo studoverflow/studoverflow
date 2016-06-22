@@ -2,7 +2,7 @@
 
 @section('content')
 <section class="container-fluid" id="search">
-    <h1 class="text-center margintop80 marginbottom40">
+    <h1 class="text-center margintop80 marginbottom40 topics">
         <i class="fa fa-btn fa-search"></i>
         Suchen
     </h1>
