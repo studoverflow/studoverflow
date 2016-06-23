@@ -4,9 +4,9 @@
 <section id="editArtikel" class="container-fluid">
     <div class="row">
         <div class="col-sm-12 col-md-12 margintop40">
-            <button type="button" class="btn btn-black buttonLeft" onclick="goBack();">
+            <button type="button" class="btn btn-black buttonLeft" method='GET' action='/question={{$question_id}}'>
                 <i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i>
-                 Zurück
+                 Zurück zur Frage
             </button>
          </div>
      </div>
@@ -43,7 +43,7 @@
     <article class="container text-center displaynone" id="showthumbs">
         <article class="row">
             <div class="col-sm-12 col-md-12 column">
-                <h1 class="marginbottom20">Vielen Dank für deine Frage</h1>
+                <h1 class="marginbottom20">Erfolgreich geändert</h1>
                 <img src="/img/thumbs.png" class="thumpsUpPic marginbottom20">
             </div>
         </article>

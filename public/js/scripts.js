@@ -1,20 +1,4 @@
-/*
- * Table Of Content
- * 
- * 1. Answer
- * 2. goBack
- * 3. question
- * 4. report
- * 5. search
- * 6. top
- * 
- */
-
-
-/**********
- * Answer *
- **********/
-function answer(){
+function answer() {
     var qid = document.getElementById('qid').value;
     var titel = document.getElementById('titel').value;
     var text = document.getElementById('text').value;
@@ -23,8 +7,8 @@ function answer(){
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
          }
      });
-
-    if(text != "" && titel != ""){
+    if(text != "" && titel != "")
+    {
         var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
         var text = document.getElementById('text').value;
         console.log(titel);
@@ -42,11 +26,7 @@ function answer(){
         $("#errordiv").show();
     }
 }
-
-/**********
- * EDIT *
- **********/
-function editQuestion(){
+function editQuestion() {
     var qid = document.getElementById('qid').value;
     var titel = $('#titel').val();
     var text = $('#text').val();
@@ -57,7 +37,8 @@ function editQuestion(){
          }
      });
 
-    if(text != "" && titel != ""){
+    if(text != "" && titel != "")
+    {
         var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
         var text = document.getElementById('text').value;
         console.log(titel);
@@ -75,8 +56,7 @@ function editQuestion(){
         $("#errordiv").show();
     }
 }
-
-function editAnswer(){
+function editAnswer() {
     var aid = document.getElementById('aid').value;
     var titel = $('#titel').val();
     var text = $('#text').val();
@@ -86,7 +66,6 @@ function editAnswer(){
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
          }
      });
-
     if(text != "" && titel != ""){
         var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
         var text = document.getElementById('text').value;
@@ -105,30 +84,19 @@ function editAnswer(){
         $("#errordiv").show();
     }
 }
-
-/**********
- * goBack *
- **********/
 function goBack() {
     window.history.back();
 }
-
-/************
- * Question *
- ************/
-function question(){
+function question() {
     $.ajaxSetup({
          headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
          }
      });
-    
     var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
     var titel = document.getElementById('titel').value;
     var text = document.getElementById('text').value;
-
     console.log('Titel: ' + titel + ' Text: ' + text);
-
     if(text != "" && titel != ""){
         $.ajax({
             url: '/create',
@@ -146,11 +114,7 @@ function question(){
         $("#errordiv").show();
     }
 }
-
-/*******************
- * Register Checks *
- *******************/
-function checkUsername(){
+function checkUsername() {
     var valueCount = document.getElementById('username').value.length;
     
     if (valueCount >= 3 && valueCount <= 12){        
@@ -163,8 +127,7 @@ function checkUsername(){
         document.getElementById('usernameHint').setAttribute('style','display:block; margin: 5px 0 0 0; ');
     }
 }
-
-function validateEmail(){
+function validateEmail() {
     var regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (regex.test(document.getElementById('email').value)){
         document.getElementById('email').setAttribute('style','border: 1px solid #2eb82e; opacity: 0.75');
@@ -174,11 +137,7 @@ function validateEmail(){
         document.getElementById('emailHint').setAttribute('style','display:block; margin: 5px 0 0 0; ');
     }    
 }
-
-/**********
- * Report *
- **********/
-function report(id, value, user){
+function report(id, value, user) {
     $.ajaxSetup({
          headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -205,11 +164,7 @@ function report(id, value, user){
         $("#errordiv").show();
     } 
 }
-
-/**********
- * Search *
- **********/
-function search(){
+function search() {
     $.ajaxSetup({
          headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -263,8 +218,7 @@ function search(){
        }
     });
 }
-
-function searchEnter(){
+function searchEnter() {
     var txt = document.getElementById("suchbegriff");
     var button = document.getElementById("btnSearch");
     txt.addEventListener("keypress", function(event) {
@@ -272,11 +226,7 @@ function searchEnter(){
             button.click();
     })
 }
-
-/*******
- * Top *
- *******/
-function top(qid){
+function topAnsw(qid) {
     $.ajaxSetup({
          headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

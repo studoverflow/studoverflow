@@ -116,20 +116,6 @@ class QuestionController extends Controller {
         return view('question')->with($data);
     }
 
-    public function top(Request $request){
-
-        //
-
-    }
-
-    // START POST INSERT ANSWER
-
-    public function answer(Request $request){
-
-        //
-        
-    }
-
     // ------------------------------------------------------------
 
     public function showAnswerQuestion($id){

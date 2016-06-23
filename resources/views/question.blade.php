@@ -95,12 +95,12 @@
                             @if(Auth::user()->id != $out->user_id)
                                 <!-- Antworten Bewerten -->
                                 @if($out->top == "1")
-                                    <button id="starbtn{{$counter}}" onclick="top({{$out->id}})" class="btn btn-black marginleft10 btntop">
+                                    <button id="starbtn{{$counter}}" onclick="topAnsw({{$out->id}})" class="btn btn-black marginleft10 btntop">
                                         <i id="star{{$counter}}" class="fa fa-btn fa-star"></i>
                                          Hilfreiche Antwort
                                      </button>
                                 @else
-                                    <button id="starbtn{{$counter}}" onclick="top({{$out->id}})" class="btn btn-black marginleft10 btntop">
+                                    <button id="starbtn{{$counter}}" onclick="topAnsw({{$out->id}})" class="btn btn-black marginleft10 btntop">
                                         <i id="star{{$counter}}" class="fa fa-btn fa-star-o"></i>
                                          Hilfreiche Antwort
                                     </button>
@@ -168,14 +168,14 @@
                              </button> 
                         @else
                             @if($out->top == "1")
-                                <button class="btn btn-black marginleft10">
+                                
                                     <i class="fa fa-star" aria-hidden="true"></i>
                                      {{$name}}, fand diese Antwort hilfreich
-                                </button>
+                               
                             @else
-                                <button class="btn btn-black marginleft10">
+                                
                                     <i class="fa fa-btn fa-star-o"></i>
-                                </button>
+                               
                             @endif
                         @endif
                     @endif
