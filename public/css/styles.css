@@ -16,44 +16,6 @@ body {
  *                               *
  *********************************/
 
-@media (min-width:991px) {
-
-    nav {
-        font-size: 14px;
-    }
-
-}
-
-@media (min-width:768px) {
-    .v-center {
-        display: table;
-        height: 90%;
-        width: 100%;
-        vertical-align: middle;
-    }
-    h1 {
-        font-size: 3em;
-    }
-}
-
-@media (max-width:500px) {
-    .scalefooter {
-        font-size: 8px;
-    }
-
-}
-
-@media (max-width:769px) {
-    .scalefooter {
-        font-size: 10px;
-    }
-        .scaleheader {
-        font-size: 10px;
-    }
-
-}
-
-
 /*********************************
  *                               *
  * ELEMENT Area                  *
@@ -82,12 +44,12 @@ button.btn-black:hover{
     border-color: #5491bd;
 }
 
-/*
 
-h1 {
-    margin: 0 0 20px 0;
+
+h3 {
+    font-size: 3vw;
 }
-*/
+
 img {
     height: auto;
     max-width: 100%;
@@ -1148,7 +1110,7 @@ div.profil > div.row {
 
 .studoverflowhead {
     margin-top: 50px;
-    font: 400 100px/1.3 Helvetica, sans-serif;
+    font-size: 10vw;
     text-shadow: 2px 2px 0px #ededed, 4px 4px 0px rgba(0,0,0,0.15);
 }
 

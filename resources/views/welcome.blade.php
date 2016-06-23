@@ -15,9 +15,11 @@
                             Jetzt Mitglied werden
                         </a>
                     </p>
-                    <div class="col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6 welcomeinfo">
+                    <div class="col-sm-12 col-md-12 welcomeinfo">
                         <p>
-                            <h3><i class="fa fa-info" aria-hidden="true"></i> Was ist StudOverflow?</h3>
+                            <h3>
+                                <i class="fa fa-info" aria-hidden="true"></i> Was ist StudOverflow?
+                            </h3>
                         </p>
                         <p class="margintop20">
                             Jedes Semester stehen Studenten vor den gleichen Problemen.
@@ -42,7 +44,9 @@
                     <?php $countanswers = DB::select('select count(*) as count from answers where user_id = ?', [Auth::user()->id]); ?>
                     <?php $counttop = DB::select('select * from topanswers where user_id = ?', [Auth::user()->id]); ?>
                     <div class="col-sm-12 col-md-12">
-                        <h3 class="text-center">Willkommen {{ Auth::user()->name }}<h3>
+                        <h3 class="text-center">
+                            Willkommen {{ Auth::user()->name }}
+                        <h3>
                     </div>
                     <div class="col-sm-12 col-md-12 welcomeinfo">
                         <div class="row paddingtop10">
@@ -155,13 +159,19 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
                 @endif
             </article>
-            <div class="text-center paddingtop10">
-                <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-action="like" data-show-faces="true" data-share="true"></div>
-                <div class="g-follow" data-annotation="bubble" data-height="20" data-href="//plus.google.com/u/0/111031593308618237725" data-rel="publisher"></div>
-                <script src="https://apis.google.com/js/platform.js" async defer></script>
+        </article>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 marginbottom20">
+                <div class="text-center paddingtop10">
+                    <div class="fb-like" style="text-align: center !important;" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+                    <div class="g-follow" data-annotation="bubble" data-height="20" data-href="//plus.google.com/u/0/111031593308618237725" data-rel="publisher"></div>
+                    <script src="https://apis.google.com/js/platform.js" async defer></script>
+                </div>
             </div>
+        </div>
     </article>
 </section>
 @endsection
