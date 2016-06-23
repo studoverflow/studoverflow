@@ -761,6 +761,15 @@ footer a:visited {
     border-left: 2px #ffffff solid;
 }
 
+ul.nav.navbar-nav.navbar-left li a:hover {
+    color: #ffffff !important;
+}
+
+ul.nav.navbar-nav.navbar-right li a:hover {
+    color: #ffffff !important;
+}
+
+}
 .nav .open>a,
 .nav .open>a:focus,
 .nav .open>a:hover {
