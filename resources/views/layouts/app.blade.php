@@ -130,7 +130,7 @@
     <script type="text/javascript">
         ChangeIt();
     </script>
-    <footer class="container-fluid navbar-trans navbar-fixed-bottom">
+    <footer class="container-fluid navbar-trans navbar-fixed-bottom scalefooter">
         <div class="container margintop15">
             <div class="row">
                 <div class="col-sm-12 col-md-12">

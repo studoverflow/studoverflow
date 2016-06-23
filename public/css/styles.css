@@ -16,6 +16,17 @@ body {
  *                               *
  *********************************/
 
+ @media (max-width:885px) {
+    .scalefooter {
+        font-size: 8px;
+    }
+}
+ @media (max-width:600px) {
+    .studoverflowhead {
+        font-size: 9vw !important;
+    }
+}
+
 /*********************************
  *                               *
  * ELEMENT Area                  *
@@ -70,6 +81,7 @@ section {
 footer {
     background-color: #2b2b2b;
     border-top: 2px solid #fff !important;
+    font-size: 1vw;
     color: #fff;
     height: 50px;
     padding-top: 2px;
