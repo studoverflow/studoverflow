@@ -135,26 +135,23 @@
             <div class="row">
                 <div class="col-sm-12 col-md-12">
                     <div class="text-center scalefooter">
-                        <div class="col-sm-3 col-md-3">
+                        
                             <a href="/imprint">
                                 <i class="fa fa-btn fa-paragraph"></i> Impressum
                             </a>
-                        </div>
-                        <div class="col-sm-3 col-md-3">
+                        
                             <a href="/privacy">
                                 <i class="fa fa-btn fa-key"></i> Datenschutz
                             </a>
-                            </div>
-                        <div class="col-sm-3 col-md-3">
+                            
                             <a href="/legalnotice">
                                 <i class="fa fa-btn fa-info"></i> Rechtliches
                             </a>
-                        </div>
-                        <div class="col-sm-3 col-md-3">
+                        
                             <a href="/feedback">
                                 <i class="fa fa-btn fa-comment-o"></i> Feedback
                             </a>
-                        </div>
+                        
                     </div>
                 </div>
             </div>

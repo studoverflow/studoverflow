@@ -4,7 +4,7 @@
 <?php $questions = DB::select('select * from questions where user_id = ? order by date desc', [Auth::user()->id]); ?>
 <?php $answers = DB::select('select * from answers where user_id = ? order by date desc', [Auth::user()->id]); ?>
 <section class="container-fluid" id="history">
-    <article class="container">
+    <article class="container marginbottom20">
         <article class="row">
             <article class="col-sm-12 col-md-12">
                 <div class="col-sm-12 col-md-12 questiontop">
