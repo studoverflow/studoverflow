@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="/css/styles.css" />
 </head>
 <body id="app-layout">
-    <header class="scaleheader test">
+    <header class="scaleheader">
         <nav class="navbar navbar-trans navbar-fixed-top navborderbot" role="navigation">
             <div class="container">
                 <div class="navbar-header">
@@ -130,28 +130,23 @@
     <script type="text/javascript">
         ChangeIt();
     </script>
-    <footer class="container-fluid navbar-trans navbar-fixed-bottom scalefooter">
+    <footer class="container-fluid navbar-trans navbar-fixed-bottom">
         <div class="container margintop15">
             <div class="row">
                 <div class="col-sm-12 col-md-12">
                     <div class="text-center scalefooter">
-                        
-                            <a href="/imprint">
-                                <i class="fa fa-btn fa-paragraph"></i> Impressum
-                            </a>
-                        
-                            <a href="/privacy">
-                                <i class="fa fa-btn fa-key"></i> Datenschutz
-                            </a>
-                            
-                            <a href="/legalnotice">
-                                <i class="fa fa-btn fa-info"></i> Rechtliches
-                            </a>
-                        
-                            <a href="/feedback">
-                                <i class="fa fa-btn fa-comment-o"></i> Feedback
-                            </a>
-                        
+                        <a href="/imprint">
+                            <i class="fa fa-btn fa-paragraph"></i> Impressum 
+                        </a>
+                        <a class="paddingleft10" href="/privacy">
+                            <i class="fa fa-btn fa-key"></i> Datenschutz
+                        </a>
+                        <a class="paddingleft10" href="/legalnotice">
+                            <i class="fa fa-btn fa-info"></i> Rechtliches 
+                        </a>
+                        <a class="paddingleft10" href="/feedback">
+                            <i class="fa fa-btn fa-comment-o"></i> Feedback 
+                        </a>
                     </div>
                 </div>
             </div>

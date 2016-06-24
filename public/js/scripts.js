@@ -160,7 +160,7 @@ function report(id, value, user) {
             success: function (data) {
             }
         });
-        text = text.replace(/\n/g, '<br>');
+        text = text.replace(/\n/g, '<br>').replace("<", '').replace(">", '');
         $("#reportmessage").append(text);
         $("#reportdiv").hide();
         $("#success").show();

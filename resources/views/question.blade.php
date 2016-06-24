@@ -140,7 +140,7 @@
                                 @else
                                         <i class="fa fa-btn fa-star-o paddingleft20"></i>
                                 @endif
-                                @if(Auth::user()->id != $out->user_id)
+                                @if(Auth::user()->id != $out->user_id && Auth::user()->rights == 'User')
                                     <button onclick="window.location.href='/reportAnswer={{$out->id}}'" class="btn btn-black marginleft10">
                                         <i class="fa fa-bolt"></i>
                                          Antwort melden

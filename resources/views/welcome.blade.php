@@ -1,18 +1,17 @@
 @extends('layouts.app')
 @section('content')
  <section class="container-fluid" id="welcome">
-    <article class="container">
-        <article class="row">
+    <div class="container">
+        <div class="row">
             <article class="col-md-12 col-sm-12 marginbottom20">
-                <div class="col-md-12 col-sm-12">
                     <h1 class="text-center studoverflowhead">
                         <span class="fa fa-stack-overflow" aria-hidden="true"></span> StudOverflow
                     </h1>
                     @if(Auth::guest())
                         <p class="text-center">
-                            <a type="button" href="/register" class="btn btn-black btn-lg btn-huge">
+                            <button onclick="window.location.href='/register'" class="btn btn-black btn-lg">
                                 Jetzt Mitglied werden
-                            </a>
+                            </button>
                         </p>
                         <div class="col-sm-12 col-md-12 welcomeinfo">
                             <p>
@@ -46,14 +45,14 @@
                         <div class="col-sm-12 col-md-12 welcomeinfo">
                             <div class="row paddingtop10">
                                 <div class="col-sm-12 col-md-12">
-                                    <div class="col-sm-9 col-md-9">
-                                        <h3>Deine Statistik</h3>
-                                    </div>
-                                    <div class="col-md-3 col-sm-3">
+                                    <div class="col-md-12 col-sm-12">
                                         <button type="button" class="btn btn-black buttonRight" onclick="location.href='/create';">
                                             <i class="fa fa-btn fa-pencil"></i>
                                              Frage verfassen
                                         </button>
+                                    </div>
+                                    <div class="col-sm-9 col-md-9">
+                                        <h3>Deine Statistik</h3>
                                     </div>
                                 </div>
                             </div>
@@ -113,15 +112,15 @@
                                         0
                                     </div>
                                     @else   
-                                            @if($top != 0)
-                                                <div class="col-sm-6 col-md-6">
-                                                    {{ $top }}
-                                                </div>
-                                            @else
-                                                <div class="col-sm-6 col-md-6">
-                                                    0
-                                                </div>
-                                            @endif
+                                        @if($top != 0)
+                                            <div class="col-sm-6 col-md-6">
+                                                {{ $top }}
+                                            </div>
+                                        @else
+                                            <div class="col-sm-6 col-md-6">
+                                                0
+                                            </div>
+                                        @endif
                                     @endif
                                 </div>
                             </div>
@@ -154,7 +153,7 @@
                     @endif
                 </div> 
             </article>
-        </article>
+        </div>
         <div class="row">
             <div class="text-center col-sm-12 col-md-12 marginbottom10">
                 <div id="fb-root"></div>
@@ -173,6 +172,6 @@
                 </script>
             </div>
         </div>
-    </article>
+    </div>
 </section>
 @endsection

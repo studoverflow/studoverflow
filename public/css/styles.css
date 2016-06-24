@@ -16,9 +16,33 @@ body {
  *                               *
  *********************************/
 
- @media (max-width:885px) {
+ @media (max-width:550px) {
+    .scalefooter {
+        font-size: 10px;
+    }
+}
+
+ @media (max-width:485px) {
+    .buttonRight {
+        float: none !important;
+    }
+}
+
+ @media (max-width:420px) {
+    .scalefooter {
+        font-size: 9px;
+    }
+}
+
+ @media (max-width:385px) {
     .scalefooter {
         font-size: 8px;
+    }
+}
+
+ @media (max-width:320px) {
+    .scalefooter {
+        font-size: 7px;
     }
 }
 
@@ -30,7 +54,7 @@ body {
 
  @media (max-width:600px) {
     .studoverflowhead {
-        font-size: 9vw !important;
+        font-size: 10vw !important;
     }
 }
 
@@ -82,11 +106,10 @@ section {
 footer {
     background-color: #2b2b2b;
     border-top: 2px solid #fff !important;
-    font-size: 0.6vw;
+    font-size: 12px;
     color: #fff;
     height: 50px;
-    padding-top: 2px;
-    padding-bottom: 2px;
+    padding: 0px !important;
 }
 
 footer a:link,
@@ -855,6 +878,10 @@ ul.nav.navbar-nav.navbar-right li a:hover {
     padding-top: 20px;
 }
 
+.paddingleft10 {
+    padding-left: 10px;
+}
+
 .paddingleft20 {
     padding-left: 20px;
 }
@@ -1156,7 +1183,7 @@ div.profil > div.row {
 
 .studoverflowhead {
     margin-top: 50px;
-    font-size: 6vw;
+    font-size: 70px;
     text-shadow: 2px 2px 0px #ededed, 4px 4px 0px rgba(0,0,0,0.15);
 }
 
