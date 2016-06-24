@@ -5,7 +5,7 @@
         var totalCount = 5;
         function ChangeIt() {
             var num = Math.ceil(Math.random() * totalCount);
-            document.body.background =  'img/' + num + '.jpg';
+            document.body.background =  '/img/' + num + '.jpg';
             document.body.style.backgroundRepeat = "repeat";
         }
     </script>
@@ -162,7 +162,8 @@
     <!-- JavaScripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="js/scripts.js"></script>
-    {{--<script href="{{ elixir('js/scripts.js') }}"></script>--}}
+    <script type="text/javascript" src="{{ URL::asset('js/scripts.js') }}"></script>
+
+
 </body>
 </html>

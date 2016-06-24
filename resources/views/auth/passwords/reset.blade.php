@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <section id="reset">
     <div class="container margintop40">
