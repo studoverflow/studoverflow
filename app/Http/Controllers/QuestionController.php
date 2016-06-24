@@ -223,8 +223,13 @@ class QuestionController extends Controller {
     }
 
     public function showQuestion($id){
+
         $question = Question::find($id);
         $user = User::find($question->user_id);
+
+        $answers = DB::table('answersview')->select('*')->where('question_id', $id)->get();
+
+
         $data = array(
             'name' => $user->name,
             'user_id' => $user->id,
@@ -234,7 +239,7 @@ class QuestionController extends Controller {
             'edit' => $question->edit,
             'question_id' => $question->id,
             'avatar' => $user->avatar );
-        return view('question')->with($data);
+        return view('question', ['answers' => $answers])->with($data);
     }
 
 

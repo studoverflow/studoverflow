@@ -10,7 +10,6 @@
          </div>
      </div>
     <!-- Frage Bereich -->
-
     <article class="container">
         <article class="row">
             <div class="col-sm-12 col-md-12 column questiontop">

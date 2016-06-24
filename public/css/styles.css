@@ -834,6 +834,10 @@ ul.nav.navbar-nav.navbar-right li a:hover {
     padding-top: 20px;
 }
 
+.paddingleft20 {
+    padding-left: 20px;
+}
+
 div.profil > div.row {
     border-bottom: 1px solid #dddddd;
 }

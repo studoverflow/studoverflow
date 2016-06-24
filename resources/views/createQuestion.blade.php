@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <section id="createquestion" class="container-fluid">
     <div class="row">
@@ -11,7 +10,7 @@
          </div>
      </div>
 	<article class="container" id="questiondiv">
-        <h1 class="text-center margintop20 marginbottom40">
+        <h1 class="text-center margintop20 marginbottom40 topics">
             <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
              Neue Frage erstellen
         </h1>

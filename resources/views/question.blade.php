@@ -50,7 +50,7 @@
                         <i class="fa fa-arrow-right" aria-hidden="true"></i>
                          Etwas zu dieser Frage schreiben
                         </button>
-                    @if(Auth::user()->id != $user_id)
+                    @if(Auth::user()->id != $user_id && Auth::user()->rights == 'User')
                         <button onclick="location.href='/reportQuestion={{$question_id}}'" class="btn btn-black marginleft10">
                             <i class="fa fa-btn fa-bolt" aria-hidden="true"></i>
                              Frage melden
@@ -59,33 +59,31 @@
                 @else
                     <button onclick="location.href='/register'" class="btn btn-black marginleft10 backbtn">
                         <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                         Jetzt Mitglied werden und Antworten!
+                         Jetzt Mitglied werden!
                     </button>
                 @endif
-
             </div>
         </article>
     </article>
 <!-- Antworten Bereich -->
-    <?php $answer = DB::select('select * from answers where question_id = ?', [$question_id]); ?>
-    @if($answer != null) 
+    @if($answers != null) 
         <?php $counter = null; ?>
-        @foreach($answer as $out)
-            <?php $usersanswer = App\User::find($out->user_id);  $counter++?>
+        @foreach($answers as $out)
+            <?php $counter++ ?>
             <article class="container">
                 <article class="row">
                     <div class="col-sm-12 col-md-12 column messagetop">
-                        <b>ANTWORT:</b> {{$out->titel}} von <a href="/profile={{$usersanswer->id}}">{{$usersanswer->name}}</a> am {{$out->date}}
+                        <b>ANTWORT:</b> {!!$out->titel!!} von <a href="/profile={{$out->id}}">{{$out->name}}</a> am {{$out->date}}
                     </div>
                     <div class="col-sm-12 col-md-12 column messagemain">
                         <div class="col-sm-1 col-md-1 column messageimg">
-                            <img class="text-center avatar" src="/img/upload/avatar/{{ $usersanswer->avatar }}">
+                            <img class="text-center avatar" src="/img/upload/avatar/{{ $out->avatar }}">
                         </div>
                         <div class="col-sm-11 col-md-11 column messagemain">
-                            @if($out->edit != null) Frage wurde editiert am {{ $out->edit }} </br></br>@endif
-                         
+                            @if($out->edit != null) 
+                                Frage wurde editiert am {{ $out->edit }} </br></br>
+                            @endif
                            {!! nl2br(e($out->text)) !!}
-                            
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-12 column messagebot marginbottom15">
@@ -106,12 +104,18 @@
                                     </button>
                                 @endif
                                 <input type="hidden" value="$out->id" name="aid">
-                                <button onclick="window.location.href='/reportAnswer={{$out->id}}'" class="btn btn-black marginleft10">
-                                    <i class="fa fa-bolt"></i>
-                                     Antwort melden
-                                 </button> 
+                                @if(Auth::user()->rights == 'User')
+                                    <button onclick="window.location.href='/reportAnswer={{$out->id}}'" class="btn btn-black marginleft10">
+                                        <i class="fa fa-bolt"></i>
+                                        Antwort melden
+                                    </button> 
+                                @endif
                             @else
                                 @if(Auth::user()->rights == 'User')
+                                    <button onclick="window.location.href='/deleteAnswer={{$out->id}}'" class="btn btn-black marginleft10">
+                                        <i class="fa fa-trash"></i>
+                                                 Löschen
+                                    </button>
                                     <button onclick="window.location.href='/editAnswer={{$out->id}}'" class="btn btn-black marginleft10">
                                         <i class="fa fa-pencil-square-o"></i>
                                          Editieren
@@ -122,38 +126,45 @@
                         <!-- View für Andere User -->
                             @if($out->user_id == $user_id)
                                 <input type="hidden" value="$out->id" name="aid">
+                                
+                                <i class="fa fa-reply paddingleft20" aria-hidden="true"></i> Fragesteller
+                            
                                 <button onclick="window.location.href='/reportAnswer={{$out->id}}'" class="btn btn-black marginleft10">
                                     <i class="fa fa-bolt"></i>
                                      Antwort melden
                                  </button> 
                             @else
                                 @if($out->top == "1")
-                                    <button class="btn btn-black marginleft10">
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                         {{$name}}, fand diese Antwort hilfreich
-                                    </button>
+                                    <i class="fa fa-star paddingleft20" aria-hidden="true"></i> 
+                                     {{$name}}, fand diese Antwort hilfreich
                                 @else
-                                    <button class="btn btn-black marginleft10">
-                                        <i class="fa fa-btn fa-star-o"></i>
-                                    </button>
+                                        <i class="fa fa-btn fa-star-o paddingleft20"></i>
                                 @endif
-                                @if(!Auth::guest())
-                                    @if(Auth::user()->id == $out->user_id)
-                                        @if(Auth::user()->rights == 'User')
-                                            <button onclick="window.location.href='/deleteAnswer={{$out->id}}'" class="btn btn-black marginleft10">
-                                                <i class="fa fa-trash"></i>
-                                                 Löschen
-                                            </button>
-                                        @endif
-                                        <button onclick="window.location.href='/editAnswer={{$out->id}}'" class="btn btn-black marginleft10">
-                                            <i class="fa fa-pencil-square-o"></i>
-                                             Editieren
-                                        </button> 
-                                    @endif
+                                @if(Auth::user()->id != $out->user_id)
+                                    <button onclick="window.location.href='/reportAnswer={{$out->id}}'" class="btn btn-black marginleft10">
+                                        <i class="fa fa-bolt"></i>
+                                         Antwort melden
+                                     </button>
+                                @endif
+                                @if(!Auth::guest() && Auth::user()->id == $out->user_id && Auth::user()->rights == 'User')
+                                    <button onclick="window.location.href='/deleteAnswer={{$out->id}}'" class="btn btn-black marginleft10">
+                                        <i class="fa fa-trash"></i>
+                                         Löschen
+                                    </button>
+                                    <button onclick="window.location.href='/editAnswer={{$out->id}}'" class="btn btn-black marginleft10">
+                                        <i class="fa fa-pencil-square-o"></i>
+                                         Editieren
+                                    </button> 
                                 @endif
                             @endif
                         @endif
                         @if(Auth::user()->rights == 'Admin' || Auth::user()->rights == 'Moderator')
+                            @if(Auth::user()->id == $out->user_id)
+                                <button onclick="window.location.href='/editAnswer={{$out->id}}'" class="btn btn-black marginleft10">
+                                    <i class="fa fa-pencil-square-o"></i>
+                                    Editieren
+                                 </button>
+                            @endif 
                             <button onclick="window.location.href='/deleteAnswer={{$out->id}}'" class="btn btn-black marginleft10">
                                 <i class="fa fa-trash"></i>
                                  Entfernen
@@ -162,20 +173,19 @@
                     @else
                         <!-- View für Gäste -->
                         @if($out->user_id == $user_id)
-                            <button onclick="window.location.href='/reportAnswer={{$out->id}}'" class="btn btn-black marginleft10">
-                                <i class="fa fa-bolt"></i>
-                                 Antwort melden
-                             </button> 
+                            <div class="col-sm-12 col-md-12">
+                                <i class="fa fa-reply" aria-hidden="true"></i> Fragesteller
+                            </div> 
                         @else
                             @if($out->top == "1")
-                                
+                                <div class="col-sm-12 col-md-12">
                                     <i class="fa fa-star" aria-hidden="true"></i>
                                      {{$name}}, fand diese Antwort hilfreich
-                               
+                                </div>  
                             @else
-                                
+                                <div class="col-sm-12 col-md-12">
                                     <i class="fa fa-btn fa-star-o"></i>
-                               
+                                </div>
                             @endif
                         @endif
                     @endif
