@@ -257,7 +257,12 @@ footer a:visited {
  */
 
 #login {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(84, 145, 189, 0.8);
+}
+
+#loginheader {
+    background: #2b2b2b;
+    color: #ffffff;
 }
 
 #login a:link,
@@ -276,7 +281,12 @@ footer a:visited {
  */
 
 #registration {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(84, 145, 189, 0.8);
+}
+
+#registrationheader {
+    background: #2b2b2b;
+    color: #ffffff;
 }
 
 #registration a:link,
@@ -295,7 +305,7 @@ footer a:visited {
  */
 
 #reset {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(84, 145, 189, 0.8);
 }
 
 #reset a:link,
@@ -314,7 +324,7 @@ footer a:visited {
  */
 
 #email {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(84, 145, 189, 0.8);
 }
 
 #email a:link,
