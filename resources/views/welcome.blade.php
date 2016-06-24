@@ -164,6 +164,15 @@
         </article>
         <div class="row">
             <div class="text-center col-sm-12 col-md-12 marginbottom10">
+                <div id="fb-root"></div>
+                    <script>(function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) return;
+                        js = d.createElement(s); js.id = id;
+                        js.src = "//connect.facebook.net/de_DE/sdk.js#xfbml=1&version=v2.6";
+                        fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));
+                    </script>
                 <div id="facebook" style="vertical-align: top; margin-right: 10px; margin-left: -5px" class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-action="recommend" data-show-faces="true" data-share="false"></div>
                 <div id="google" class="g-follow" data-annotation="none" data-height="20" data-href="//plus.google.com/u/0/111031593308618237725" data-rel="publisher"></div>
                 <script src="https://apis.google.com/js/platform.js" async defer>
