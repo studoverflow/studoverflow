@@ -126,13 +126,13 @@
                         <!-- View für Andere User -->
                             @if($out->user_id == $user_id)
                                 <input type="hidden" value="$out->id" name="aid">
-                                
                                 <i class="fa fa-reply paddingleft20" aria-hidden="true"></i> Fragesteller
-                            
-                                <button onclick="window.location.href='/reportAnswer={{$out->id}}'" class="btn btn-black marginleft10">
-                                    <i class="fa fa-bolt"></i>
-                                     Antwort melden
-                                 </button> 
+                                @if(Auth::user()->rights == 'User')
+                                    <button onclick="window.location.href='/reportAnswer={{$out->id}}'" class="btn btn-black marginleft10">
+                                        <i class="fa fa-bolt"></i>
+                                         Antwort melden
+                                     </button> 
+                                 @endif
                             @else
                                 @if($out->top == "1")
                                     <i class="fa fa-star paddingleft20" aria-hidden="true"></i> 
