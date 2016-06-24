@@ -129,11 +129,11 @@ function checkUsername() {
 }
 function validateEmail() {
     var regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if (regex.test(document.getElementById('email').value)){
-        document.getElementById('email').setAttribute('style','border: 1px solid #2eb82e; opacity: 0.75');
+    if (regex.test(document.getElementById('emailaddress').value)){
+        document.getElementById('emailaddress').setAttribute('style','border: 1px solid #2eb82e; opacity: 0.75');
         document.getElementById('emailHint').setAttribute('style','display:none');
     } else {
-        document.getElementById('email').setAttribute('style','border: 1px solid #a94442; opacity: 0.75');
+        document.getElementById('emailaddress').setAttribute('style','border: 1px solid #a94442; opacity: 0.75');
         document.getElementById('emailHint').setAttribute('style','display:block; margin: 5px 0 0 0; ');
     }    
 }
@@ -192,7 +192,7 @@ function search() {
                                     +'<b>' 
                                         +'<a href="/question=' + resultSet.id +'">'
                                             +'<i class="fa fa-question-circle-o" aria-hidden="true"></i> '
-                                            + resultSet.titel
+                                            + resultSet.titel.replace("<", '').replace(">", '')
                                         +'</a>'
                                     +'</b>'
                                 +'</div>'
@@ -201,13 +201,13 @@ function search() {
                                         +'<a class="beforeiconxs" href="/profile=' + resultSet.user_id + '">'
                                             + '<i class="fa" aria-hidden="true">'
                                             +'<img class="avatariconxs" src="/img/upload/avatar/' + resultSet.avatar + '"></i>' 
-                                            + resultSet.name 
+                                            + resultSet.name.replace("<", '').replace(">", '')
                                         + '</a>'
                                     +'</b>'
                                 +'</div>'
                                 +'<div class="col-sm-3 col-md-3">'
                                     +'<i class="fa fa-clock-o" aria-hidden="true"></i> '
-                                    + resultSet.date
+                                    + resultSet.date.replace("<", '').replace(">", '')
                                 +'</div>'
                             +'</div>');
                 }
