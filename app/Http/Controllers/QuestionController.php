@@ -98,22 +98,22 @@ class QuestionController extends Controller {
     public function deleteAnswer(Request $request){
 
         $aid = $request->input('aid');
-        DB::table('answers')->where('id', '=', $aid)->delete();
-
+        DB::table('answers')->where('id', $aid)->delete();
         $id = $request->input('qid');
         $question = Question::find($id);
         $user = User::find($question->user_id);
+        $answers = DB::table('answersview')->select('*')->where('question_id', $id)->get();
         $data = array(
             'name' => $user->name,
-            'user_id' => $question->id,
+            'user_id' => $user->id,
             'titel' => $question->titel,
             'text' => $question->text,
             'date' => $question->date,
             'edit' => $question->edit,
             'question_id' => $question->id,
-            'value' => 'Answer',
             'avatar' => $user->avatar );
-        return view('question')->with($data);
+
+        return view('question', ['answers' => $answers])->with($data);
     }
 
     // ------------------------------------------------------------
@@ -158,8 +158,8 @@ class QuestionController extends Controller {
 
     public function deleteQuestion(Request $request){
 
-        $aid = $request->input('qid');
-        DB::table('questions')->where('id', '=', $aid)->delete();
+        $qid = $request->input('qid');
+        DB::table('questions')->where('id', '=', $qid)->delete();
 
         return view('history');
     }

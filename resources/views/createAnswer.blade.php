@@ -3,7 +3,7 @@
 <section class="container-fluid" id="createanswer">
     <div class="row">
         <div class="col-sm-12 col-md-12 margintop40">
-            <button type="button" class="btn btn-black buttonLeft" onclick="goBack();">
+            <button type="button" class="btn btn-black buttonLeft" onclick="window.location.href='/question={{$question_id}}'">
                 <i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i>
                  Zurück
             </button>
