@@ -7,8 +7,6 @@ function answer() {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
          }
      });
-    if(text != "" && titel != "")
-    {
         var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
         var text = document.getElementById('text').value;
         console.log(titel);
@@ -22,10 +20,6 @@ function answer() {
         });
         $("#showthumbs").show();
         $("#answerdiv").hide();
-        $("#errordiv").hide();
-    } else {
-        $("#errordiv").show();
-    }
 }
 function editQuestion() {
     var qid = document.getElementById('qid').value;
@@ -37,9 +31,6 @@ function editQuestion() {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
          }
      });
-
-    if(text != "" && titel != "")
-    {
         var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
         var text = document.getElementById('text').value;
         console.log(titel);
@@ -53,10 +44,6 @@ function editQuestion() {
         });
         $('#questiondiv').hide();
         $("#showthumbs").show();
-        $("#errordiv").hide();
-    } else {
-        $("#errordiv").show();
-    }
 }
 function editAnswer() {
     var aid = document.getElementById('aid').value;
@@ -68,7 +55,6 @@ function editAnswer() {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
          }
      });
-    if(text != "" && titel != ""){
         var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
         var text = document.getElementById('text').value;
         console.log(titel);
@@ -82,10 +68,6 @@ function editAnswer() {
         });
         $('#answerdiv').hide();
         $("#showthumbs").show();
-        $("#errordiv").hide();
-    } else {
-        $("#errordiv").show();
-    }
 }
 function goBack() {
     window.history.back();
@@ -100,7 +82,6 @@ function question() {
     var titel = document.getElementById('titel').value;
     var text = document.getElementById('text').value;
     console.log('Titel: ' + titel + ' Text: ' + text);
-    if(text != "" && titel != ""){
         $.ajax({
             url: '/create',
             type: 'POST',
@@ -109,13 +90,38 @@ function question() {
             success: function (data) {
             }
         });
-        $("#createhead").prepend("FRAGE: " + titel + " von ");
-        text = text.replace(/\n/g, '<br>');
         $("#showthumbs").show();
         $("#questiondiv").hide();
-        $("#errordiv").hide();
+    
+}
+function checkPost() {
+    var valueCount = document.getElementById('titel').value.length;
+    var valueCount2 = document.getElementById('text').value.length;  
+    if (valueCount >= 3 && valueCount <= 20){        
+        document.getElementById('titel').setAttribute('style','border: 2px solid #2eb82e; opacity: 0.75');
     } else {
-        $("#errordiv").show();
+        document.getElementById('titel').setAttribute('style','border: 2px solid #a94442; opacity: 0.75');
+    }
+    if (valueCount2 >= 1){        
+        document.getElementById('text').setAttribute('style','border: 2px solid #2eb82e; opacity: 0.75');
+    } else {
+        document.getElementById('text').setAttribute('style','border: 2px solid #a94442; opacity: 0.75');
+    }
+    if (valueCount2 >= 1 && valueCount >= 3 && valueCount <= 20){        
+        document.getElementById('send').disabled = false;
+    } else {
+        document.getElementById('send').disabled = true;
+    }
+}
+function checkReport() {
+    var valueCount = document.getElementById('text').value.length;
+    
+    if (valueCount >= 10 && valueCount <= 20){        
+        document.getElementById('text').setAttribute('style','border: 2px solid #2eb82e; opacity: 0.75');
+        document.getElementById('send').disabled = false;
+    } else {
+        document.getElementById('text').setAttribute('style','border: 2px solid #a94442; opacity: 0.75');
+        document.getElementById('send').disabled = true;
     }
 }
 function checkUsername() {
@@ -151,7 +157,6 @@ function report(id, value, user) {
     var text = document.getElementById('text').value;
     var dataString = value + "-" + id + " wurde von " + user  + " mit der Nachricht: " + text + " gemeldet."
     console.log(dataString);
-    if(text != ""){
         $.ajax({
             url: '/report',
             type: 'POST',
@@ -163,11 +168,7 @@ function report(id, value, user) {
         text = text.replace(/\n/g, '<br>').replace("<", '').replace(">", '');
         $("#reportmessage").append(text);
         $("#reportdiv").hide();
-        $("#success").show();
-        $("#errordiv").hide();
-    } else {
-        $("#errordiv").show();
-    } 
+        $("#success").show(); 
 }
 function search() {
     $.ajaxSetup({

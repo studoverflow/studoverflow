@@ -16,10 +16,10 @@
                 <b>FRAGE:</b> {{$titel}} von <a href="/profile={{$user_id}}">{{$name}}</a> am {{$date}}
             </div>
             <div class="col-sm-12 col-md-12 column messagemain">
-                <div class="col-sm-1 col-md-1 column messageimg">
+                <div class="col-sm-2 col-md-2 column messageimg">
                     <img class="text-center avatar" src="/img/upload/avatar/{{ $avatar }}">
                 </div>
-                <div class="col-sm-11 col-md-11 column messagemain">
+                <div class="col-sm-10 col-md-10 column messagemain">
                 @if($edit != null) Frage wurde editiert am {{ $edit }} </br></br>@endif 
                    {!! nl2br(e($text)) !!}
                 </div>
@@ -76,10 +76,10 @@
                         <b>ANTWORT:</b> {!!$out->titel!!} von <a href="/profile={{$out->id}}">{{$out->name}}</a> am {{$out->date}}
                     </div>
                     <div class="col-sm-12 col-md-12 column messagemain">
-                        <div class="col-sm-1 col-md-1 column messageimg">
+                        <div class="col-sm-2 col-md-2 column messageimg">
                             <img class="text-center avatar" src="/img/upload/avatar/{{ $out->avatar }}">
                         </div>
-                        <div class="col-sm-11 col-md-11 column messagemain">
+                        <div class="col-sm-10 col-md-10 column messagemain">
                             @if($out->edit != null) 
                                 Frage wurde editiert am {{ $out->edit }} </br></br>
                             @endif

@@ -17,10 +17,10 @@
                     {{$titel}} geschrieben am {{$date}} von {{$name}}
                 </div>
                 <div class="col-sm-12 col-md-12 column messagemain">
-                    <div class="col-sm-1 col-md-1 column messageimg">
+                    <div class="col-sm-2 col-md-2 column messageimg">
                         <img class="text-center avatar" src="/img/upload/avatar/{{ $avatar }}">
                     </div>
-                    <div class="col-sm-11 col-md-11 column messagemain">
+                    <div class="col-sm-10 col-md-10 column messagemain">
                         {!! nl2br(e($text)) !!}
                     </div>
                 </div>
@@ -37,13 +37,11 @@
                 </div>
             </article>
             <div class="col-sm-12 col-md-12 form-group" id="reportdiv">
-                    <textarea class="form-control" placeholder="Begründung" id="text" rows="6"></textarea>
-                    <button class="btn btn-black buttonRight margintop10" onclick="report('{{$id}}', '{{$value}}', '{{Auth::user()->name}}')">
-                         Abschicken
-                     </button>
-                    <div class="col-sm-12 col-md-12 margintop10 notvalid" id="errordiv">
-                        <h2 class="text-center">Ungültige Anfrage. Bitte zuerst alle Felder ausfüllen!</h2>
-                    </div>
+                <div>Text muss mindestens 10 Zeichen lang sein</div>
+                <textarea onkeyup="checkReport()" class="form-control" placeholder="Begründung" id="text" rows="6"></textarea>
+                <button id="send" class="btn btn-black buttonRight margintop10" onclick="report('{{$id}}', '{{$value}}', '{{Auth::user()->name}}')" disabled="">
+                     <i class="fa fa-paper-plane-o" aria-hidden="true"></i> Abschicken
+                 </button>
             </div>
         </div>
     </div>

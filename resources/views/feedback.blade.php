@@ -40,7 +40,7 @@
 			        </div>
 			    </div>
 			    <div class="col-sm-offset-2 col-md-offset-2 col-sm-8 col-md-8">
-			        {!! Form::submit('Senden', array('class' => 'btn btn-black buttonRight'));  !!}
+			        {!! Form::submit('Absenden', array('class' => 'btn btn-black buttonRight'));  !!}
 			    </div>
 			    {!! Form::close() !!}
 			</article>

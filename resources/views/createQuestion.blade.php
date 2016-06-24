@@ -19,21 +19,19 @@
 			    <form class="form-group" action="/create" method="POST">
                     <div class="col-sm-12 col-md-12">
                         <div class="col-sm-offset-2 col-md-offset-2 col-sm-8 col-md-8">
-                            <input class="form-control" placeholder="Titel" id="titel" name="titel" type="text">
+                            <div>Titel muss zwischen 3 und 20 Zeichen lang sein</div>
+                            <input class="form-control" onkeyup="checkPost()" placeholder="Titel" id="titel" name="titel" type="text">
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-12 margintop15">
                         <div class="col-sm-offset-2 col-md-offset-2 col-sm-8 col-md-8">                            
-                            <textarea class="form-control" placeholder="Deine Frage" id="text" name="text" cols="50" rows="10" id="message"></textarea>
+                            <textarea onkeyup="checkPost()" class="form-control" placeholder="Deine Frage" id="text" name="text" cols="50" rows="10" id="message"></textarea>
                             <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-12 margintop15">
                         <div class="col-sm-offset-2 col-sm-8 col-md-offset-2 col-md-8">
-                            <input type="button" onclick="question();" class="btn btn-black buttonRight marginbottom20" value="Senden">
-                            <div class="col-sm-12 col-md-12 margintop10 notvalid" id="errordiv">
-                                <h3 class="text-center">Ungültige Anfrage. Bitte zuerst alle Felder ausfüllen!</h3>
-                            </div>
+                            <input id="send" type="button" onclick="question();" class="btn btn-black buttonRight marginbottom20" value="Senden" disabled="">
                         </div>
                     </div>
 			    </form>

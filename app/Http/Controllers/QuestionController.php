@@ -161,15 +161,9 @@ class QuestionController extends Controller {
         $qid = $request->input('qid');
         DB::table('questions')->where('id', '=', $qid)->delete();
 
-        if(Auth::guest()){
-            return view('welcome');
-        } else {
-
-            $questions = DB::select('select * from questions where user_id = ? order by date desc', [Auth::user()->id]);
-            $answers = DB::select('select * from answers where user_id = ? order by date desc', [Auth::user()->id]);
-
-            return view('history', ['answers' => $answers], ['questions' => $questions]);
-        } 
+        $questions = DB::table('overquestview')->select('*')->get();
+        return view('questionsoverview', ['questions' => $questions]);
+        
     }
 
     // ------------------------------------------------------------
