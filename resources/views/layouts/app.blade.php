@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <script type="text/javascript">
-        var totalCount = 5;
-        function ChangeIt() {
-            var num = Math.ceil(Math.random() * totalCount);
-            document.body.background =  '/img/' + num + '.jpg';
-            document.body.style.backgroundRepeat = "repeat";
-        }
-    </script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,18 +11,17 @@
     <meta name="description" content="Studoverflow ist ein Portal zum Informationsaustausch von Studenten">
     <meta name="email" content="info@studoverflow.de">
     <meta name="csrf-token" content="{{ csrf_token() }}"/>
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     {{--<link href="{{ elixir('favicon.ico') }}" rel="shortcut icon" type="image/x-icon">--}}
     <!-- Styles -->
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     {{--<link href="{{ elixir('css/style.css') }}" rel="stylesheet">--}}
-
+    <link rel="stylesheet" href="/css/styles.css" />
+    <meta http-equiv="expires" content="100">
 <!--
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/css/font-awesome.min.css" />
 -->
-    <link rel="stylesheet" href="/css/styles.css" />
 </head>
 <body id="app-layout">
     <header class="scaleheader">
@@ -124,12 +115,7 @@
             </div>
         </nav>
     </header>
-
     @yield('content')
-
-    <script type="text/javascript">
-        ChangeIt();
-    </script>
     <footer class="container-fluid navbar-trans navbar-fixed-bottom">
         <div class="container margintop15">
             <div class="row">
@@ -157,8 +143,17 @@
     <!-- JavaScripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="{{ URL::asset('js/scripts.js') }}"></script>
-
-
+    <script type="text/javascript" src="{{ URL::asset('js/scripts.min.js') }}"></script>
+    <script type="text/javascript">
+        var totalCount = 5;
+        function ChangeIt() {
+            var num = Math.ceil(Math.random() * totalCount);
+            document.body.background =  '/img/' + num + '.jpg';
+            document.body.style.backgroundRepeat = "repeat";
+        }
+    </script>
+    <script type="text/javascript">
+        ChangeIt();
+    </script>
 </body>
 </html>

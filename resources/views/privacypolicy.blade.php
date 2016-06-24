@@ -2,9 +2,9 @@
 @section('content')
 <section id="privacypolicy" class="container-fluid">
 	<h1 class="text-center margintop80 marginbottom40 topics"><i class="fa fa-btn fa-key"></i> Datenschutz</h1>
-	<article class="container">
-		<article class="row">
-			<div class="col-sm-12 col-md-12 whiteboxdiv">
+	<div class="container">
+		<div class="row">
+			<article class="col-sm-12 col-md-12 whiteboxdiv">
 				<p>
 					Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst.
 					Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der
@@ -17,8 +17,8 @@
 				<p>
 					Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.
 				</p>
-			</div>
-		</article>
-	</article>
+			</article>
+		</div>
+	</div>
 </section>
 @endsection

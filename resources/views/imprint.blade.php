@@ -2,10 +2,10 @@
 @section('content')
 <section id="imprint" class="container-fluid">
 	<h1 class="text-center margintop80 marginbottom40 topics"><i class="fa fa-btn fa-paragraph"></i> Impressum</h1>
-	<article class="container">
-		<article class="row">
-			<div class="col-sm-12 col-md-12">
-				<div class="col-sm-12 col-md-12 whiteboxdiv text-center marginbottom20">
+	<div class="container">
+		<div class="row">
+			<article class="col-sm-12 col-md-12">
+				<article class="col-sm-12 col-md-12 whiteboxdiv text-center marginbottom20">
 					Angaben gemäß § 5 TMG:
 					<h3>StudOverflow</h3>
 					<p>
@@ -26,8 +26,8 @@
 						<a href="http://ec.europa.eu/consumers/odr">http://ec.europa.eu/consumers/odr</a>
 					</p>
 					Unsere E-Mail-Adresse finden sie oben im Impressum.
-				</div>
-				<div class="col-sm-12 col-md-12 whiteboxdiv text-center marginbottom20">
+				</article>
+				<article class="col-sm-12 col-md-12 whiteboxdiv text-center marginbottom20">
 					<h4>Haftungsausschluss (Disclaimer)</h4>
 					<h6>Haftung für Inhalte</h6>
 					<p>
@@ -43,9 +43,9 @@
 					<p>
 						Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet. Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.
 					</p>
-				</div>
-			</div>
-		</article>
-	</article>
+				</article>
+			</article>
+		</div>
+	</div>
 </section>
 @endsection

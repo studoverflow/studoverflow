@@ -5,9 +5,9 @@
         <i class="fa fa-btn fa-search"></i>
         Suchen
     </h1>
-    <div class="container">
+    <div class="container marginbottom40">
         <div class="row">
-            <div class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
+            <article class="col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2">
                 <div class="input-group">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <input type="text" id="suchbegriff" onkeyup="searchEnter()" class="form-control" placeholder="Suchbegriff hier eingeben...">
@@ -17,7 +17,7 @@
                     </button>
                   </span>
                 </div><!-- /input-group -->
-            </div>
+            </article>
         </div>
         <div class="row">
             <div class="margintop20">
@@ -26,9 +26,9 @@
                   <div class="col-sm-3 col-md-3">Autor</div>
                   <div class="col-sm-3 col-md-3">Erstelldatum</div>
                </div>
-               <div id="searchResults">
+               <article id="searchResults">
                    
-               </div>
+               </article>
             </div>
         </div>
     </div>

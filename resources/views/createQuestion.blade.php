@@ -19,7 +19,7 @@
 			    <form class="form-group" action="/create" method="POST">
                     <div class="col-sm-12 col-md-12">
                         <div class="col-sm-offset-2 col-md-offset-2 col-sm-8 col-md-8">
-                            <div>Titel muss zwischen 3 und 20 Zeichen lang sein</div>
+                            <div>Titel muss zwischen 3 und 35 Zeichen lang sein</div>
                             <input class="form-control" onkeyup="checkPost()" placeholder="Titel" id="titel" name="titel" type="text">
                         </div>
                     </div>

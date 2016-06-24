@@ -1,13 +1,13 @@
 @extends('layouts.app')
 @section('content')
 <section class="container-fluid" id="new">
-    <article class="container marginbottom20">
-        <article class="row">
+    <div class="container marginbottom20">
+        <div class="row">
             <article class="col-sm-12 col-md-12">
-                <div class="col-sm-12 col-md-12 questiontop">
+                <article class="col-sm-12 col-md-12 questiontop">
                     <h1 class="text-center questionheaderfont">Übersicht</h1>
-                </div>
-                <div class="col-sm-12 col-md-12 question">
+                </article>
+                <article class="col-sm-12 col-md-12 question">
                     <div class="col-sm-6 col-md-6">
                         Titel:
                     </div>
@@ -17,9 +17,9 @@
                     <div class="col-sm-3 col-md-3">
                         Erstelldatum:
                     </div>
-               </div>
+                </article>
                 @foreach($questions as $question)
-                    <div class="col-sm-12 col-md-12 question">
+                    <article class="col-sm-12 col-md-12 question">
                         <div class="col-sm-6 col-md-6">
                             <b>
                                 <a href="/question={{$question->id}}">
@@ -41,10 +41,10 @@
                         <div class="col-sm-3 col-md-3">
                             <i class="fa fa-clock-o" aria-hidden="true"></i> {{$question->date}}
                         </div>
-                    </div>
+                    </article>
                 @endforeach
             </article>
-        </article>
-    </article>
+        </div>
+    </div>
 </section>
 @endsection

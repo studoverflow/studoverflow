@@ -97,7 +97,7 @@ function question() {
 function checkPost() {
     var valueCount = document.getElementById('titel').value.length;
     var valueCount2 = document.getElementById('text').value.length;  
-    if (valueCount >= 3 && valueCount <= 20){        
+    if (valueCount >= 3 && valueCount <= 35){        
         document.getElementById('titel').setAttribute('style','border: 2px solid #2eb82e; opacity: 0.75');
     } else {
         document.getElementById('titel').setAttribute('style','border: 2px solid #a94442; opacity: 0.75');
@@ -107,7 +107,7 @@ function checkPost() {
     } else {
         document.getElementById('text').setAttribute('style','border: 2px solid #a94442; opacity: 0.75');
     }
-    if (valueCount2 >= 1 && valueCount >= 3 && valueCount <= 20){        
+    if (valueCount2 >= 1 && valueCount >= 3 && valueCount <= 35){        
         document.getElementById('send').disabled = false;
     } else {
         document.getElementById('send').disabled = true;
@@ -116,7 +116,7 @@ function checkPost() {
 function checkReport() {
     var valueCount = document.getElementById('text').value.length;
     
-    if (valueCount >= 10 && valueCount <= 20){        
+    if (valueCount >= 10){        
         document.getElementById('text').setAttribute('style','border: 2px solid #2eb82e; opacity: 0.75');
         document.getElementById('send').disabled = false;
     } else {
@@ -219,7 +219,8 @@ function search() {
                 }
             } else {
                 document.getElementById('suchbegriff').setAttribute('style', 'form-control; background-color: #a94442');
-                document.getElementById('suchbegriff').setAttribute('placeholder', 'Sie müssen einen Suchbegriff eingeben!!!');
+                document.getElementById('suchbegriff').setAttribute('placeholder', 'Sie müssen einen Suchbegriff eingeben!');
+                
             }
        }
     });

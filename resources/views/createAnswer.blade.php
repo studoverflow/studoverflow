@@ -28,7 +28,7 @@
             </div>
             <form action="/answer={{$question_id}}" method="POST" id="answerdiv">         
                 <div class="form-group"> 
-                    <div>Titel muss zwischen 3 und 20 Zeichen lang sein</div>
+                    <div>Titel muss zwischen 3 und 35 Zeichen lang sein</div>
                     <input onkeyup="checkPost()" class="form-control" type="text" id="titel" name="titel" placeholder="Titel">
                     <textarea onkeyup="checkPost()" class="form-control margintop10"  name="text" id="text" placeholder="Nachricht" rows="10" ></textarea>
                     <input type="hidden" name="qid" id="qid" value="{{$question_id}}">

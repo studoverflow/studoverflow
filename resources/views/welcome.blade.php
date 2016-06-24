@@ -13,7 +13,7 @@
                                 Jetzt Mitglied werden
                             </button>
                         </p>
-                        <div class="col-sm-12 col-md-12 welcomeinfo">
+                        <article class="col-sm-12 col-md-12 welcomeinfo">
                             <p>
                                 <h3 class="whatsstud">
                                     <i class="fa fa-info" aria-hidden="true"></i> Was ist StudOverflow?
@@ -35,14 +35,14 @@
                                 Wir möchten den Studierenden eine Plattform schaffen, auf der ihre Fragen rund um das
                                 Studium von Kommilitonen schnell und einfach beantwortet werden.
                             </p>
-                        </div>
+                        </article>
                     @else                        
                         <div class="col-sm-12 col-md-12">
                             <h3 class="text-center">
                                 Willkommen {{ Auth::user()->name }}
                             <h3>
                         </div>
-                        <div class="col-sm-12 col-md-12 welcomeinfo">
+                        <article class="col-sm-12 col-md-12 welcomeinfo">
                             <div class="row paddingtop10">
                                 <div class="col-sm-12 col-md-12">
                                     <div class="col-md-12 col-sm-12">
@@ -149,7 +149,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </article>
                     @endif
                 </div> 
             </article>

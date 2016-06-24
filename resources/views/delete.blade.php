@@ -16,10 +16,10 @@
                 LÖSCHEN von {{$titel}} geschrieben am {{$date}}
             </div>
             <div class="col-sm-12 col-md-12 column messagemain">
-                <div class="col-sm-1 col-md-1 column messageimg">
+                <div class="col-sm-2 col-md-2 column messageimg">
                     <img class="text-center avatar" src="/img/upload/avatar/{{ $avatar }}">
                 </div>
-                <div class="col-sm-9 col-md-11 column messagemain">
+                <div class="col-sm-10 col-md-10 column messagemain">
                     {!! nl2br(e($text)) !!}
                 </div>
             </div>
