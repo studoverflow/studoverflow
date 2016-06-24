@@ -163,12 +163,12 @@
             </article>
         </article>
         <div class="row">
-            <div class="col-md-12 col-sm-12 marginbottom20">
-                <div class="text-center paddingtop10">
-                    <div class="fb-like" style="text-align: center !important;" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
-                    <div class="g-follow" data-annotation="bubble" data-height="20" data-href="//plus.google.com/u/0/111031593308618237725" data-rel="publisher"></div>
-                    <script src="https://apis.google.com/js/platform.js" async defer></script>
-                </div>
+            <div class="text-center col-sm-12 col-md-12 marginbottom10">
+                <div id="facebook" style="vertical-align: top; margin-right: 10px; margin-left: -5px" class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-action="recommend" data-show-faces="true" data-share="false"></div>
+                <div id="google" class="g-follow" data-annotation="none" data-height="20" data-href="//plus.google.com/u/0/111031593308618237725" data-rel="publisher"></div>
+                <script src="https://apis.google.com/js/platform.js" async defer>
+                  {lang: 'de'}
+                </script>
             </div>
         </div>
     </article>
