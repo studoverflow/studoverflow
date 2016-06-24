@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <section class="container-fluid" id="new">
     <article class="container marginbottom20">

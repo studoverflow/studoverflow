@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <section class="container-fluid" id="search">
     <h1 class="text-center margintop80 marginbottom40 topics">

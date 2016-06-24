@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <section id="privacypolicy" class="container-fluid">
 	<h1 class="text-center margintop80 marginbottom40 topics"><i class="fa fa-btn fa-key"></i> Datenschutz</h1>
