@@ -20,9 +20,7 @@
                     <img class="text-center avatar" src="/img/upload/avatar/{{ $avatar }}">
                 </div>
                 <div class="col-sm-9 col-md-11 column messagemain">
-                <?php
-                 echo nl2br($text);
-                ?>
+                    {!! nl2br(e($text)) !!}
                 </div>
             </div>
             <div class="col-sm-12 col-md-12 column questionbot marginbottom20">
