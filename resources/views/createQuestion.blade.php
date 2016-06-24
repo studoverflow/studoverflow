@@ -3,9 +3,9 @@
 <section id="createquestion" class="container-fluid">
     <div class="row">
         <div class="col-sm-12 col-md-12 margintop40">
-            <button type="button" class="btn btn-black buttonLeft" onclick="goBack();">
+            <button type="button" class="btn btn-black buttonLeft" onclick="window.location.href='overview'">
                 <i class="fa fa-btn fa-arrow-circle-left" aria-hidden="true"></i>
-                 Zurück
+                 zur Übersicht
             </button>
          </div>
      </div>

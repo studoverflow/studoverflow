@@ -22,6 +22,7 @@ function answer() {
         });
         $("#showthumbs").show();
         $("#answerdiv").hide();
+        $("#errordiv").hide();
     } else {
         $("#errordiv").show();
     }
@@ -52,6 +53,7 @@ function editQuestion() {
         });
         $('#questiondiv').hide();
         $("#showthumbs").show();
+        $("#errordiv").hide();
     } else {
         $("#errordiv").show();
     }
@@ -80,6 +82,7 @@ function editAnswer() {
         });
         $('#answerdiv').hide();
         $("#showthumbs").show();
+        $("#errordiv").hide();
     } else {
         $("#errordiv").show();
     }
@@ -110,6 +113,7 @@ function question() {
         text = text.replace(/\n/g, '<br>');
         $("#showthumbs").show();
         $("#questiondiv").hide();
+        $("#errordiv").hide();
     } else {
         $("#errordiv").show();
     }
@@ -160,6 +164,7 @@ function report(id, value, user) {
         $("#reportmessage").append(text);
         $("#reportdiv").hide();
         $("#success").show();
+        $("#errordiv").hide();
     } else {
         $("#errordiv").show();
     } 
