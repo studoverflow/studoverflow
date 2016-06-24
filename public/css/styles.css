@@ -21,6 +21,13 @@ body {
         font-size: 8px;
     }
 }
+
+ @media (max-width:767px) {
+    .whatsstud {
+        padding-top: 20px !important;
+    }
+}
+
  @media (max-width:600px) {
     .studoverflowhead {
         font-size: 9vw !important;

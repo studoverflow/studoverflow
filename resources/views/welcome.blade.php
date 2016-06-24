@@ -16,7 +16,7 @@
                     </p>
                     <div class="col-sm-12 col-md-12 welcomeinfo">
                         <p>
-                            <h3>
+                            <h3 class="whatsstud">
                                 <i class="fa fa-info" aria-hidden="true"></i> Was ist StudOverflow?
                             </h3>
                         </p>
