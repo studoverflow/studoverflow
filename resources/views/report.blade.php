@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <section class="container-fluid" id="report">
     <div class="row">
@@ -10,8 +9,8 @@
             </button>
         </div>
     </div>
-    <article class="container">
-        <article class="row">
+    <div class="container">
+        <div class="row">
             <article class="col-sm-12 col-md-12">
             	 <div class="col-sm-12 col-md-12 column questiontop">
                     <h3>Diesen Beitrag Melden:</h3>
@@ -22,12 +21,14 @@
                         <img class="text-center avatar" src="/img/upload/avatar/{{ $avatar }}">
                     </div>
                     <div class="col-sm-11 col-md-11 column messagemain">
-                        <?php
-                        echo nl2br($text);
-                        ?>
+                        {!! nl2br(e($text)) !!}
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-12 column questionbot marginbottom20"></div>
+                <div class="col-sm-12 col-md-12 column questionbot marginbottom20">
+                    <div class="col-sm-12 col-md-12">
+                        Bitte eine nachvollziehbare Begründung nennen
+                    </div>
+                </div>
                 <div class="col-sm-12 col-md-12 reportsuccess" id="success">
                     <h4>Vielen Dank für Ihre Nachricht. Unsere Moderatoren werden den Artikel so schnell wie möglich prüfen.</h4>
                     <div id="reportmessage">
@@ -35,24 +36,16 @@
                     </div>
                 </div>
             </article>
-        </article>
-    </article>
-    <div class="container" id="reportdiv">
-        <article class="row">
-            <article class="col-sm-12 col-md-12">
-                    <div class="form-group">
-                        <div class="col-sm-12 col-md-12">
-                            <textarea class="form-control" placeholder="Begründung" id="text" rows="6"></textarea>
-                            <button class="btn btn-black buttonRight margintop10" onclick="report('{{$id}}', '{{$value}}', '{{Auth::user()->name}}')">
-                                 Abschicken
-                             </button>
-                            <div class="col-sm-12 col-md-12 margintop10 notvalid" id="errordiv">
-                                <h2 class="text-center">Ungültige Anfrage. Bitte zuerst alle Felder ausfüllen!</h2>
-                            </div>
-                        </div>
+            <div class="col-sm-12 col-md-12 form-group" id="reportdiv">
+                    <textarea class="form-control" placeholder="Begründung" id="text" rows="6"></textarea>
+                    <button class="btn btn-black buttonRight margintop10" onclick="report('{{$id}}', '{{$value}}', '{{Auth::user()->name}}')">
+                         Abschicken
+                     </button>
+                    <div class="col-sm-12 col-md-12 margintop10 notvalid" id="errordiv">
+                        <h2 class="text-center">Ungültige Anfrage. Bitte zuerst alle Felder ausfüllen!</h2>
                     </div>
-            </article>
-        </article>
+            </div>
+        </div>
     </div>
 </section>
 @endsection

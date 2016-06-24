@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <section id="feedback" class="container-fluid">
 	<h1 class="text-center margintop40 topics"><i class="fa fa-btn fa-comment-o"></i> Feedback</h1>

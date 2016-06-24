@@ -1,8 +1,5 @@
 @extends('layouts.app')
-
 @section('content')
-<?php $questions = DB::select('select * from questions where user_id = ? order by date desc', [Auth::user()->id]); ?>
-<?php $answers = DB::select('select * from answers where user_id = ? order by date desc', [Auth::user()->id]); ?>
 <section class="container-fluid" id="history">
     <article class="container marginbottom20">
         <article class="row">
@@ -14,7 +11,6 @@
                     <h3 class="text-center">Fragen</h3>
                 </div>
                 @foreach($questions as $question)
-                    <?php $user = App\User::find($question->user_id); ?>
                     <div class="col-sm-12 col-md-12 question">
                         <div class="col-sm-6 col-md-6">
                             <b>
@@ -25,11 +21,11 @@
                         </div>
                         <div class="col-sm-3 col-md-3">
                             <b>
-                                <a href="/profile={{$user->id}}">
+                                <a href="/profile={{Auth::user()->id}}">
                                     <i class="fa" aria-hidden="true">
-                                        <img class="avatariconxs" src="/img/upload/avatar/{{ $user->avatar }}">
+                                        <img class="avatariconxs" src="/img/upload/avatar/{{Auth::user()->avatar}}">
                                     </i>
-                                     {{$user->name}}
+                                     {{Auth::user()->name}}
                                 </a>
                             </b>
                         </div>
@@ -52,11 +48,11 @@
                         </div>
                         <div class="col-sm-3 col-md-3">
                             <b>
-                                <a href="/profile={{$user->id}}">
+                                <a href="/profile={{Auth::user()->id}}">
                                     <i class="fa" aria-hidden="true">
-                                        <img class="avatariconxs" src="/img/upload/avatar/{{ $user->avatar }}">
+                                        <img class="avatariconxs" src="/img/upload/avatar/{{Auth::user()->avatar}}">
                                     </i>
-                                     {{$user->name}}
+                                     {{Auth::user()->name}}
                                 </a>
                             </b>
                         </div>

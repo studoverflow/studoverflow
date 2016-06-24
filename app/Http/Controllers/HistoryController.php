@@ -20,7 +20,11 @@ class HistoryController extends Controller {
 		if(Auth::guest()){
 	        return view('welcome');
 	    } else {
-	        return view('history');
+
+	    	$questions = DB::select('select * from questions where user_id = ? order by date desc', [Auth::user()->id]);
+	    	$answers = DB::select('select * from answers where user_id = ? order by date desc', [Auth::user()->id]);
+
+	        return view('history', ['answers' => $answers], ['questions' => $questions]);
 	    } 
 
 	}

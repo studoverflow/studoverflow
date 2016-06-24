@@ -10,7 +10,7 @@
         </div>
     </div>
 	<article class="container" id="answerdiv">
-        <h1 class="text-center marginbottom20"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Antwort Editieren</h1>
+        <h1 class="text-center marginbottom20 topics"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Antwort Editieren</h1>
 		<article class="row">
 			<div class="col-sm-12 col-md-12">
 			    <form class="form-group" action="/create" method="POST">
