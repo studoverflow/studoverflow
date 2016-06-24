@@ -5,7 +5,7 @@
         var totalCount = 5;
         function ChangeIt() {
             var num = Math.ceil(Math.random() * totalCount);
-            document.body.background = 'img/' + num + '.jpg';
+            document.body.background =  '/img/' + num + '.jpg';
             document.body.style.backgroundRepeat = "repeat";
         }
     </script>
@@ -20,7 +20,7 @@
     <meta name="email" content="info@studoverflow.de">
     <meta name="csrf-token" content="{{ csrf_token() }}"/>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-
+    {{--<link href="{{ elixir('favicon.ico') }}" rel="shortcut icon" type="image/x-icon">--}}
     <!-- Styles -->
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
@@ -162,23 +162,8 @@
     <!-- JavaScripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="js/scripts.js"></script>
-    {{--
-        <script src="{{ elixir('js/app.js') }}"></script>
-    --}}
+    <script type="text/javascript" src="{{ URL::asset('js/scripts.js') }}"></script>
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/de_DE/sdk.js#xfbml=1&version=v2.6";
-    fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-</script>
 
-    {{--
-        <script src="{{ elixir('js/app.js') }}"></script>
-    --}}
 </body>
 </html>

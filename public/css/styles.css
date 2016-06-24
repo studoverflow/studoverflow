@@ -81,7 +81,7 @@ section {
 footer {
     background-color: #2b2b2b;
     border-top: 2px solid #fff !important;
-    font-size: 1vw;
+    font-size: 0.6vw;
     color: #fff;
     height: 50px;
     padding-top: 2px;
@@ -308,6 +308,11 @@ footer a:visited {
     background: rgba(84, 145, 189, 0.8);
 }
 
+#resetheader {
+    background: #2b2b2b;
+    color: #ffffff;
+}
+
 #reset a:link,
 #reset a:visited,
 #reset a:active {
@@ -325,6 +330,11 @@ footer a:visited {
 
 #email {
     background: rgba(84, 145, 189, 0.8);
+}
+
+#emailresetheader {
+    background: #2b2b2b;
+    color: #ffffff;
 }
 
 #email a:link,
